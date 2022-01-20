@@ -58,7 +58,11 @@ plugins:
   - search:
       lang: en
 
-  - git-revision-date
+  - git-revision-date-localized:
+      type: iso_date
+      enable_creation_date: true
+      exclude:
+        - index.md
     
 
 

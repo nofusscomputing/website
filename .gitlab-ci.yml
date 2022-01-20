@@ -49,6 +49,8 @@ markdown lint:
 Static Pages:
   image: python:3.7.5-buster
   stage: build
+  variables:
+    GIT_DEPTH: 0
   before_script:
     - pip install --upgrade pip -r requirements.txt
   script:
