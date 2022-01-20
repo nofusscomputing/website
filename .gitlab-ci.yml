@@ -71,15 +71,17 @@ Gitlab Release:
 
 pages:
   stage: publish
+  variables:
+    GIT_STRATEGY: none
   script:
-    - echo publish page
+    - mv build public
   needs: ['Static Pages']
   environment: 
     name: staging
     url: $CI_PAGES_URL
   artifacts:
     paths:
-    - build
+    - public
   rules:
     - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "master"'
       when: always
