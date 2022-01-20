@@ -1,0 +1,57 @@
+site_name: No Fuss Computing
+site_description: A wiki with random bits of information you may find useful.
+site_url: https://nofusscomputing.com
+
+site_author: No Fuss Computing
+copyright: Copyright No Fuss Computing 2021
+
+#site_favicon: favicon.ico
+# site_dir: 'docs/static/mkdocs_build'
+
+docs_dir: 'pages'
+site_dir: build
+
+repo_name: Gitlab
+repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
+#edit_uri: '-/blob/pages'
+edit_uri: '-/blob/master/pages/'
+
+theme: 
+    name: mkdocs
+    locale: en
+
+
+markdown_extensions:
+
+# disable until can figure out
+# huge emoji size
+# having the svg generated and be included as the image and not a link from elsewhere.
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:pymdownx.emoji.twemoji
+#      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+##      options:
+##        custom_icons:
+##          - theme/my_icons
+
+
+
+nav:
+- Home: index.md
+
+- Wiki: wiki.md
+
+- Projects: 
+  - Home: projects.md
+
+  - Ansible Roles: projects/ansible-roles/README.md
+
+  - Gitlab CI Templates: projects/gitlab-ci/README.md
+
+  - Python Gitlab Management: projects/python-gitlab-management/README.md
+
+- Operations: 
+
+  - Home: operations.md
+
+- Contact Us: contact.md
+
