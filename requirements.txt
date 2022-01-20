@@ -1,5 +1,7 @@
 mkdocs>=1.2.3
 mkdocs-material-extensions>=1.0.3
 
-#pip install material
+mkdocs-material==8.1.7
+mkdocs-plugin-tags==1.0.2
+mkdocs-git-revision-date-plugin==0.3.1
 pymdown-extensions

@@ -3,7 +3,7 @@ site_description: A wiki with random bits of information you may find useful.
 site_url: https://nofusscomputing.com
 
 site_author: No Fuss Computing
-copyright: Copyright No Fuss Computing 2021
+copyright: Copyright &copy; No Fuss Computing 2021
 
 #site_favicon: favicon.ico
 # site_dir: 'docs/static/mkdocs_build'
@@ -11,20 +11,85 @@ copyright: Copyright No Fuss Computing 2021
 docs_dir: 'pages'
 site_dir: build
 
-repo_name: Gitlab
+repo_name: Website
+#repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
 repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
 #edit_uri: '-/blob/pages'
-edit_uri: '-/blob/master/pages/'
+#edit_uri: '-/blob/master/pages/'
+edit_uri: ''
 
 theme: 
-    name: mkdocs
-    locale: en
+  name: material
+  logo: assets/logo.png
+  custom_dir: theme-overrides
+  icon:
+    repo: fontawesome/brands/gitlab # (1)!
+  locale: en
+  font: false
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.indexes
+    - toc.integrate
+    - navigation.top
+    - header.autohide
+    - navigation.sections
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+
+
+plugins:
+#  - tags:
+#      tags_file: tags.md
+  - search:
+      lang: en
+
+  - git-revision-date
+    
+
+
+
+extra:
+  homepage: https://nofusscomputing.com
+  version: 1.0
+  social:
+    - icon: fontawesome/brands/docker
+      link: https://
+    - icon: fontawesome/brands/facebook
+      link: https://facebook.com/NoFussComputing
+      name: Facebook
+    - icon: fontawesome/brands/github
+      link: https://
+    - icon: fontawesome/brands/gitlab
+      link: https://
+#    - icon: fontawesome/brands/readthedocs
+#      link: https://
+    
+  generator: false
 
 
 markdown_extensions:
-
+  - meta
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji # (1)!
+      emoji_generator: !!python/name:pymdownx.emoji.to_alt
 # disable until can figure out
-# huge emoji size
+# huge emoji size NOTE: isnt on material theme
 # having the svg generated and be included as the image and not a link from elsewhere.
 #  - pymdownx.emoji:
 #      emoji_index: !!python/name:pymdownx.emoji.twemoji
@@ -38,10 +103,13 @@ markdown_extensions:
 nav:
 - Home: index.md
 
-- Wiki: wiki.md
+- Articles: 
+
+  - articles/index.md
 
 - Projects: 
-  - Home: projects.md
+
+  - projects/index.md
 
   - Ansible Roles: projects/ansible-roles/README.md
 
@@ -51,7 +119,11 @@ nav:
 
 - Operations: 
 
-  - Home: operations.md
+  - operations/index.md
+
+- Wiki: 
+
+  - wiki/index.md
 
 - Contact Us: contact.md
 
