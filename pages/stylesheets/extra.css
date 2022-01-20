@@ -1,3 +1,16 @@
-html.md-footer-social a[title="Facebook"] {
-  color: #00acee;
+html .md-social a[title="DockerHub"] {
+  color: #0DB7ED;
+}
+
+html .md-social a[title="Facebook"] {
+  color: #3B5998;
+
+}
+
+html .md-social a[title="Github"] {
+  color: #F5F5F5;
+}
+
+html .md-social a[title="Gitlab"] {
+  color: #fc6d26;
 }

@@ -71,27 +71,38 @@ extra:
   homepage: https://nofusscomputing.com
   version: 1.0
   social:
-    - icon: fontawesome/brands/docker
-      link: https://
-    - icon: fontawesome/brands/facebook
-      link: https://facebook.com/NoFussComputing
+    - link: https://hub.docker.com/u/nofusscomputing
+      name: DockerHub
+      icon: fontawesome/brands/docker
+ 
+    - link: https://facebook.com/NoFussComputing
       name: Facebook
-    - icon: fontawesome/brands/github
-      link: https://
-    - icon: fontawesome/brands/gitlab
-      link: https://
-#    - icon: fontawesome/brands/readthedocs
+      icon: fontawesome/brands/facebook
+
+    - link: https://gitlab.com/nofusscomputing
+      name: Gitlab
+      icon: fontawesome/brands/gitlab
+      
+    - link: https://github.com/NoFussComputing
+      name: Github
+      icon: fontawesome/brands/github
+
+#    - link: https://readthedocs.org/profiles/nofusscomputing/
+#       nane: ReadTheDocs
+#       icon: fontawesome/brands/readthedocs
 #      link: https://
-    
-  generator: false
+
+
+extra_css:
+  - stylesheets/extra.css
 
 
 markdown_extensions:
   - meta
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji # (1)!
-      emoji_generator: !!python/name:pymdownx.emoji.to_alt
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 # disable until can figure out
 # huge emoji size NOTE: isnt on material theme
 # having the svg generated and be included as the image and not a link from elsewhere.
