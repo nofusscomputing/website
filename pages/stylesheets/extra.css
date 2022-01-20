@@ -14,3 +14,20 @@ html .md-social a[title="Github"] {
 html .md-social a[title="Gitlab"] {
   color: #fc6d26;
 }
+
+.docker {
+  color: #0DB7ED;
+}
+
+.facebook {
+  color: #3B5998;
+}
+
+.github {
+  color: #333;
+}
+
+.gitlab {
+  color: #fc6d26;
+}
+
