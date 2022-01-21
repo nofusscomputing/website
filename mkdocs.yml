@@ -125,6 +125,10 @@ nav:
 
   - articles/index.md
 
+  - 2015:
+ 
+    - articles/2015/choose_internet_service.md
+
 - Projects: 
 
   - projects/index.md
