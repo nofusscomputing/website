@@ -4,6 +4,10 @@ User-agent: *
 
 Redirect 301 /wiki/public/article/150225_choose_internet_service /articles/2015/choose_internet_service
 
+Redirect 301 /wiki/syntax /operations/syntax
+
+
+
 Redirect 301 /wiki/public/help/mdt/* /wiki/info/*
 
 Redirect 301 /wiki/public/help/mantis/* /wiki/info/*
