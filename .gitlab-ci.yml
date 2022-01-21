@@ -57,6 +57,7 @@ Static Pages:
 #    - mkdir static
 #    - cp README.md pages/
     - mkdocs build --clean --strict
+    - rm build/sitemap*
   artifacts:
     paths:
       - build
