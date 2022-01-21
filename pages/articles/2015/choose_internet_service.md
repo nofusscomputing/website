@@ -70,11 +70,11 @@ The National broadband network or NBN as it is known is the new way to connect t
 
 Now hopefully by now I have given you a little better understanding of the connection types and terminology in relation to choosing an Internet service; believe me it is still a cumbersome task. Yes there are a lot of things to consider. From a technical standpoint the following should be taken into account:
 
-- availability in your area
+- availability in your area
 
-- what you will be using the Internet for
+- what you will be using the Internet for
 
-- bang for buck
+- bang for buck
 
 ### Availability in Your Area
 
@@ -88,23 +88,23 @@ Most website designers will aim for a page load time of within one-two seconds; 
 
 Read the fine print………. READ THE FINE PRINT……… oh, did I mention fine print? Every Internet package has fine print. This fine print will cover things like:
 
-- what is unmetered((this is a category of sites that you can use without it being counted towards your quota.))
+- what is unmetered((this is a category of sites that you can use without it being counted towards your quota.))
 
-- how much quota you have, read carefully some ISPs will charge by the megabyte if you go over
+- how much quota you have, read carefully some ISPs will charge by the megabyte if you go over
 
-- what happens when you reach your quota limit (good ISPs will shape your speed ((slow your Internet connection speed)))
+- what happens when you reach your quota limit (good ISPs will shape your speed ((slow your Internet connection speed)))
 
-- what you should not do with your Internet package (some ISPs won’t allow you to host your own website.)
+- what you should not do with your Internet package (some ISPs won’t allow you to host your own website.)
 
-- contract period
+- contract period
 
-- exit fees associated with leaving your contract early
+- exit fees associated with leaving your contract early
 
-- fees associated with moving house
+- fees associated with moving house
 
-- support
+- support
 
-- your responsibilities
+- your responsibilities
 
 ### Further Considerations
 
@@ -139,11 +139,12 @@ Lets face it, The Internet has made our lives easier. You can now sit in your lo
 
 Some ISPs in Australia:
 
-- Internode
+- Internode
 
-- IINet
+- IINet
 
-- WestNet
+- WestNet
 
 !!! warning
     The information contained within this article based on the opinion of the author and is provided for informational purposes only. Before utilizing any information or advice from this article you are encouraged to do your own research
+
