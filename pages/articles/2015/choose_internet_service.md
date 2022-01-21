@@ -20,7 +20,6 @@ tags:
 
     This article was originally posted on 25 Feb 2015. It has been migrated from its original source _http://nofusscomputing.com/wiki/public/article/150225_choose_internet_service_ to here.
 
-
 !!! info
     This article has been targeted towards the common mass who don’t understand the technical details and considerations for choosing an Internet package.
 
@@ -79,7 +78,7 @@ Now hopefully by now I have given you a little better understanding of the conne
 
 ### Availability in Your Area
 
-For a majority of Australians, ADSL is the best Internet service you will have available. The most annoying thing when trying to connect an ADSL service is the wait time. This wait time is due to the requirement for a technician to have to go to your local telephone exchange to actually connect you, that is if there are spare ports available in the exchange. If though, you can get the NBN, go for it. Seriously you are being foolish if you don't. Why? the NBN is an actual data network and the speed you pay for is what you get, overall the NBN is more reliable. 
+For a majority of Australians, ADSL is the best Internet service you will have available. The most annoying thing when trying to connect an ADSL service is the wait time. This wait time is due to the requirement for a technician to have to go to your local telephone exchange to actually connect you, that is if there are spare ports available in the exchange. If though, you can get the NBN, go for it. Seriously you are being foolish if you don't. Why? the NBN is an actual data network and the speed you pay for is what you get, overall the NBN is more reliable.
 
 ### What You Will be Using the Internet For?
 
@@ -111,28 +110,22 @@ Read the fine print………. READ THE FINE PRINT……… oh, did I mention fin
 
 - "**Unlimited Packages"** Some ISPs do offer "unlimited packages". Please read the fine print so you can get the definition of unlimited as sometimes unlimited does not exactly mean unlimited. Some ISPs have been know to use peak and off-peak times, during peak you will have a quota and off peak is “unlimited”. A big consideration for unlimited or large packages with lower download speeds is calculating what you could actually download in that billing period. This is a simple task and would use the following formula.
 
-    (Billing Period Days x seconds in day) × max download speed in bits ÷ 8 = max bytes for period
-
-    Example:
-
-    - Billing Period days = 30
-
-    - Second in one day = 86,400
-
-    - Max download speed = 22,000,000
-
-    - ( 30 x 86,400 ) × 22,000,000 ÷ 8 = 7,128,000,000,000Bytes or 7.128TB
-
-    So with the example above a package with a quota above 7.128TB with a download speed of 22mb would be a waste of money.
+    > (Billing Period Days x seconds in day) × max download speed in bits ÷ 8 = max bytes for period
+    >Example:
+    >
+    >- Billing Period days = 30
+    >- Second in one day = 86,400
+    >- Max download speed = 22,000,000
+    >- ( 30 x 86,400 ) × 22,000,000 ÷ 8 = 7,128,000,000,000Bytes or 7.128TB
+    >So with the example above a package with a quota above 7.128TB with a download speed of 22mb would be a waste of money.
 
 - **Bundled Items** We have all seen and heard of them.
 
-    - "Select our Internet Package for $120 a month and we will give you a telephone with free calls, 200gb of download and if you sign up for a 24month contract we will throw in a free iPad"
+  - "Select our Internet Package for $120 a month and we will give you a telephone with free calls, 200gb of download and if you sign up for a 24month contract we will throw in a free iPad"
 
-    - With the exception of a modem-if you don't have one; be very careful of falling into this trap. These “Bundled Packages” are plain and simply designed to get your business. Believe me when I say you can get all of this for a hell of a lot cheaper. Again <u>READ THE FINE PRINT</u> and calculate the cost of the whole contract period including any hidden fees and you will find that these are quite expensive packages. A simple way to test these packages is how much is thrown in, the more free stuff that is included outside of the Internet package, then the more desperate they are for your business. Listen to your gut and the age old saying "If it's too good to be true, than it probably is". Once in my life time I have seen one of these packages and it was too good to be true, but turned out to actually be worth while in the long run, again this was more than likely a “once in a lifetime good package”
+  - With the exception of a modem-if you don't have one; be very careful of falling into this trap. These “Bundled Packages” are plain and simply designed to get your business. Believe me when I say you can get all of this for a hell of a lot cheaper. Again <u>READ THE FINE PRINT</u> and calculate the cost of the whole contract period including any hidden fees and you will find that these are quite expensive packages. A simple way to test these packages is how much is thrown in, the more free stuff that is included outside of the Internet package, then the more desperate they are for your business. Listen to your gut and the age old saying "If it's too good to be true, than it probably is". Once in my life time I have seen one of these packages and it was too good to be true, but turned out to actually be worth while in the long run, again this was more than likely a “once in a lifetime good package”
 
 - **Naked ADSL** works exactly the same as normal ADSL Internet but you don’t have to pay for the phone line as it is included in the “Naked ADSL package” if you don’t use the telephone much or you are utilizing VOIP choosing one of these packages can save you some money. Like ADSL this is only available in certain areas, Please confirm with your ISP for availability.
-
 
 - **Support** It's common practice for ISPs to outsource the first stage of customer support. This problem is a plague that needs to be truncated from the IT((Information Technology)) industry. Why? 9 times out of 10 the person on the other end of the phone either does not have a good grasp on our native language or has an accent that is so thick you can not understand them, which makes it very difficult for the hearing impaired. When this occurs the assistance you called for doesn't happen, and is escalated to someone else in the chain who may or may not be able to help you. In the end you are stuck with no internet and built up frustration from a 1:30h phone call.
 
@@ -152,5 +145,5 @@ Some ISPs in Australia:
 
 - WestNet
 
-!!! warning 
+!!! warning
     The information contained within this article based on the opinion of the author and is provided for informational purposes only. Before utilizing any information or advice from this article you are encouraged to do your own research

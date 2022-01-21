@@ -63,9 +63,6 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
-    
-
-
 
 extra:
   homepage: https://nofusscomputing.com
@@ -106,17 +103,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji 
       emoji_generator: !!python/name:materialx.emoji.to_svg
-# disable until can figure out
-# huge emoji size NOTE: isnt on material theme
-# having the svg generated and be included as the image and not a link from elsewhere.
-#  - pymdownx.emoji:
-#      emoji_index: !!python/name:pymdownx.emoji.twemoji
-#      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-##      options:
-##        custom_icons:
-##          - theme/my_icons
-
-
 
 nav:
 - Home: index.md
