@@ -1,7 +1,7 @@
-mkdocs>=1.2.3
-mkdocs-material-extensions>=1.0.3
+mkdocs==1.2.3
+mkdocs-material-extensions==1.0.3
 
 mkdocs-material==8.1.7
-mkdocs-plugin-tags==1.0.2
+./custom-plugins/mkdocs-plugin-tags
 mkdocs-git-revision-date-localized-plugin==0.11.1
-pymdown-extensions
+pymdown-extensions==9.1

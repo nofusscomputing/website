@@ -31,3 +31,17 @@ html .md-social a[title="Gitlab"] {
   color: #fc6d26;
 }
 
+.tags {
+    background-color: #4051B5;
+    border-radius: 10px;
+    font-size: 12px;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+   
+}
+
+.tags:link {
+    color: white;
+}
+

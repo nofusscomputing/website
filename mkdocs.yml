@@ -53,8 +53,10 @@ theme:
 
 
 plugins:
-#  - tags:
-#      tags_file: tags.md
+  - tags:
+        filename: tags.md
+        folder: pages
+        css_name: ".tags"
   - search:
       lang: en
 
@@ -63,6 +65,7 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
+        - tags.md
 
 extra:
   homepage: https://nofusscomputing.com
@@ -117,6 +120,8 @@ nav:
   - 2015:
  
     - articles/2015/choose_internet_service.md
+
+  - tags: tags.md
 
 - Projects: 
 
