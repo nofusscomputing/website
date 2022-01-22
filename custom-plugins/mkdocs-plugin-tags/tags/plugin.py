@@ -47,8 +47,15 @@ class TagsPlugin(BasePlugin):
         currently modifies the markdown to add a button to click to get related tag info
         tag is customizeable by adding css that keys off the `self.css_name`
         """
+
+        page_url = page.url.split("/")
+        tags_link = ''
+
+        for i in range(len(page_url) - 1):
+            tags_link = tags_link + '../'
+
         if 'tags' in page.meta:
-            swap_mark = [f"[{x}](/{str(self.filename).strip('.md')}.html#{x}){{{self.css_name}}}"
+            swap_mark = [f"[{x}]({tags_link}{str(self.filename).strip('.md')}#{x}){{{self.css_name}}}"
                          for x in page.meta['tags']]
             swap_mark.append('\n')
             return f'{" ".join(swap_mark)}{markdown}'
