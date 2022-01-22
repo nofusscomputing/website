@@ -1,12 +1,6 @@
----
-title: Tags
----
-
 # Contents grouped by tag
-
 {% for tag, pages in tags %}
 ## <span class="{{css_name}}">{{tag}}</span>
 {%  for page in pages %}
-  * [{{page.title}}]({{page.filename}})
-{% endfor %}
-{% endfor %}
+* [{{page.title}}]({{page.filename}})
+{% endfor %}{% endfor %}
