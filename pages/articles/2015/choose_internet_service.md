@@ -1,4 +1,7 @@
 ---
+template: blog_post.html
+title: Choosing an Internet Service
+date: 2015-02-25
 tags:
   - "2015"
   - Feburary
@@ -10,10 +13,7 @@ tags:
   - Internet
   - NBN
   - Australia
-
 ---
-
-# Choosing an Internet Service
 
 !!! attention
     This post is considered an archived post.

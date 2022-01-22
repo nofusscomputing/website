@@ -91,7 +91,13 @@ extra:
 #       nane: ReadTheDocs
 #       icon: fontawesome/brands/readthedocs
 #      link: https://
-
+  blog:
+    dir: articles
+    author: jon_nfc
+    author_image: https://gitlab.com/uploads/-/system/user/avatar/4125177/avatar.png
+    words_read_per_minute: 300
+    list_length: 25
+    extended_preview: true
 
 extra_css:
   - stylesheets/extra.css
