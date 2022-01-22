@@ -2,10 +2,9 @@
 Setup the plugin
 """
 from setuptools import setup, find_packages
-import versioneer
 
 setup(
-    version=versioneer.get_version(),
+    version='0.0.1',
     python_requires='>=3.6',
     install_requires=[
         'mkdocs==1.2.3',
