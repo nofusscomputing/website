@@ -55,7 +55,7 @@ class TagsPlugin(BasePlugin):
             tags_link = tags_link + '../'
 
         if 'tags' in page.meta:
-            swap_mark = [f"[{x}]({tags_link}{str(self.filename).strip('.md')}#{x}){{{self.css_name}}}"
+            swap_mark = [f"[{x}]({tags_link}{str(self.filename).strip('.md')}#{x.lower()}){{{self.css_name}}}"
                          for x in page.meta['tags']]
             swap_mark.append('\n')
             return f'{" ".join(swap_mark)}{markdown}'
