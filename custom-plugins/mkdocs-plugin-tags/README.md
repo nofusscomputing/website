@@ -1,8 +1,9 @@
 # No Fuss Computing's Tags Plugin for MKDocs
 
-Modified version from: https://github.com/ginsburgnm/mkdocs-plugin-tags.git
+Modified version from: [github.com/ginsburgnm/mkdocs-plugin-tags](https://github.com/ginsburgnm/mkdocs-plugin-tags)
 
-# Previous Readme below - tags
+## Previous Readme below - tags
+
 Support for tags in the yaml-metadata in the header of markdown files.
 
 Extracts this metadata and creates a "Tags" page which lists all tags
