@@ -103,8 +103,14 @@ class TagsPlugin(BasePlugin):
     def generate_tags_page(self, data):
         """Generate the tags to be populated on the
         mkdocs tag page"""
+
+        css_name = self.css_name
+
+        if css_name[0:1] == '.':
+            css_name = css_name[1:len(css_name)]
         return self.templ.render(
             tags=sorted(data.items(), key=lambda t: t[0].lower()),
+            css_name = css_name,
         )
 
     def generate_tags_file(self):
