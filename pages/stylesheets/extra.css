@@ -41,7 +41,14 @@ html .md-social a[title="Gitlab"] {
    
 }
 
+a.tags:hover {
+    color: #FFFF00;
+}
+
 .tags:link {
     color: white;
 }
 
+.tags:visited {
+    color: white;
+}
