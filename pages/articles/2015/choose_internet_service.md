@@ -29,6 +29,8 @@ Now if I haven't lost you already and hopefully by the end of this article I hav
 
 Below I will cover a little of the technical details and hopefully bringing into perspective, so you can better understand what is being explained to you. To do this I will use the flow of water methodology.
 
+<p hidden>#more</p>
+
 ## Bandwidth
 
 Bandwidth is the actual speed of your Internet connection and its unit of measure is bits per second. So basically if you think water pipe, only so much water will flow through a water pipe but if you increase it’s pressure you will receive more water. For the actual Internet connection different technology is used to essentially achieve the same

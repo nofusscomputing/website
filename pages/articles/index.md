@@ -1,5 +1,8 @@
-# No Fuss Computing Articles
+---
 
-## 2015
+template: blog_list.html
+title: No Fuss Computing Articles
 
-- [Choosing an internet service](2015/choose_internet_service.md)
+---
+
+Please see below for our articles.
