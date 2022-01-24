@@ -15,6 +15,7 @@ include:
     ref: 46cc1fbb6a878e485af39e679b5184a9912c2e7f
     file:
       - conventional_commits/.gitlab-ci.yml
+      - mkdocs/.gitlab-ci.yml
       - gitlab_release/.gitlab-ci.yml
 
 
@@ -46,25 +47,9 @@ markdown lint:
             - "**.md"
         - when: never
 
+
 Static Pages:
-  image: python:3.7.5-buster
-  stage: build
-  variables:
-    GIT_DEPTH: 0
-  before_script:
-    - pip install --upgrade pip -r requirements.txt
-  script:
-#    - mkdir static
-#    - cp README.md pages/
-    - mkdocs build --clean --strict
-    - rm build/sitemap*
-  artifacts:
-    paths:
-      - build
-  rules:
-    - if: '$CI_COMMIT_BRANCH'
-      when: always
-    - when: never
+  extends: .MKDocs_Build
 
 
 Gitlab Release:
