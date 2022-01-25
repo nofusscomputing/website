@@ -3,22 +3,14 @@ template: blog_post.html
 title: Choosing an Internet Service
 date: 2015-02-25
 tags:
-  - "2015"
-  - Feburary
   - ADSL
   - Archive
   - Article
-  - Binary
   - Broadband
   - Internet
   - NBN
   - Australia
 ---
-
-!!! attention
-    This post is considered an archived post.
-
-    This article was originally posted on 25 Feb 2015. It has been migrated from its original source _http://nofusscomputing.com/wiki/public/article/150225_choose_internet_service_ to here.
 
 !!! info
     This article has been targeted towards the common mass who don’t understand the technical details and considerations for choosing an Internet package.
@@ -149,3 +141,9 @@ Some ISPs in Australia:
 
 !!! warning
     The information contained within this article based on the opinion of the author and is provided for informational purposes only. Before utilizing any information or advice from this article you are encouraged to do your own research
+
+
+!!! attention
+    This post is considered an archived post.
+
+    This article was originally posted on 25 Feb 2015. It has been migrated from its original source _http://nofusscomputing.com/wiki/public/article/150225_choose_internet_service_ to here.
