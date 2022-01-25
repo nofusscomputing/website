@@ -38,7 +38,7 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
-    - mv build public
+    - mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
   needs: ['Static Pages']
   environment: 
     name: staging
