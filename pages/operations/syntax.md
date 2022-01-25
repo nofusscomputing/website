@@ -1,7 +1,10 @@
 ---
+title: Supported Markdown Syntax
 tags:
   - Development
   - Markdown
+  - Website
+  - mkdocs
 ---
 
 # Supported Markdown Syntax
