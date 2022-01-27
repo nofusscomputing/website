@@ -66,6 +66,8 @@ plugins:
       exclude:
         - index.md
         - tags.md
+  - minify
+      minify_html: true
 
 extra:
   homepage: https://nofusscomputing.com
