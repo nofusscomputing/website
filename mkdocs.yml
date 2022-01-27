@@ -66,7 +66,7 @@ plugins:
       exclude:
         - index.md
         - tags.md
-  - minify
+   - minify
       minify_html: true
 
 extra:
