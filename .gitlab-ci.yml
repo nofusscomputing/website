@@ -42,7 +42,7 @@ Unit Tests:
     - pip3 install -r test/requirements.txt
     - mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" build
   script:
-    - pytest --junitxml=unit_test.junit.xml --tb=line -s
+    - pytest --junitxml=unit_test.junit.xml --tb=line -s test/unit
     - cp *.junit.xml "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/tests/"
     - echo "[DEBUG] python_exit[$python_exit]"
   artifacts:
