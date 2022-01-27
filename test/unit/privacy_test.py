@@ -21,7 +21,7 @@ class Test:
         argvalues=[link for url_id, link in data.test_data['page_load_resource_links'].items() if link['request_protocol'][0:4] =='http'], 
         ids=[url_id for url_id, link in data.test_data['page_load_resource_links'].items() if link['request_protocol'][0:4] =='http']
     )
-    def test_page_external_requests(self, data):
+    def test_page_load_external_requests(self, data):
 
             check_url = data['url']
 
