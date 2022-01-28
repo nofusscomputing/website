@@ -36,6 +36,7 @@ class Data:
 
       return {
         'url_id': url_id,
+        'url': url,
         'request_protocol': request_protocol,
         'domain': domain,
         'request_path': request_path
