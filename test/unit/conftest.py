@@ -54,7 +54,7 @@ class Data:
         chrome_options.add_argument("start-maximized")
         chrome_options.add_argument("window-size=1900,1080");
 
-        self.driver = webdriver.Chrome(desired_capabilities=caps, options=chrome_options)
+        driver = webdriver.Chrome(desired_capabilities=caps, options=chrome_options)
 
         self.urls = []
         self.suffux_path = os.path.realpath('./build')
@@ -76,9 +76,9 @@ class Data:
             if source_file not in data['source_files']:
               data['source_files'].append(source_file)
 
-            self.driver.get(check_url)
+            driver.get(check_url)
 
-            links =  self.driver.find_elements_by_css_selector("a")
+            links =  driver.find_elements_by_css_selector("a")
 
             for link in links:
 
@@ -100,7 +100,7 @@ class Data:
                 data['hyperlinks'][link['url_id']] = link
 
 
-            events = [self.process_browser_log_entry(entry) for entry in self.driver.get_log('performance')]
+            events = [self.process_browser_log_entry(entry) for entry in driver.get_log('performance')]
 
             for entry in events:
 
@@ -145,6 +145,7 @@ class Data:
 
                       data['page_load_resource_links'][url_id] = {'url': url, 'request_protocol': request_protocol, 'domain': domain, 'request_path': request_path, 'source_files': [ {'name': source_file, 'line_number': source_file_line_number, 'http_status': http_status} ]}
 
+        driver.close()
         self.test_data = data
 
 
