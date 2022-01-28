@@ -89,7 +89,7 @@ Unit Tests:
 #  needs: 
 #    - pages
 #    - 'Unit Tests'
-  script:
+#  script:
 #   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
 
 Gitlab Release:
