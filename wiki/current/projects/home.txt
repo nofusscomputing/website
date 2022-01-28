@@ -1,0 +1,17 @@
+~~NOTOC~~
+====== NFC Projects ======
+Here at No Fuss Computing (NFC) we do a lot of research and development. Namely this RD is done for our own requirements, which is to manage our own computers and/or network. On occasion though, these projects may be made available to the general Public.
+
+To find our projects please scroll down to [[#Our Projects|our projects]]. Please Note though, not all listed projects below are available to the public. To find out it's release status, view the applicable projects page.
+
+===== Applications =====
+  - [[.:logongui|Logon GUI]]
+  - [[.:scms:home|SOE Centralized Management System (SCMS)]]
+      - [[.:application_manager:home| Application Manager]]
+      - [[public:projects:scms:command_line]]
+  - [[.:xbmc_addons:home| XBMC Addons]]
+
+
+===== Policy =====
+  - [[public/privacy]]
+  - [[.:beta_tester|Application Beta Tester]]

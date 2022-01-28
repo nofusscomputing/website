@@ -1,0 +1,36 @@
+====== 2. Browse the Bug Tracker ======
+After login you are redirected to the **My View** page. There are four parts to the page: 
+  * Header
+  * Menu Bar
+  * Body
+  * Footer
+ 
+Each section of the page is described in further detail below.
+
+===== 2.1. Header =====
+The Header consists the Bug Tracker title, No Fuss Computing's own customized Mantis logo, the login information and the switch [[project]] select box.
+
+==== 2.1.1 Project Select Box ====
+This is where you select what project you would like to filter and display only those tickets. After you have selected the project, the page will automatically redirect.
+
+===== 2.2. Menu Bar =====
+The Menu Bar is how you navigate around the bug tracker and is comprised of the following links.
+
+==== 2.2.1 Description ====
+{{:public:help:mantis:mantismenubar.png?nolink|Bug Tracker Menu Bar}}
+  - My View
+  - View Issues
+  - Report Issue
+  - Change Log
+  - Road map
+  - My Account
+  - Logout
+
+==== 2.2.2 Ticket Jump Box ====
+Also included on the header bar is an input box. This input box is where you can put a ticket number in, once you enter a number press 'Enter'/'Click Jump' and you will be taken directly to that tickets detail page.
+
+===== 2.3. Body =====
+This section of the page is where the content of the site will be displayed, each time you click on a link within the Bug Tracker the body will update and change accordingly.
+
+===== 2.4. Footer =====
+The Footer begins after a horizontal rule and is composed of some info (copyright) on the left and the Mantis logo at right. 

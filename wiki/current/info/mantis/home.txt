@@ -1,0 +1,38 @@
+~~NOCACHE~~
+~~NOTOC~~
+{{ :public:logos:nfc_mantis_logo.png?nolink |}}
+====== Bug and Feature Tracker User Manual ======
+
+This Manual describes our bug and feature tracker, Mantis; and how you can view, report and monitor bugs and/or features. \\
+\\
+**Table of Contents:**
+  * [[01_access]]
+     * [[01_access#1.1. Access]]
+     * [[01_access#1.2. Lost/Forgotten password]]
+     * [[01_access#1.3. Login Form]]
+  * [[02_browse]]
+    * [[02_browse#2.1. Header]]
+    * [[02_browse#2.2. Menu Bar]]
+    * [[02_browse#2.3. Body]]
+    * [[02_browse#2.4. Footer]]
+  * [[03_tickets]]
+    * [[03_tickets#3.1. Reporting]]
+    * [[03_tickets#3.2. Notifications]]
+    * [[03_tickets#3.3. Monitor a Ticket]]
+  * [[04_manage_account]]
+    * [[04_manage_account#4.1. Pages]]
+    * [[04_manage_account#4.2 Notifications]]
+  * [[05_workflow_transitions]]
+    * [[05_workflow_transitions#5.1 Status]]
+    * [[05_workflow_transitions#5.2 Workflow]]
+    * [[05_workflow_transitions#5.3 Resolution]]
+  * [[Search]]
+  * [[Report]]
+  * [[Update]]
+  * [[Print]]
+
+
+<WRAP info>
+If you identify any issues, inconsistencies or would like to suggest an improvement to this 'Bug and Feature Tracker Manual', Please open a Feature ticket and reference [[mantis>81|Feature Ticket #81]] as a parent to your ticket.
+
+</WRAP>

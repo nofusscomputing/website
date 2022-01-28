@@ -1,0 +1,16 @@
+====== Application Manager - Notes======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+:TODO: write this documentation better.
+
+Other pages that are WIP\\
+
+  * [[.how_to/managed_installation_and_deployment]]
+
+
+
+===== Notes =====
+items in this section need to be added to the documentation.
+
+  - Adding Images: PNG32 file type with a transparent background. Canvas size is 120x120px and image is 110x110px 

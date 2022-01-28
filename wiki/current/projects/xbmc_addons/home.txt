@@ -1,0 +1,9 @@
+====== NFC Addon Repository ======
+<wrap important center 80%>page to be created.</wrap>
+
+We have our own XBMC (Kodi) Repository, which is currently host on GitHub. [[https://github.com/NoFussComputing/XBMC-Addons]]
+
+This repository holds all of the XBMC (Kodi) Addons that we have created and are available for you to use free of charge.
+
+===== Addons =====
+  * [[.:nofussconfluence|Skin - No Fuss Confluence]]

@@ -1,0 +1,50 @@
+====== 1. Bug Tracker Access ======
+First go to the Bug and Feature Tracker at [[https://nofusscomputing.com/mantis/]].
+
+===== 1.1. Access =====
+You don't have a bug tracker account, but if you wish to log or track tickets you will need an account as the anonymous user wont allow you to do this. \\
+
+==== 1.1.1 Guest Account ====
+When you first navigate to the bug tracker you will be automatically logged on as an anonymous user. An anonymous user has view access to public projects and tickets only.
+
+==== 1.1.2 Create Your Own Account ====
+To create an account follow this [[https://nofusscomputing.com/mantis/signup_page.php|link]]. 
+
+{{:public:help:mantis:mantislogon.png?nolink|The signup page}}
+
+To create a new account please follow the steps below:
+  - Fill in your username using format //firstname.lastname//
+  - Fill in your E-Mail address that you wish to receive notification's on
+  - Fill in the CAPTCHA box //(using the image beside the input box)//
+  - Click on sign up.
+
+You will be redirected to a new page and a confirmation email will be sent to you. To finalise the signup process please follow the instructions provided in the email.  
+
+===== 1.2. Lost/Forgotten password =====
+You forgot your password? No Problems, [[https://nofusscomputing.com/mantis/lost_pwd_page.php|click Here]]. 
+
+{{:public:help:mantis:mantisforgotpassword.png?nolink|Forgotten Password Page}}
+
+From the forgotten passwords page please follow the steps below to reset your password:
+  - Enter your username
+  - Enter in the password you use for the Bug Tracker
+  - Click Submit
+Once form has been submitted, instructions will be printed on the screen stating what you need to complete the password reset process. 
+
+===== 1.3. Login Form =====
+{{:public:help:mantis:mantislogonscreen.png?nolink|}}
+
+From the logon screen please follow the instructions below to logon
+  - Enter your username as set during account creation
+  - Enter your password
+  - Check this box to remember your logon details between browser sessions //You must have cookies enable to take advantage of this feature//
+  - Only allow your username to be used on this PC. //once you log out you will be able to use another PC//
+  - Click login, and [[02_browse|Browse the Bug Tracker]]. 
+ 
+==== 1.3.1 Successful ====
+  * You will be redirected to the start page of the ticket tracker,
+
+==== 1.3.2 Unsuccessful ====
+  * An error message will be displayed.
+
+<WRAP important>The **Save Login** checkbox is used to remember your logon, even if you close the browser. The next time the browser is opened you will be directly authenticated under your username, if you checked this field. __//Don't use this feature on a shared computer//__ </WRAP>

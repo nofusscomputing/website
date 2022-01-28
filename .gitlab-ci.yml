@@ -1,0 +1,66 @@
+stages:
+    - validation
+    - release
+    - publish
+
+
+variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    MY_PROJECT_ID: "13001358"
+
+
+include:
+  - project: nofusscomputing/projects/gitlab-ci
+    ref: 1ef6c41818c40183f8019ea5cde48b4278e4d694
+    file:
+      - conventional_commits/.gitlab-ci.yml
+      - gitlab_release/.gitlab-ci.yml
+
+
+markdown lint:
+    image: node:alpine3.14
+    stage: validation
+    before_script:
+        - npm install markdownlint-cli2 --global
+        - npm install markdownlint-cli2-formatter-junit --global
+        - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME"
+        - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/tests"
+    script:
+        - markdownlint-cli2 "**/*.md" "!gitlab-ci" 1>&1 || EXITCODE=$?
+        - echo DEBUG EXITCODE[$EXITCODE]
+        - mv markdown.junit.xml $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/tests/markdown.junit.xml
+    artifacts:
+        expire_in: 3 days
+        when: always
+        paths:
+            - "$CI_PROJECT_DIR/artifacts/*"
+        reports:
+            junit:
+                - "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/tests/*.junit.xml"
+    rules:
+        - if: '$CI_COMMIT_BRANCH == "master"'
+          when: never
+        - if: '$CI_COMMIT_BRANCH'
+          exists:
+            - "**.md"
+        - when: never
+
+
+
+
+Gitlab Release:
+    extends:
+        - .gitlab_release
+
+
+pages:
+  stage: publish
+  script:
+    - echo publish page
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+

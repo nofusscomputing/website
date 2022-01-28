@@ -1,0 +1,63 @@
+====== Managed Installation ======
+
+
+<WRAP download>
+<WRAP info>This file may download with a .txt file extension. Please adjust the file extension so that it reflects the file you are downloading.</WRAP>
+<code dos Install-SCMS_and_Import_settings.cmd>
+@echo off
+REM -----------------------------------------------------------------------
+REM                 Application Manager Silent Installer 
+REM                                and 
+REM                 Installation of Managed Applications
+REM
+REM Version: 2015-06-28
+REM There is no licence available for the script, use at will!!
+REM http://nofusscomputing.com/wiki/public/projects/application_manager/administration_documentation/how_to/managed_installation_and_deployment
+REM -----------------------------------------------------------------------
+echo.
+echo.
+echo *******************************************************
+echo.
+echo                   Installing SCMS
+echo.
+echo *******************************************************
+echo.
+echo Please Wait......
+REM Change these Filename's (After the equal sign) to match the file name of the installer, and registry settings to import.
+SET SCMSFilename=SCMS.msi
+SET RegFileName=ExportedApplicationManagerConfiguration.reg
+
+
+IF %PROCESSOR_ARCHITECTURE%==x86 SET ProgPath=Program Files
+IF %PROCESSOR_ARCHITECTURE%==AMD64 SET ProgPath=Program Files (x86)
+
+msiexec /i "%~dp0%SCMSFilename%" /passive /NOREBOOT
+
+if %ERRORLEVEL%== 0 GOTO ImportRegistry
+
+REM Application failed to install, exit script and pass error to launching process.
+GOTO ErrorEnd
+
+:ImportRegistry
+
+reg IMPORT %dp0%RegFileName%
+
+if %ERRORLEVEL%== 0 GOTO LaunchInstaller
+
+REM Application settings import failed, exit script and pass error to launching process.
+GOTO ErrorEnd
+
+:LaunchInstaller
+start /wait "C:\%SOEProgPath%\NoFussComputing\SCMS\SOETray.exe" InstallManagedApplications
+
+
+
+REM Exit script with ERRORLEVEL 0
+exit
+
+:ErrorEnd
+exit %ERRORLEVEL%
+</code>
+</WRAP>
+
+

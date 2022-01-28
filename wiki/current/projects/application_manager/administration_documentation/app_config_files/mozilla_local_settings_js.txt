@@ -1,0 +1,10 @@
+====== Mozilla Firefox - Local-Settings.js ======
+This file is used by the [[public:projects:application_manager:home|Application Manager]] when installing Mozilla Firefox.
+
+===== Download =====
+<WRAP center download 90%>
+<file java Local-Settings.js>
+pref("general.config.obscure_value", 0);
+pref("general.config.filename", "mozilla.cfg");
+</file>
+</WRAP>

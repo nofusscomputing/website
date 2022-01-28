@@ -1,0 +1,52 @@
+====== Mozilla Firefox - Mozilla.cfg ======
+This file is used by the [[public:projects:application_manager:home|Application Manager]] when installing Mozilla Firefox.
+
+===== Download =====
+<WRAP center download 90%>
+<file java mozilla.cfg>
+//
+try {
+lockPref("app.update.enabled", false);
+lockPref("app.update.autoUpdateEnabled", false);
+lockPref("extensions.update.enabled", true);
+lockPref("extensions.update.autoUpdateEnabled", false);
+
+lockPref("dwhelper.conversion-enabled", false);
+lockPref("dwhelper.conversion-was-enabled", true);
+lockPref("dwhelper.convert-free", true);
+lockPref("dwhelper.first-time", false);
+lockPref("dwhelper.mediaweight", "1024");
+lockPref("dwhelper.menu-expiration", 60);
+lockPref("dwhelper.passwords-migrated", true);
+lockPref("dwhelper.storagedirectory", "h:\\downloads");
+
+lockPref("security.enable_ssl3", true);
+lockPref("security.enable_tls", true);
+
+// Clear History when firefox closed
+lockPref("privacy.sanitize.sanitizeOnShutdown", true);
+lockPref("privacy.sanitize.promptOnSanitize", false);
+lockPref("privacy.item.downloads", true);
+lockPref("privacy.item.cache", true);
+lockPref("privacy.item.cookies", true);
+lockPref("privacy.item.sessions", true);
+lockPref("privacy.item.history", false);
+
+lockPref("browser.startup.homepage", "http://nofusscomputing.com");
+
+//disable firefox dns cache
+lockPref("network.dnsCacheExpiration", 0);
+
+// Change default paper size from US-Letter to A4:
+lockPref("print.postscript.paper_size", "A4");
+
+// added to remove browser rights
+lockPref("browser.rights.3.shown", true);
+lockPref("browser.download.panel.firstSessionCompleted", true);
+
+
+} catch(e) {
+displayError("lockedPref", e);
+}
+</file>
+</WRAP>

@@ -1,0 +1,327 @@
+====== SCMS Server Change Log ====== 
+Below are the changes as they were made to the [[public:applications:scms:server|SCMS Server]]. each time the repository has a change this changelog is automaticly updated.\\ 
+ 
+===== Change log ===== 
+//NOTE: There maybe some changesets missing. Only changesets applicable to non developers are listed below.// 
+ 
+<wrap em>111</wrap>//**:bbb564d5e19b**// 2015-06-27 15:48 +1000<wrap center 90%> // Feature: #228 Added Application Node 'InstallerSize' //</wrap> 
+
+
+<wrap em>110</wrap>//**:92d0172b5109**// 2015-06-27 15:48 +1000<wrap center 90%> // Version Support //</wrap> 
+
+
+<wrap em>109</wrap>//**:f7a6d0d03089**// 2015-06-25 18:47 +1000<wrap center 90%> // Feature: #211 Support for file help link. //</wrap> 
+
+
+<wrap em>108</wrap>//**:39015f6c3c05**// 2015-06-25 14:07 +1000<wrap center 90%> // Feature: #210 Request Version and Architecture for custom config. //</wrap> 
+
+
+<wrap em>107</wrap>//**:dc975c7ab06f**// 2015-06-25 12:57 +1000<wrap center 90%> // Feature: #210 Supporting new features. //</wrap> 
+
+
+<wrap em>105</wrap>//**:ca4de1469ce1**// 2015-06-24 18:02 +1000<wrap center 90%> // Bug: not selecting the right version or architecture //</wrap> 
+
+
+<wrap em>104</wrap>//**:ad8edde986b6**// 2015-06-24 11:43 +1000<wrap center 90%> // Bug: #232 Selection Suported versions. //</wrap> 
+
+
+<wrap em>103</wrap>//**:e305b6a96683**// 2015-06-24 10:14 +1000<wrap center 90%> // Bug: #232 Selection of correct and current version. //</wrap> 
+
+
+<wrap em>102</wrap>//**:d8606e382b73**// 2015-06-24 09:20 +1000<wrap center 90%> // bug: syntax error //</wrap> 
+
+
+<wrap em>101</wrap>//**:7912ebe5700d**// 2015-06-23 20:40 +1000<wrap center 90%> // Security: #58 fix //</wrap> 
+
+
+<wrap em>100</wrap>//**:1d90154fef0b**// 2015-06-23 20:14 +1000<wrap center 90%> // Bug: filename had a spcae in it. //</wrap> 
+
+
+<wrap em>98</wrap>//**:47fd1f1e70a9**// 2015-06-21 21:07 +1000<wrap center 90%> // 296 (fb44bb8329fb) Feature: #210 Arch and version support added to app.xml for user customizations. //</wrap> 
+
+
+<wrap em>97</wrap>//**:1d4d0c19bee4**// 2015-06-21 17:16 +1000<wrap center 90%> // Release: Version Support. //</wrap> 
+
+
+<wrap em>96</wrap>//**:502740df9d36**// 2015-06-21 16:34 +1000<wrap center 90%> // Feature: #229 Dependent Applications, and requesting by processor type support. //</wrap> 
+
+
+<wrap em>95</wrap>//**:f7c2512dd1d8**// 2015-06-21 15:03 +1000<wrap center 90%> // Feature: #230 Adjusted DB storage type //</wrap> 
+
+
+<wrap em>94</wrap>//**:f575f1dc6a37**// 2015-06-21 15:00 +1000<wrap center 90%> // Feature: #229 Added dependent Application to AppXML and Arch to Application subnode in Dependant node. //</wrap> 
+
+
+<wrap em>93</wrap>//**:d36b99761cca**// 2015-06-21 14:57 +1000<wrap center 90%> // Feature: #230 Adjusted DB storage type //</wrap> 
+
+
+<wrap em>92</wrap>//**:138646b97049**// 2015-06-21 11:12 +1000<wrap center 90%> // Feature: #230 Adjusted DB storage type //</wrap> 
+
+
+<wrap em>91</wrap>//**:52626eaef0f6**// 2015-06-20 20:45 +1000<wrap center 90%> // Silent switches added. //</wrap> 
+
+
+<wrap em>90</wrap>//**:344ce381cc8d**// 2015-06-20 18:12 +1000<wrap center 90%> // Future code: optional XML Nodes wont be output if empty. //</wrap> 
+
+
+<wrap em>89</wrap>//**:536d891b6dea**// 2015-06-20 18:10 +1000<wrap center 90%> // Bug: time wasnt being recorded for processes being run. //</wrap> 
+
+
+<wrap em>88</wrap>//**:5d06d468311a**// 2015-06-20 12:33 +1000<wrap center 90%> // Bug: #220 fixed up selecting arch and version //</wrap> 
+
+
+<wrap em>87</wrap>//**:568617870341**// 2015-06-18 18:59 +1000<wrap center 90%> // Bug: #220 adjusted to accept architectecture //</wrap> 
+
+
+<wrap em>86</wrap>//**:fe8358d5f963**// 2015-06-14 20:31 +1000<wrap center 90%> // Bug: #58 Log entries were being converted to lower case. //</wrap> 
+
+
+<wrap em>85</wrap>//**:fae34b6b113e**// 2015-06-14 17:15 +1000<wrap center 90%> // debug //</wrap> 
+
+
+<wrap em>84</wrap>//**:7c798e8f11b4**// 2015-06-14 09:43 +1000<wrap center 90%> // Development: #58 Added download Size for installer to interface. //</wrap> 
+
+
+<wrap em>83</wrap>//**:857ecf230118**// 2015-06-13 21:02 +1000<wrap center 90%> // Development: #216 Added initial Dynamic XML Creation //</wrap> 
+
+
+<wrap em>82</wrap>//**:03c7eb4be50a**// 2015-06-10 21:13 +1000<wrap center 90%> // New Apps. //</wrap> 
+
+
+<wrap em>81</wrap>//**:f57f0b931303**// 2015-06-10 20:46 +1000<wrap center 90%> // Version Support //</wrap> 
+
+
+<wrap em>80</wrap>//**:6e4669563b94**// 2015-06-10 20:46 +1000<wrap center 90%> // Bug: fixed DB input //</wrap> 
+
+
+<wrap em>79</wrap>//**:7d4e2a05dc12**// 2015-06-08 19:43 +1000<wrap center 90%> // Commit due to this being Client bugs. //</wrap> 
+
+
+<wrap em>78</wrap>//**:d9fc957c2335**// 2015-06-08 19:43 +1000<wrap center 90%> // Version Support //</wrap> 
+
+
+<wrap em>77</wrap>//**:a8d65667541f**// 2015-06-08 19:41 +1000<wrap center 90%> // Bug: #191 Incorrect fields being inserted into DB. //</wrap> 
+
+
+<wrap em>76</wrap>//**:742e46e25902**// 2015-06-06 14:25 +1000<wrap center 90%> // Bug: #170 Headers being sent where incorrect. //</wrap> 
+
+
+<wrap em>75</wrap>//**:3463c6f1b416**// 2015-06-05 16:40 +1000<wrap center 90%> // Release: Support 1.1.15.1 //</wrap> 
+
+
+<wrap em>74</wrap>//**:a2db4bc4a9cc**// 2015-06-05 13:34 +1000<wrap center 90%> // Development: #58 Status Reporting. //</wrap> 
+
+
+<wrap em>73</wrap>//**:5b3d93513bbc**// 2015-06-05 10:01 +1000<wrap center 90%> // Bug: incorrect headers. //</wrap> 
+
+
+<wrap em>72</wrap>//**:0f6c5db79226**// 2015-06-05 10:00 +1000<wrap center 90%> // Development: #58 Logging and reporting. //</wrap> 
+
+
+<wrap em>71</wrap>//**:66a940d6e168**// 2015-06-04 22:35 +1000<wrap center 90%> // Development: #58 Full Lining of application manager //</wrap> 
+
+
+<wrap em>70</wrap>//**:cf53aa4e5ad0**// 2015-06-04 11:59 +1000<wrap center 90%> // Development: #58 Added initial Application Manager functionality. //</wrap> 
+
+
+<wrap em>69</wrap>//**:c9547a85fe35**// 2015-05-30 19:00 +1000<wrap center 90%> // Development: #58 Amended Applist.xml //</wrap> 
+
+
+<wrap em>68</wrap>//**:1fc6addc6746**// 2015-05-30 11:51 +1000<wrap center 90%> // Development: #58 AppList //</wrap> 
+
+
+<wrap em>67</wrap>//**:cc55de699ef4**// 2015-05-30 11:50 +1000<wrap center 90%> // Development: #58 updated xml //</wrap> 
+
+
+<wrap em>66</wrap>//**:daa7705148e3**// 2015-05-29 21:10 +1000<wrap center 90%> // Development: #58 Application Editor. //</wrap> 
+
+
+<wrap em>65</wrap>//**:9c6735990467**// 2015-05-29 21:10 +1000<wrap center 90%> // Development: #58 XML //</wrap> 
+
+
+<wrap em>64</wrap>//**:4bac67b2e559**// 2015-05-28 20:37 +1000<wrap center 90%> // Development: #58 Initial deployment methods for applications. //</wrap> 
+
+
+<wrap em>63</wrap>//**:70e7c31790cf**// 2015-05-28 20:35 +1000<wrap center 90%> // Added OO MySQL added //</wrap> 
+
+
+<wrap em>62</wrap>//**:6cd1a74ec219**// 2015-05-28 17:53 +1000<wrap center 90%> // Server Migration: #163 //</wrap> 
+
+
+<wrap em>61</wrap>//**:e76e37c03682**// 2015-05-28 17:52 +1000<wrap center 90%> // ignore //</wrap> 
+
+
+<wrap em>60</wrap>//**:eafda53f6a51**// 2015-05-22 12:33 +1000<wrap center 90%> // Server Migration: %163 Moved Files to root of folder //</wrap> 
+
+
+<wrap em>59</wrap>//**:d81720866a26**// 2015-05-22 12:25 +1000<wrap center 90%> // Update: //</wrap> 
+
+
+<wrap em>58</wrap>//**:1c7867d9c778**// 2015-05-22 12:23 +1000<wrap center 90%> // Version Support: scms.dll V1.1.14.1 //</wrap> 
+
+
+<wrap em>57</wrap>//**:895841d42b08**// 2015-05-22 12:22 +1000<wrap center 90%> // Server Migration: #163 Updated Paths //</wrap> 
+
+
+<wrap em>56</wrap>//**:90405c4761d0**// 2015-04-06 15:13 +1000<wrap center 90%> // Version Support Adjustment: SCMS.dll V1.1.12.1 support moved to own class due to new methods. //</wrap> 
+
+
+<wrap em>55</wrap>//**:c7e74fc012e6**// 2015-04-05 20:53 +1000<wrap center 90%> // Version Support: SCMS.dll V1.1.11.1 and V1.1.12.1 //</wrap> 
+
+
+<wrap em>54</wrap>//**:f217a6e1f64d**// 2015-02-15 12:09 +1100<wrap center 90%> // Improvement: added logic to update file category. //</wrap> 
+
+
+<wrap em>53</wrap>//**:c906d6956462**// 2015-02-09 11:12 +1100<wrap center 90%> // Fix: #146 added a check so that client could mark task as complete if no work was required to be done. //</wrap> 
+
+
+<wrap em>51</wrap>//**:53cfdca3b15c**// 2015-01-24 17:19 +1100<wrap center 90%> // Version Support: SCMS.dll V1.1.10.1 //</wrap> 
+
+
+<wrap em>50</wrap>//**:3f0dfcf80057**// 2015-01-24 16:27 +1100<wrap center 90%> // VersionSupport: scms.dll V1.1.9.2 //</wrap> 
+
+
+<wrap em>49</wrap>//**:c0cb474c442b**// 2015-01-24 15:36 +1100<wrap center 90%> // Version Support: SCMS.dll V1.1.9.1 //</wrap> 
+
+
+<wrap em>48</wrap>//**:7933fe3a08a0**// 2015-01-24 15:25 +1100<wrap center 90%> // Debug: #148 Added Square Braces around command to assist in debugging //</wrap> 
+
+
+<wrap em>47</wrap>//**:292f982ea047**// 2015-01-23 17:33 +1100<wrap center 90%> // Fix: #21 Added baseboard collection support. //</wrap> 
+
+
+<wrap em>46</wrap>//**:e12114d7b5cb**// 2015-01-23 17:33 +1100<wrap center 90%> // Increment: Added Support for SCMS.dll V1.1.6.2 and V1.1.7.1 //</wrap> 
+
+
+<wrap em>45</wrap>//**:05c38cf45a9b**// 2015-01-17 21:04 +1100<wrap center 90%> // Added V1.1.6.1 Inventory Support. //</wrap> 
+
+
+<wrap em>44</wrap>//**:9055f213912d**// 2015-01-17 21:03 +1100<wrap center 90%> // Improvement: Added 409 Logging. //</wrap> 
+
+
+<wrap em>43</wrap>//**:250e0d2770e5**// 2015-01-17 16:39 +1100<wrap center 90%> // Debug: Added for Beta testers stage 2 //</wrap> 
+
+
+<wrap em>42</wrap>//**:356a3e5ca37e**// 2015-01-17 16:39 +1100<wrap center 90%> // Improvement: Remove existing debug data. //</wrap> 
+
+
+<wrap em>41</wrap>//**:6e265aa0f410**// 2015-01-17 14:29 +1100<wrap center 90%> // Fix: #87 Added Support for SCMS.dll V1.1.5.1. //</wrap> 
+
+
+<wrap em>40</wrap>//**:c7274f30815a**// 2015-01-17 13:52 +1100<wrap center 90%> // Development: Unknown //</wrap> 
+
+
+<wrap em>39</wrap>//**:7a7ecc626224**// 2014-12-21 22:21 +1100<wrap center 90%> // Feature: #134 Logic added to store file details and link it to an application. //</wrap> 
+
+
+<wrap em>38</wrap>//**:0121b302e95e**// 2014-12-21 10:27 +1100<wrap center 90%> // String to Names. //</wrap> 
+
+
+<wrap em>37</wrap>//**:6856b70b6665**// 2014-12-21 10:26 +1100<wrap center 90%> // Code Cleanup //</wrap> 
+
+
+<wrap em>36</wrap>//**:91c648083fb2**// 2014-12-21 10:22 +1100<wrap center 90%> // Fix: Switch Name Corrected. //</wrap> 
+
+
+<wrap em>35</wrap>//**:6f97ab73ca18**// 2014-12-21 10:21 +1100<wrap center 90%> // Fix: newline now returned to original explode string. //</wrap> 
+
+
+<wrap em>34</wrap>//**:89e72c08b15c**// 2014-12-20 21:40 +1100<wrap center 90%> // Features: #134 Added V 1.1.4.1 //</wrap> 
+
+
+<wrap em>33</wrap>//**:6931e3645cb9**// 2014-12-20 21:40 +1100<wrap center 90%> // Improvement: trim uploaded data. //</wrap> 
+
+
+<wrap em>32</wrap>//**:5c737b5d09af**// 2014-12-14 17:59 +1100<wrap center 90%> // Improvement added additional logging to debug logs. //</wrap> 
+
+
+<wrap em>31</wrap>//**:a7911ca29815**// 2014-12-14 17:58 +1100<wrap center 90%> // Update: scms.dll V1.1.3.1 Released //</wrap> 
+
+
+<wrap em>30</wrap>//**:76831c2eb695**// 2014-12-03 17:39 +1100<wrap center 90%> // Release: v1.1.1.2 Released Stage 1. //</wrap> 
+
+
+<wrap em>29</wrap>//**:ae3d85a6cab0**// 2014-11-30 16:32 +1100<wrap center 90%> // Fix: #100 Windows Service Hash Incorrect. SCMS.dll v1.1.0.1 //</wrap> 
+
+
+<wrap em>28</wrap>//**:bd4ccd99a691**// 2014-11-30 15:50 +1100<wrap center 90%> // Fix: Added SQL Time Variable //</wrap> 
+
+
+<wrap em>26</wrap>//**:37726b750657**// 2014-11-29 17:41 +1100<wrap center 90%> // Update: Created the logic for SCMS task creation to update SCMS client on release increment. //</wrap> 
+
+
+<wrap em>25</wrap>//**:d4d9fef62342**// 2014-11-29 17:07 +1100<wrap center 90%> // Fix: updated For array so could increment from family to release //</wrap> 
+
+
+<wrap em>24</wrap>//**:cf3f1ac69740**// 2014-11-29 14:39 +1100<wrap center 90%> // removed un-needed Debug line. //</wrap> 
+
+
+<wrap em>23</wrap>//**:2ca46ebb8b86**// 2014-11-29 14:29 +1100<wrap center 90%> // FIX: Ref Ticket #101. Added service File hash details. //</wrap> 
+
+
+<wrap em>22</wrap>//**:42679049f326**// 2014-11-29 14:29 +1100<wrap center 90%> // Update: Added File Version details to PCID on hover. //</wrap> 
+
+
+<wrap em>21</wrap>//**:83c251bcbe13**// 2014-11-29 14:28 +1100<wrap center 90%> // Update: Ref Ticket #101. Added column names to insert for service. //</wrap> 
+
+
+<wrap em>19</wrap>//**:37410c4e2ae6**// 2014-06-25 21:12 +1000<wrap center 90%> // Changed to order PC's by most current checked in PC. //</wrap> 
+
+
+<wrap em>18</wrap>//**:37c5f2f584c7**// 2014-06-25 21:11 +1000<wrap center 90%> // Feature #88 (SCMS Server Logging)
+these methods were updated to reflect the above feature request. //</wrap> 
+
+
+<wrap em>17</wrap>//**:11630852326b**// 2014-06-22 15:14 +1000<wrap center 90%> // Feature #88 (SCMS Server Logging) Started session for logging. //</wrap> 
+
+
+<wrap em>16</wrap>//**:489011fe7ccb**// 2014-06-22 15:10 +1000<wrap center 90%> // Feature #88 (SCMS Server Logging) Added log severity to index pages. //</wrap> 
+
+
+<wrap em>15</wrap>//**:257b1bcf65b7**// 2014-06-22 15:09 +1000<wrap center 90%> // Feature #88 (SCMS Server Logging) Changed to absolute path to prevent different logging locations. //</wrap> 
+
+
+<wrap em>14</wrap>//**:33528c7742c5**// 2014-06-22 14:57 +1000<wrap center 90%> // (Server Error 500)
+Log method name needed updating Due to Feature #88 being implemented. //</wrap> 
+
+
+<wrap em>13</wrap>//**:430d3bb4c4f8**// 2014-06-22 14:52 +1000<wrap center 90%> // Feature #88 (SCMS Server Logging) Added ability to filter by log severity. //</wrap> 
+
+
+<wrap em>12</wrap>//**:b52b3c619463**// 2014-06-22 12:48 +1000<wrap center 90%> // Feature #88 (SCMS Server Logging) Added constantans for log level and renamed log method. //</wrap> 
+
+
+<wrap em>11</wrap>//**:1185c368c912**// 2014-06-22 11:51 +1000<wrap center 90%> // Feature #88 Initial design of SCMS Server Logging. //</wrap> 
+
+
+<wrap em>10</wrap>//**:c9534798332e**// 2014-06-22 11:36 +1000<wrap center 90%> // Removed old file references that are not a part of the SCMS client files. //</wrap> 
+
+
+<wrap em>9</wrap>//**:7077bbde8e02**// 2014-06-22 11:35 +1000<wrap center 90%> // Changeset (0ee126d3dbe7) was causing an update loop due to the method being called wasn't updated. //</wrap> 
+
+
+<wrap em>8</wrap>//**:698cd9764cff**// 2014-06-22 09:52 +1000<wrap center 90%> // Removed old file references that are not a part of the SCMS client files. //</wrap> 
+
+
+<wrap em>7</wrap>//**:ac83bf4019ac**// 2014-06-22 09:09 +1000<wrap center 90%> // Removed old file references that are not a part of the SCMS client files. //</wrap> 
+
+
+<wrap em>6</wrap>//**:60ff3ed389db**// 2014-06-22 09:02 +1000<wrap center 90%> // Code Cleanup //</wrap> 
+
+
+<wrap em>5</wrap>//**:0ee126d3dbe7**// 2014-06-22 09:01 +1000<wrap center 90%> // Moved function inside update class so it can be upgraded as necessary. //</wrap> 
+
+
+<wrap em>3</wrap>//**:1378c53ced4c**// 2014-06-21 21:00 +1000<wrap center 90%> // Feature #86
+Changed function to allow user to update based on their group permissions. //</wrap> 
+
+
+<wrap em>2</wrap>//**:552e17c15816**// 2014-06-21 20:33 +1000<wrap center 90%> // Bug #85
+Function was selecting multiple non-disabled files and not ordering by highest version first so the highest version would be availible for download. //</wrap> 
+
+
+<wrap em>1</wrap>//**:caa40a8bcb3d**// 2014-06-21 12:06 +1000<wrap center 90%> // Created Local Development Repo //</wrap> 
+
+
+ 
+Auto Generated File 

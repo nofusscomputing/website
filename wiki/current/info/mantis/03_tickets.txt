@@ -1,0 +1,108 @@
+====== 3. Support Tickets ======
+Support tickets are a way to enable you, the end user; to communicate with the developers or owners of a specific product. this method of communication will enable you to directly affect the product you are reporting on by filing bug tickets or feature requests.\\
+\\
+When you file a ticket on No Fuss Computing's Bug and Feature Tracker you will be directly communicating with the person who creates the product you are reporting on.
+
+===== 3.1. Reporting =====
+To report a bug, isssue, improvement or to request a feature please click on 'Report Issue' on the menu Bar. 
+
+==== 3.1.1 Select a Project ====
+When you click this link, and if you haven't selected a project; you will be redirected to the 'Select Project' Page.
+{{ :public:help:mantis:mantisreportselectproject.png?nolink |}}\\
+
+  - Select the project you wish to report on
+  - Click 'Select Project' 
+
+<WRAP tip center 90%>If you check 'Make Default' every time you use the bug tracker you will not have to select a project. but if you wish to refer to other projects, you will have to manually select the project on the top right of the screen </WRAP>
+
+==== 3.1.2 Report Form ====
+You will be required to fill in the following form. More details on each of the fields are covered below.
+{{ :public:help:mantis:mantisreport.png?nolink |Mantis Ticket Reporting}}
+
+=== 3.1.2.1 Category ===
+Category: Select the most appropriate category for the report. These categories are pre-defined by the administrator. If you are completely unsure then select "other" as a the category.
+
+=== 3.1.2.2 Reproducibility ===
+This is the key to being able to quickly fix a bug possible values are:
+  - Always
+  - Some times
+  - Random
+  - Have not tried
+  - Unable to reproduce
+  - N/A
+If you are not reporting an issue then select N/A.
+
+=== 3.1.2.3 Severity === 
+This dictates how bad you think the problem is and genrally if correctly assessed will become the order in which it gets fixed. 
+
+Severity levels are:
+
+  - block - //prevents further work / progress from being made// 
+  - crash - // crashes the application or OS//
+  - major - // major bug//
+  - minor - // minor bug//
+  - tweak - // needs tweaking (Graphic alignment, formatting, etc)//
+  - text - // error in the text, grammar, wording, etc//
+  - trivial - // being nit picky//
+  - feature - // request new feature//
+
+<WRAP info Center 90%>the severity level may be changed by a developer, this only occurs if you have been a little zealous with your grading of the problem.</WRAP>
+
+=== 3.1.2.4 Priority ===
+Priority is how quickly you think it should be fixed. The available priorities are:
+  - None
+  - Low
+  - Normal
+  - High
+  - Urgent
+  - Immediate
+<WRAP info Center 90%>Yes, you may think a problem should be fixed straight away, but at the end of the day a developer needs to prioritize all of their work so your assessed priority may be down graded.</WRAP>
+
+=== 3.1.2.5 Summary ===
+A one line description of the problem. Please be helpful, and make it descriptive for the developer, meaningful titles get your issue looked at sooner.
+
+=== 3.1.2.6 Description === 
+A detailed description of the problem. As a rule of thumb you should always enter enough information for the developer to feel like he is in your shoes. a good way to be descriptive is to start of by answering the following two questions:
+  - What is the product doing that it should __not__ be doing?
+  - What is the product __not__ doing that it should be doing?
+
+Once you have answered those two questions, state what you were doing that led to the issue. Describe what you were doing, what you expected to happen, what should have happened, the error, setup and system settings, software version(s), and possible ideas and suspicions.\\
+\\
+** Feature Requests**\\
+If you wish to change something than the description you put here must be relatively descriptive covering What you want done, what you want to achieve and how you want it to look. __Please no 2000 page novels!!__ 
+
+=== 3.1.2.7 Steps To Reproduce ===
+List the detailed steps to reproduce a problem. This is useful for bugs that take a while to show up or tricky cases. A developer will take an order of magnitude more time to fix a bug that is not easily reproducible. So, if at all possible go back and try to reproduce the bug.\\ 
+\\
+It would be best to use a bullet format like: 
+  * Step 1
+  * Step 2
+  * Step 3
+
+=== 3.1.2.8 Additional Information ===
+Any extra information that you didn’t put into the description goes here. This might be a dump of the error, a proposed fix, or anything that is related to, but not directly a part of the request.
+
+=== 3.1.2.9 Upload File ===
+If necessary then you can attach a document or any image like Screen Shoot of the bug.
+
+=== 3.1.2.10 View Status === 
+Allows You to set who can view it. Private: Only you and a developer can see it and public: anyone who has access to the project.
+
+=== 3.1.2.11 Submit Report ===
+After submit the report it will be filed with the other requests on the bug tracker; ready for a developer to review your request.
+
+On submission, a notification will be sent to the person responsible for the project. 
+
+===== 3.2 Notification =====
+Whenever there is any update or change to a ticket you have filed you will receive notification via E-Mail.
+<WRAP tip center 90%>notifications are on by default, if you do not wish to receive email about changes to your tick goto [[04_manage_account#notifications|Account Management]]</WRAP>
+
+===== 3.3. Monitor a Ticket =====
+Our bug tracker gives you the ability to monitor a ticket. if you monitor a ticket you will be notified every time there is a change to the ticket. //As long as you haven't changed your notification settings!//
+
+{{ :public:help:mantis:mantismonitor.png?nolink |}}
+
+To monitor please follow thes steps
+  - goto the ticket you wish to monitor
+  - put your user name in the 'users monitoring this issue box'
+  - click add, and your username should be displayed.

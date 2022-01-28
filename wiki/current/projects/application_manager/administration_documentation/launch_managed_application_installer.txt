@@ -1,0 +1,51 @@
+====== Application Manager - Launching ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+The Application manager shortcut is located in the start menu under "Utilities->Application Manager" Launching the Application Manager without administrative permissions will give you read access to the interface. If opened with Administrative permissions you will have full access to the Application Manager features.
+
+===== Switches =====
+
+==== Application Manager Interface ====
+To start the Application Manager from the command line use the following command:
+
+    [SCMS Install Path]\soetray.exe ApplicationManager
+
+Using the same command within a shortcut will enable you to launch the Application Manager as well.
+
+
+==== Managed Application Installer ====
+You can manually launch the application installer from the command line to do so run: 
+
+    [SCMS Install Path]\soetray.exe InstallManagedApplications
+
+
+Use this option to launch the installer and display the Desktop notification panel. this switch does not have to be launched with administrative permissions, but if it is and the Worker Service has not been started it will attempt to start it. If launched without administrative permissions the normal install process will be run, as long as the worker service has been started((Automatically starts when windows boots up)).
+
+**NO GUI Option with exit code**
+
+    [SCMS Install Path]\soetray.exe InstallManagedApplications NoGUI
+
+**NOTE:** //This switch must be launched with administrative permissioins, without it, the application will __NOT__ launch and will return an [[public:projects:scms:command_line|Error]]// This switch would be used if you don't want to display a GUI
+
+
+
+The normal [[public:projects:application_manager:administration_documentation:logging|logging feature]] available during software install, is also utilised with this switch. 
+
+==== Usage scenarios ====
+As long as you launch this switch with administrative permissions you are only limited by your imagination. Possible usage scenarios include:
+  * part of a task sequence from MDT/SCCM
+  * startup script
+  * psexec to remote computer that has SCMS installed
+  * During user logon as a logon script
+
+==== TODO ====
+:TODO:
+  * what licence is this feature avail in.
+  * explain about log file
+  * 
+  
+
+
+
+  

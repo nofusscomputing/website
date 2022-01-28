@@ -1,0 +1,151 @@
+====== Application.XML ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+
+This file is used by the Application Manager to either install or uninstall an application including any custom tasks that are required to be run.
+
+
+===== Packages =====
+This is the root XML Node. this tells the Application Manager that the XML contains one or more Application Packages. This node must contain at least one 'ApplicationPackage' Node but can contain as many as you would like.
+
+===== ApplicationPackage =====
+This node is sub node of 'Packages' but the root node for the application being processed. This node also has sub-nodes that are essentially tasks. This node also has attributes that pertinent to the application being installed. 
+
+==== Attributes ====
+
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^
+| Arch  |  String  |  AMD64\\ Any\\ x86  | 5  | Used to determine what processor architecture to process this application on.  |
+| ID  |  String  |  ASCII Chars  | 5  | This is a unique value assigned to each application. if you use a SHA256 then our database will be queried for the application details. |
+| Name  |  String  |  ASCII Chars  | 255  | The value used here is what is presented to the end user in the log file.  |
+| Version  |  Float  |  Major.Minor[.Build[.Revision]]\\ i.e.\\ 1.2\\ 1.2.3\\ 1.2.3.4  |   | This attribute contains the version to be installed. A valid Value is the version that is found in the registry after it has been installed.  |
+| Reboot  |  Boolean  |  TRUE\\ FALSE  | 5  | Regardless for what exit codes tell the Application manager to do if this is set to true then a reboot will occur after installation.  |
+| [Uninstall]  |  String  |  ASCII Chars  |   | This value contains the Registry Key Name that will be used to determine if the Application is installed.  | 
+| //Values in '[ ]' are optional//  |||||
+
+===== FileDetails =====
+This node contains the download information for the application installer. There must be a minimum of one Download sub-node.
+
+==== Download Node Attributes ====
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^
+| Arch  |  String  |  AMD64\\ Any\\  x86  | 5  | Processor Architecture to run this download.  |
+| Extension  |  String  |  ASCII  | 3  | File extension of the file being downloaded.  |
+| SHA1  |  HEX String  |  ASCII  | 40 | This value indicates what the Hash of the download should be. There must be at least one hash type attribute. if two hash attributes are added the order of precedence is SHA256 followed by SHA1.  |
+| SHA256  |  HEX String  |  ASCII  | 64 |::: |
+| URL  |  String  |  ASCII  | | File Download URL. must contain '%%http://%%' or '%%https://%%'  |
+| [Path]  |  String  |  ASCII  | | SubPath for download. //(Dependant Downloads ONLY!)//((:TODO: Confirm this is optional))  |
+| //Values in '[ ]' are optional//  |||||
+
+===== Dependencies =====
+Dependencies are required for this application to install correctly. the dependencies can be another application or an additional file that may be needed, i.e. configuration file, addon etc.
+
+==== Application Node Attributes ====
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^
+|  Arch  |  String  |  AMD64\\ Any\\ x86  | 5  | The architecture of the software to install.  |
+|  ID  |  HEX String  |  ASCII  | 64  | The Unique ID of the application you would like installed first.  |
+|  Name  |  String  |  ASCII  |  | This is the name of the dependant application, this value will be used in the log files.  |
+| //Both attributes are required //  |||||
+
+==== Download Node Attributes ====
+The download node attributes are the same as the 'filedetails' [[#Download Node Attributes|download attributes]].
+
+===== Install =====
+This Node contains the install command, Installer exit code, checks and what tasks should be run when the application is installed.
+
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^
+|  Command  |  String  |  ASCII  |  | The command to start the installer  |
+|  Switches  |  String  |  ASCII  |  | The switches required for the installer. Namely the silent install switches.  |
+| //**These attributes may not available your [[public:projects:application_manager:features|version]].** Both attributes are required //  |||||
+
+==== Exit Code ===
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^
+|  Code  |  Integer  |  ASCII  |  | the exit code that the installer should have for successful completion.  |
+|  [Reboot]  |  Boolean  |  TRUE\\ FALSE  | 5  | This optional value tells the plugin manager whether it should reboot if this exit code is returned.  |
+| //Values in '[ ]' are optional//  |||||
+
+
+==== Check ====
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^^
+|  Arch  |  String  |  AMD64\\ Any\\ x86  | 5  | Processor Architecture that this check should run on.  ||
+|  Type  |  String  |  File\\ Registry  | 8  | The type of check that should be run.  ||
+|::: ^  Check Type  ^  Attribute Name  ^  Type  ^  Valid Value / Max Length  ^  Description  ^
+|::: |  File  |  Logic  |  String  |  Hash  | Check File Hash. if this attribute is included than either MD5, SHA1 or SHA256 attributes also need to be included.  |
+|::: |:::  |  MD5  |  HEX String  | 32  | MD5 of file of file to check. |
+|::: |:::  |  SHA1  |::: | 40  | SHA1 of file of file to check.  |
+|::: |::: |  SHA256  |::: | 64  | SHA256 of file of file to check.  |
+|::: |  Registry  |  Logic  |  String  |  KeyValue  | The type of registry check to conduct.  |
+|::: |:::  |  Key  |  String  |  ASCII  | The Registry key to check.  |
+|::: |:::  |  SubKey  |  String  |  ASCII  | ??? |
+|::: |:::  |  Value  |  String  |  ASCII  | The Value of what the Registry Key should equal. |
+| //Values in '[ ]' are optional//  ||||||
+
+==== Task ====
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^^
+|  Arch  |  String  |  AMD64\\ Any\\ x86  | 5  | Processor Architecture that this check should run on.  ||
+|  Description  |  String  |  ASCII  | 255  | the description of what the task is going to do.  ||
+|  Type  |  String  |  Command\\ Copy\\ Delete\\ Move\\ Registry  |   | The type of check that should be run.  ||
+|::: ^  Check Type  ^  Attribute Name  ^  Type  ^  Valid Value / Max Length  ^  Description  ^
+|:::   |Command  |  Command  |  String  |  | Command to run.  |
+|:::   |:::  |  Switches  |:::  |  | Switches to run command, namely for silent running.  |
+|:::   |:::  |  ExitCode  |  Integer  |  | The exit code that should be returned from the application.  |
+|:::   |  Copy  |  Source  |  String  |  255  | Source Location.  |
+|:::   |:::  |  Destination  |:::  |  255  | Destination Location.  |
+|:::   |:::  |  SHA256  |:::  |  | The hash of the file to be copied.  |
+|:::   |  Delete  |  Source  |  String  |  255  | The File or Directory to Delete.  |
+|:::   |:::  |  PartB  |:::  |  | ??? is the required...  |
+|:::   |  Move  |  PartA  |  String  |  | Source Location.  |
+|:::   |:::  |  PartB  |:::  |  | Destination Location.  |
+|:::   |  Registry  |  Key  |  String  |  ASCII/?  | Registry Hive Key.  |
+|:::   |:::  |  SubKey  |:::  |  ASCII/?  | ???  |
+|:::   |:::  |  Value  |:::  |  ASCII/?  | Registry Value to set.  |
+| //Values in '[ ]' are optional//  ||||||
+===== Uninstall =====
+
+
+
+
+====== Example Download ======
+<WRAP center download 95%>
+<code xml Application-Template.xml>
+<Packages>
+	<ApplicationPackage 
+		Arch="" 
+		ID="" 
+		Name=""
+		Version=""
+		Reboot="" 
+		Uninstall="">
+	
+		<FileDetails>
+			<Download Arch="Any" URL="" Extension="" SHA256="" />
+		</FileDetails>
+		
+		<Dependencies>
+			<Application Arch="" ID="" Name="" />
+			<Download Arch="" FileName="" URL="" SHA256="" Path="" />
+		</Dependencies>
+		
+		<Install Command="" Switches="">
+			<Exit Code="0" Reboot="True"/>
+			
+			<Check Arch="" Type="File" Logic="Hash" File="" SHA256="" />
+			<Check Arch="" Type="File" Logic="Hash" File="" SHA1="" />
+			<Check Arch="" Type="Registry" Logic="KeyValue" Key="" SubKey="" Value="" />
+			
+			<Task Arch="" Description="" Type="Command" ExitCode="" Command="" Switches="" />
+			<Task Arch="" Description="" Type="Copy" PartA="" PartB="" SHA256="" />
+			<!-- Copy file destination can either have filename or without. if without add trailing slash -->
+			<Task Arch="" Description="" Type="Delete" PartA="" PartB="" />
+			<Task Arch="" Description="" Type="Move" PartA="" PartB="" />
+			<Task Arch="" Description="" Type="Registry" Key="" SubKey="" Value="" />
+		</Install>
+		
+		<Uninstall Command="" Switches="">
+			<Exit Code="3010"/>
+			<Exit Code="0" />
+		</Uninstall>
+
+	</ApplicationPackage>
+</Packages>	
+</code>
+</WRAP>

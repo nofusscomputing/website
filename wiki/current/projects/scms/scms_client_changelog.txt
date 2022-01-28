@@ -1,0 +1,1070 @@
+====== SCMS Client Change Log ====== 
+Below are the changes as they were made to the [[public:projects:scms:home|SCMS Client]]. Each time the repository has a change this changelog is auto magically updated.\\ 
+ 
+===== Change log ===== 
+//NOTE: There maybe some changesets missing. Only changesets applicable to non developers are listed below.// 
+ 
+<wrap em>363</wrap>//**:bc966b7759da**// 2015-07-11 13:48 +1000<wrap center 90%> // Support: Added Game Category //</wrap> 
+
+
+<wrap em>362</wrap>//**:70fda1c73921**// 2015-07-11 11:31 +1000<wrap center 90%> // bug: #241 Don't return from function until all tasks have run. //</wrap> 
+
+
+<wrap em>361</wrap>//**:a5a41a9019b6**// 2015-07-11 11:10 +1000<wrap center 90%> // Improvement: #241 Adjusted so hash included in log. //</wrap> 
+
+
+<wrap em>360</wrap>//**:d4a92eb67dfa**// 2015-07-11 11:05 +1000<wrap center 90%> // Fix: #241 Task, Validate XML, check for existance of hash //</wrap> 
+
+
+<wrap em>359</wrap>//**:1e637c14b5c0**// 2015-07-05 12:25 +1000<wrap center 90%> // Feature: #236 Timer Thread added. //</wrap> 
+
+
+<wrap em>358</wrap>//**:edc297e62830**// 2015-07-04 11:38 +1000<wrap center 90%> // Installer: Incremented Version Number Prior to Release //</wrap> 
+
+
+<wrap em>357</wrap>//**:e13fc7e6fe48**// 2015-07-04 11:37 +1000<wrap center 90%> // Bug: #247 Disable Advertised Shortcuts. //</wrap> 
+
+
+<wrap em>356</wrap>//**:c2bf6e351d9a**// 2015-07-04 10:43 +1000<wrap center 90%> // Bug: #218 Version Number Validation. //</wrap> 
+
+
+<wrap em>355</wrap>//**:387d1f58bd5e**// 2015-06-30 19:23 +1000<wrap center 90%> // Feature: #188 Removed the superfluous log entries. //</wrap> 
+
+
+<wrap em>354</wrap>//**:a137c311a062**// 2015-06-28 16:24 +1000<wrap center 90%> // Feature: #236 New Desktop Notifier with timers. //</wrap> 
+
+
+<wrap em>353</wrap>//**:7a3e36bd2f4f**// 2015-06-28 11:42 +1000<wrap center 90%> // Feature: #183 Updated XML Attributes. //</wrap> 
+
+
+<wrap em>352</wrap>//**:03229e3882f4**// 2015-06-28 01:37 +1000<wrap center 90%> // Feature: #222 Added GUI to command line switches. //</wrap> 
+
+
+<wrap em>351</wrap>//**:0fefc05c2e8a**// 2015-06-27 21:25 +1000<wrap center 90%> // Bug: #180 Hide form if close clicked, then exit after install. Keep notifier open. //</wrap> 
+
+
+<wrap em>350</wrap>//**:f21331f015ae**// 2015-06-27 20:34 +1000<wrap center 90%> // Feature: #177 Desktop Notifier and Application Manager now fully closes. //</wrap> 
+
+
+<wrap em>349</wrap>//**:3b4de9a82a30**// 2015-06-27 20:16 +1000<wrap center 90%> // Feature: #177 Desktop Notifier now fully closes, but if done so from the App MGR wont close it. //</wrap> 
+
+
+<wrap em>348</wrap>//**:2259bc087def**// 2015-06-27 19:27 +1000<wrap center 90%> // Feature: #177 Can now close Desktop notifier, without causing crash. //</wrap> 
+
+
+<wrap em>347</wrap>//**:8f8df2768aac**// 2015-06-27 16:07 +1000<wrap center 90%> // Bug: #235 remove check boxes from Non-Admin Users. //</wrap> 
+
+
+<wrap em>346</wrap>//**:e3c8ef58cd62**// 2015-06-27 16:06 +1000<wrap center 90%> // Bug: #235 Prevent non-Admin from accessing registry. //</wrap> 
+
+
+<wrap em>345</wrap>//**:2ab550a7f217**// 2015-06-27 15:45 +1000<wrap center 90%> // Feature: #228 Checking of HDD space now occurs prior to installation. //</wrap> 
+
+
+<wrap em>344</wrap>//**:5ebac31b7fd1**// 2015-06-26 20:51 +1000<wrap center 90%> // Feature: #188 Daily log also save to logging path. //</wrap> 
+
+
+<wrap em>343</wrap>//**:9c4a3383823d**// 2015-06-26 20:30 +1000<wrap center 90%> // Feature: #180 Desktop Notifier Interface Layout. //</wrap> 
+
+
+<wrap em>342</wrap>//**:3c56974f4c85**// 2015-06-26 18:51 +1000<wrap center 90%> // Release: SCMS Installer 2.1.8 x64, Incremented SCMS.dll and SOETray.exe Version Numbers. //</wrap> 
+
+
+<wrap em>341</wrap>//**:bb853a1db8d2**// 2015-06-26 18:18 +1000<wrap center 90%> // Release: SCMS Installer 2.1.8 x86 //</wrap> 
+
+
+<wrap em>339</wrap>//**:c5d8789e94de**// 2015-06-26 17:48 +1000<wrap center 90%> // Moved tag - to changeset 5dcada4aa8ec (from changeset f9182c79e546) //</wrap> 
+
+
+<wrap em>338</wrap>//**:5dcada4aa8ec**// 2015-06-26 17:46 +1000<wrap center 90%> // Moved tag #210 to changeset 0b5fbc971911 (from changeset 137c7cae693f) //</wrap> 
+
+
+<wrap em>337</wrap>//**:6e0143ee2bcc**// 2015-06-26 17:45 +1000<wrap center 90%> // Moved tag #213 to changeset c9acc62675a7 (from changeset 34a3e748ce90) //</wrap> 
+
+
+<wrap em>336</wrap>//**:6edacf24a54c**// 2015-06-26 17:45 +1000<wrap center 90%> // Added tag #211 for changeset 7f65565bd857 //</wrap> 
+
+
+<wrap em>335</wrap>//**:92c1d399de7b**// 2015-06-26 17:44 +1000<wrap center 90%> // Moved tag #210 to changeset 137c7cae693f (from changeset 2e5bdba8a166) //</wrap> 
+
+
+<wrap em>334</wrap>//**:74ab0634fcb1**// 2015-06-26 17:43 +1000<wrap center 90%> // Added tag - for changeset f9182c79e546 //</wrap> 
+
+
+<wrap em>333</wrap>//**:b7c2356a4d09**// 2015-06-26 17:43 +1000<wrap center 90%> // Added tag #213 for changeset 34a3e748ce90 //</wrap> 
+
+
+<wrap em>332</wrap>//**:0b5fbc971911**// 2015-06-26 17:43 +1000<wrap center 90%> // Added tag #210 for changeset 2e5bdba8a166 //</wrap> 
+
+
+<wrap em>331</wrap>//**:6efb1c9fbf59**// 2015-06-26 17:42 +1000<wrap center 90%> // Moved tag #234 to changeset 3878eb11cd20 (from changeset a920279c452d) //</wrap> 
+
+
+<wrap em>330</wrap>//**:eba3a05aa22f**// 2015-06-26 17:42 +1000<wrap center 90%> // Added tag #234 for changeset a920279c452d //</wrap> 
+
+
+<wrap em>329</wrap>//**:c3dc353e4f84**// 2015-06-26 17:41 +1000<wrap center 90%> // archive //</wrap> 
+
+
+<wrap em>328</wrap>//**:d11eacdf9cb9**// 2015-06-26 17:27 +1000<wrap center 90%> // Feature: #234 Clean Stale Objects. //</wrap> 
+
+
+<wrap em>327</wrap>//**:a920279c452d**// 2015-06-26 13:27 +1000<wrap center 90%> // Feature: #234 Dispose of Request //</wrap> 
+
+
+<wrap em>326</wrap>//**:564a34635da6**// 2015-06-26 12:40 +1000<wrap center 90%> // note: //</wrap> 
+
+
+<wrap em>325</wrap>//**:3878eb11cd20**// 2015-06-26 12:34 +1000<wrap center 90%> // Feature: #234 Project level for disposing. //</wrap> 
+
+
+<wrap em>324</wrap>//**:f9182c79e546**// 2015-06-26 11:53 +1000<wrap center 90%> // Log Message. //</wrap> 
+
+
+<wrap em>323</wrap>//**:34a3e748ce90**// 2015-06-26 11:42 +1000<wrap center 90%> // Feature: #213 Check to make sure worker is started, prior to commencing work. //</wrap> 
+
+
+<wrap em>322</wrap>//**:c9acc62675a7**// 2015-06-26 11:41 +1000<wrap center 90%> // Feature: #213 Added Service Check Method. //</wrap> 
+
+
+<wrap em>321</wrap>//**:7f65565bd857**// 2015-06-25 18:50 +1000<wrap center 90%> // Feature: #211 Added creation of URL for file help link. //</wrap> 
+
+
+<wrap em>320</wrap>//**:dee62289f257**// 2015-06-25 14:06 +1000<wrap center 90%> // Feature: #210 Request Version and Architecture for custom config. //</wrap> 
+
+
+<wrap em>319</wrap>//**:07d4f5735791**// 2015-06-25 13:28 +1000<wrap center 90%> // Send correct headers //</wrap> 
+
+
+<wrap em>318</wrap>//**:1d3d4b328c92**// 2015-06-25 12:58 +1000<wrap center 90%> // Feature: 210 Link new feature. //</wrap> 
+
+
+<wrap em>317</wrap>//**:bb675cbf454c**// 2015-06-25 12:47 +1000<wrap center 90%> // Corrected Function //</wrap> 
+
+
+<wrap em>316</wrap>//**:5bc0c1d33807**// 2015-06-25 06:52 +1000<wrap center 90%> // cleanup //</wrap> 
+
+
+<wrap em>315</wrap>//**:7dcfd920f4fe**// 2015-06-25 06:15 +1000<wrap center 90%> // Feature: #210 Update AutoUpdate status box when setting changes. //</wrap> 
+
+
+<wrap em>314</wrap>//**:3f543e8a74c2**// 2015-06-25 06:13 +1000<wrap center 90%> // Bug: Description box now show CrLf. //</wrap> 
+
+
+<wrap em>313</wrap>//**:4ad55d13893f**// 2015-06-25 05:04 +1000<wrap center 90%> // Feature: #210 testing and refining of settings and GUI. (Auto Update, Version and Architecture) //</wrap> 
+
+
+<wrap em>312</wrap>//**:9e68bfb28191**// 2015-06-25 04:57 +1000<wrap center 90%> // Cleanup: Left over from [259 (244524fb34e1) Bug: #200] //</wrap> 
+
+
+<wrap em>311</wrap>//**:2e5bdba8a166**// 2015-06-25 03:19 +1000<wrap center 90%> // Feature: #210 Refining GUI and improving expierance. //</wrap> 
+
+
+<wrap em>310</wrap>//**:021fdc0cc651**// 2015-06-25 03:14 +1000<wrap center 90%> // Missed from commit 301 (137c7cae693f) //</wrap> 
+
+
+<wrap em>309</wrap>//**:c8b0a467e877**// 2015-06-25 03:13 +1000<wrap center 90%> // Bug: Removed comma from reported errors. //</wrap> 
+
+
+<wrap em>308</wrap>//**:a60d6a5e21da**// 2015-06-25 00:30 +1000<wrap center 90%> // moving methods side-by-side //</wrap> 
+
+
+<wrap em>307</wrap>//**:137c7cae693f**// 2015-06-24 23:58 +1000<wrap center 90%> // Feature: #210 Method re-arranging. //</wrap> 
+
+
+<wrap em>305</wrap>//**:31e45ee9aa23**// 2015-06-24 18:15 +1000<wrap center 90%> // Feature: #210 Version and arch selection with config saving, deleting and reading from GUI. //</wrap> 
+
+
+<wrap em>304</wrap>//**:0ddcca79c6ca**// 2015-06-24 18:12 +1000<wrap center 90%> // Bug: #210 Null reference exception (first chance) //</wrap> 
+
+
+<wrap em>303</wrap>//**:6e9867e17d0e**// 2015-06-22 20:32 +1000<wrap center 90%> // Feature: #210 GUI finished setting architecture and version infomation. //</wrap> 
+
+
+<wrap em>302</wrap>//**:259bb9167053**// 2015-06-22 18:06 +1000<wrap center 90%> // Re-organise sturcture //</wrap> 
+
+
+<wrap em>300</wrap>//**:fb44bb8329fb**// 2015-06-21 21:05 +1000<wrap center 90%> // Feature: #210 Added ability to select Architecture and Version + save setting. //</wrap> 
+
+
+<wrap em>299</wrap>//**:d27876d7e2ad**// 2015-06-21 17:14 +1000<wrap center 90%> // Increment Version Number (SCMS.dll) //</wrap> 
+
+
+<wrap em>298</wrap>//**:cac024153057**// 2015-06-21 17:11 +1000<wrap center 90%> // Release: x86 Installer 2.1.7, incremented to .2 release scms.dll new. //</wrap> 
+
+
+<wrap em>297</wrap>//**:bec88ed274fb**// 2015-06-21 16:45 +1000<wrap center 90%> // Release x64 Installer 2.1.7, incremented to .2 release scms.dll new. //</wrap> 
+
+
+<wrap em>296</wrap>//**:ea76c92350db**// 2015-06-21 16:33 +1000<wrap center 90%> // Feature: #229 Dependent Applications, and requesting by processor type. //</wrap> 
+
+
+<wrap em>295</wrap>//**:90a8d9a5019b**// 2015-06-21 14:54 +1000<wrap center 90%> // Bug: #192 Make sure user is admin. //</wrap> 
+
+
+<wrap em>294</wrap>//**:ed6eb8cd70b3**// 2015-06-21 09:44 +1000<wrap center 90%> // Feature: #230 Create path. //</wrap> 
+
+
+<wrap em>293</wrap>//**:a491b6584980**// 2015-06-21 09:31 +1000<wrap center 90%> // Feature: #230 System and user registry locations. //</wrap> 
+
+
+<wrap em>292</wrap>//**:c35414e9abe9**// 2015-06-20 18:08 +1000<wrap center 90%> // Feature: #227 TimeDate single digits now padded with '0' for single digits. //</wrap> 
+
+
+<wrap em>291</wrap>//**:abfa6c2b180a**// 2015-06-20 18:04 +1000<wrap center 90%> // Feature: #226 Times each process that is run instead of combined install porcess. //</wrap> 
+
+
+<wrap em>290</wrap>//**:3f71f7615d38**// 2015-06-20 14:54 +1000<wrap center 90%> // Feature: #192 Remove applications no longer supported. //</wrap> 
+
+
+<wrap em>289</wrap>//**:89c146439981**// 2015-06-20 13:33 +1000<wrap center 90%> // Bug: #202 Made Description, Uninstall, Logo, InstallerSize Optional Nodes within the Application XML. //</wrap> 
+
+
+<wrap em>288</wrap>//**:9ac86587506c**// 2015-06-20 13:15 +1000<wrap center 90%> // Bug: #212 Check for existance of file //</wrap> 
+
+
+<wrap em>287</wrap>//**:1a3e90cb4fe0**// 2015-06-20 12:57 +1000<wrap center 90%> // Bug: #207 Applications with no install info now show orange. //</wrap> 
+
+
+<wrap em>286</wrap>//**:bdecd5921991**// 2015-06-20 12:31 +1000<wrap center 90%> // Bug: #220 Service now sends proc architecture //</wrap> 
+
+
+<wrap em>285</wrap>//**:b4a03d9e4ff8**// 2015-06-20 11:20 +1000<wrap center 90%> // Bug: #207 Applications with no install info now show yellow. //</wrap> 
+
+
+<wrap em>284</wrap>//**:0d265cbbba20**// 2015-06-20 09:04 +1000<wrap center 90%> // Fix: #223 Fix release Names. //</wrap> 
+
+
+<wrap em>282</wrap>//**:73991901ab85**// 2015-06-19 15:56 +1000<wrap center 90%> // Increment of version numbers. //</wrap> 
+
+
+<wrap em>281</wrap>//**:92ea9c431e4c**// 2015-06-19 15:45 +1000<wrap center 90%> // Release: x86 Installer 2.1.6 - Application Manager //</wrap> 
+
+
+<wrap em>280</wrap>//**:55062b3f5249**// 2015-06-19 15:40 +1000<wrap center 90%> // Release: x64 Installer 2.1.6 - Application Manager //</wrap> 
+
+
+<wrap em>279</wrap>//**:fcea9936168e**// 2015-06-18 20:41 +1000<wrap center 90%> // Feature: #222 Added ability to launch installer from command line. //</wrap> 
+
+
+<wrap em>278</wrap>//**:e1713ad75a95**// 2015-06-18 18:55 +1000<wrap center 90%> // Bug: #190 Prevented Debug messages from outputting to notifyer. //</wrap> 
+
+
+<wrap em>277</wrap>//**:32aafb790196**// 2015-06-18 18:28 +1000<wrap center 90%> // Bug: #220 Corrected setting of variable. //</wrap> 
+
+
+<wrap em>276</wrap>//**:0173e4cd6479**// 2015-06-18 18:09 +1000<wrap center 90%> // Bug: #220 Set Architecture to be sent on all requests. //</wrap> 
+
+
+<wrap em>275</wrap>//**:3fe703a434e7**// 2015-06-14 20:58 +1000<wrap center 90%> // Bug: #220 Added processor architecture to custom settings panel. //</wrap> 
+
+
+<wrap em>274</wrap>//**:4ed36dd8c04c**// 2015-06-14 20:00 +1000<wrap center 90%> // Development: #210 cosmetic only, Adjusted interface to allow selection of version and auto update. //</wrap> 
+
+
+<wrap em>273</wrap>//**:549268f7df7c**// 2015-06-14 18:27 +1000<wrap center 90%> // Documentation: #58 and #183 Documentation images. //</wrap> 
+
+
+<wrap em>272</wrap>//**:9d58e2df49d4**// 2015-06-14 09:44 +1000<wrap center 90%> // Development: #58 Added download Size for installer to interface. //</wrap> 
+
+
+<wrap em>271</wrap>//**:764a0b632611**// 2015-06-13 21:00 +1000<wrap center 90%> // Debug //</wrap> 
+
+
+<wrap em>270</wrap>//**:8a4af42298d7**// 2015-06-13 20:59 +1000<wrap center 90%> // Improvement: #58 added  Processor Architecture Field. //</wrap> 
+
+
+<wrap em>269</wrap>//**:14b41f7423e6**// 2015-06-13 20:58 +1000<wrap center 90%> // Improvement: #58 Read Only Application Description. //</wrap> 
+
+
+<wrap em>268</wrap>//**:fd78e67f6aea**// 2015-06-11 19:55 +1000<wrap center 90%> // Development: #58 Adjusted Beta Tag //</wrap> 
+
+
+<wrap em>267</wrap>//**:979e29e6025d**// 2015-06-11 17:06 +1000<wrap center 90%> // Feature: #136 Now checks HKU for software. //</wrap> 
+
+
+<wrap em>266</wrap>//**:b32b86981eaf**// 2015-06-10 21:18 +1000<wrap center 90%> // Improvement: Added BETA Tags to make it obvious..... //</wrap> 
+
+
+<wrap em>265</wrap>//**:94b2cb7d0fb7**// 2015-06-10 21:12 +1000<wrap center 90%> // Version Increment: 1.1.19.1 //</wrap> 
+
+
+<wrap em>264</wrap>//**:9f271f7a76c8**// 2015-06-10 19:12 +1000<wrap center 90%> // Release: scms.dll v1.1.18.2 //</wrap> 
+
+
+<wrap em>263</wrap>//**:163e17ed6b60**// 2015-06-10 19:09 +1000<wrap center 90%> // Release: scms.dll v1.1.18.1 //</wrap> 
+
+
+<wrap em>262</wrap>//**:244524fb34e1**// 2015-06-10 19:07 +1000<wrap center 90%> // Bug: #200 Removed code that required external dependencies. //</wrap> 
+
+
+<wrap em>261</wrap>//**:2f84c7403373**// 2015-06-08 20:23 +1000<wrap center 90%> // Bug: #193 Added Wiki Link to Help Link. //</wrap> 
+
+
+<wrap em>260</wrap>//**:b49c52a9460e**// 2015-06-08 13:16 +1000<wrap center 90%> // Incremented Version Numbers and returned to debug. //</wrap> 
+
+
+<wrap em>259</wrap>//**:ad688fe509ee**// 2015-06-08 13:14 +1000<wrap center 90%> // Release: SCMSService.exe v2.1.3.2 //</wrap> 
+
+
+<wrap em>258</wrap>//**:112d795c63e3**// 2015-06-08 13:12 +1000<wrap center 90%> // Release: SCMS.dll v1.1.17.2 //</wrap> 
+
+
+<wrap em>257</wrap>//**:42fb9edb6c3b**// 2015-06-08 13:11 +1000<wrap center 90%> // Release: SOETray.exe v2.1.2.2 //</wrap> 
+
+
+<wrap em>256</wrap>//**:72e90c7456f8**// 2015-06-08 13:05 +1000<wrap center 90%> // Debug: #87 Fixed release setup. //</wrap> 
+
+
+<wrap em>255</wrap>//**:38ae1b3e2546**// 2015-06-08 12:21 +1000<wrap center 90%> // Bug: #185 failure to install was being reported as this application didn't have any tasks. this has now been corrected to check task count first. //</wrap> 
+
+
+<wrap em>254</wrap>//**:22e4da3a23eb**// 2015-06-08 12:19 +1000<wrap center 90%> // Debug: #185. //</wrap> 
+
+
+<wrap em>253</wrap>//**:05e1dad925cd**// 2015-06-08 11:54 +1000<wrap center 90%> // Debug: #185 //</wrap> 
+
+
+<wrap em>252</wrap>//**:a644c9cd57d0**// 2015-06-08 11:11 +1000<wrap center 90%> // Improvement: added type setting //</wrap> 
+
+
+<wrap em>251</wrap>//**:7216d6f53355**// 2015-06-08 11:10 +1000<wrap center 90%> // Bug: #184 Fixed. //</wrap> 
+
+
+<wrap em>250</wrap>//**:14732b31663e**// 2015-06-08 11:08 +1000<wrap center 90%> // Debug: #184 Debugging added. //</wrap> 
+
+
+<wrap em>249</wrap>//**:8ae01fe89a18**// 2015-06-08 09:54 +1000<wrap center 90%> // Bug: #179 Debug. //</wrap> 
+
+
+<wrap em>248</wrap>//**:b4f875df8599**// 2015-06-07 19:45 +1000<wrap center 90%> // Bug: #181 Fixed and commands run as intended. //</wrap> 
+
+
+<wrap em>247</wrap>//**:84fd2ef9c0f4**// 2015-06-06 17:00 +1000<wrap center 90%> // Development: #58 Updated Category Icons. //</wrap> 
+
+
+<wrap em>246</wrap>//**:46ade18a0187**// 2015-06-06 16:09 +1000<wrap center 90%> // Dev: #58 Adding icons //</wrap> 
+
+
+<wrap em>245</wrap>//**:2d8f9f2de7f0**// 2015-06-06 13:57 +1000<wrap center 90%> // Release: #58 scms.dll v1.1.16.1 //</wrap> 
+
+
+<wrap em>244</wrap>//**:9f55944688d3**// 2015-06-06 13:43 +1000<wrap center 90%> // Bug: #58 Prevented service from stopping //</wrap> 
+
+
+<wrap em>243</wrap>//**:24c9092f5791**// 2015-06-06 10:31 +1000<wrap center 90%> // Debug: adding //</wrap> 
+
+
+<wrap em>242</wrap>//**:256278b67979**// 2015-06-05 19:03 +1000<wrap center 90%> // Release: #58 scms.dll v1.1.15.1 //</wrap> 
+
+
+<wrap em>241</wrap>//**:22119e61a25b**// 2015-06-05 19:01 +1000<wrap center 90%> // Bug: #58 Thread prevented service from stoping. //</wrap> 
+
+
+<wrap em>240</wrap>//**:c3cdb7ee8771**// 2015-06-05 18:34 +1000<wrap center 90%> // Debug: Post Release //</wrap> 
+
+
+<wrap em>239</wrap>//**:979a62ace816**// 2015-06-05 16:49 +1000<wrap center 90%> // Release: #58 scms.dll v1.1.14.1. //</wrap> 
+
+
+<wrap em>238</wrap>//**:f8b38b4c05e7**// 2015-06-05 16:42 +1000<wrap center 90%> // Release: #58 SOETray.exe v2.1.1.0 //</wrap> 
+
+
+<wrap em>237</wrap>//**:5c327d3ebe92**// 2015-06-05 16:35 +1000<wrap center 90%> // Development: #58 Final Testing complete. //</wrap> 
+
+
+<wrap em>236</wrap>//**:52c3037e6725**// 2015-06-05 16:26 +1000<wrap center 90%> // Development: #58 Added Application Manager to Application, Service and Installer. //</wrap> 
+
+
+<wrap em>235</wrap>//**:5b1d20d6b6c6**// 2015-06-05 16:23 +1000<wrap center 90%> // Feture Freeze: Create Shortcut. //</wrap> 
+
+
+<wrap em>234</wrap>//**:c209c123aaf2**// 2015-06-05 14:31 +1000<wrap center 90%> // Development: #58 Code Cleanup //</wrap> 
+
+
+<wrap em>233</wrap>//**:ee5e30659435**// 2015-06-05 13:59 +1000<wrap center 90%> // Development: #58 Code Cleanup //</wrap> 
+
+
+<wrap em>232</wrap>//**:35fd00d30456**// 2015-06-05 13:50 +1000<wrap center 90%> // Development: #58 Code Cleanup //</wrap> 
+
+
+<wrap em>231</wrap>//**:b08c9b650e66**// 2015-06-05 13:33 +1000<wrap center 90%> // Feature: #58 Refinements //</wrap> 
+
+
+<wrap em>230</wrap>//**:916cd5be0cca**// 2015-06-05 11:31 +1000<wrap center 90%> // Development: #58 Removed old Methods. //</wrap> 
+
+
+<wrap em>229</wrap>//**:12d8ecfb12ac**// 2015-06-05 02:51 +1000<wrap center 90%> // Feature: #58 sha256 //</wrap> 
+
+
+<wrap em>228</wrap>//**:f110a964f171**// 2015-06-05 02:50 +1000<wrap center 90%> // Development: #58 Logging //</wrap> 
+
+
+<wrap em>227</wrap>//**:6bbc5e85abbb**// 2015-06-04 22:32 +1000<wrap center 90%> // Development: #58 Linking to server //</wrap> 
+
+
+<wrap em>226</wrap>//**:54572ff5dce8**// 2015-06-04 20:29 +1000<wrap center 90%> // Bug: Fixed Stream, request and responce from being left open. //</wrap> 
+
+
+<wrap em>225</wrap>//**:dd530454d910**// 2015-06-04 12:40 +1000<wrap center 90%> // Bug: HTTP read whole stream. //</wrap> 
+
+
+<wrap em>224</wrap>//**:f66edf9728c6**// 2015-06-04 12:00 +1000<wrap center 90%> // TODO //</wrap> 
+
+
+<wrap em>223</wrap>//**:f720f14a30f5**// 2015-06-03 17:03 +1000<wrap center 90%> // Development: #58 Refinements. //</wrap> 
+
+
+<wrap em>222</wrap>//**:8cb522b8cbcc**// 2015-06-03 14:48 +1000<wrap center 90%> // Development: #58 Refinements. //</wrap> 
+
+
+<wrap em>221</wrap>//**:5691e3194f6d**// 2015-06-03 10:50 +1000<wrap center 90%> // Development: #58 Splash Screen //</wrap> 
+
+
+<wrap em>220</wrap>//**:a9c04257c3c8**// 2015-06-03 10:06 +1000<wrap center 90%> // Development: #58 Feature audit and correction. //</wrap> 
+
+
+<wrap em>219</wrap>//**:fc1e21038f5f**// 2015-06-03 06:07 +1000<wrap center 90%> // Development: #58 Worker notification Fixes. //</wrap> 
+
+
+<wrap em>218</wrap>//**:cb97cfeb3442**// 2015-06-03 04:36 +1000<wrap center 90%> // Development: #58 Testing Worker, notification refinements. //</wrap> 
+
+
+<wrap em>217</wrap>//**:b9677fa5e459**// 2015-06-03 01:42 +1000<wrap center 90%> // Development: #58 Testing Worker, notifications. //</wrap> 
+
+
+<wrap em>216</wrap>//**:70b291a262d6**// 2015-06-03 01:30 +1000<wrap center 90%> // Development: #58 Testing Worker. //</wrap> 
+
+
+<wrap em>215</wrap>//**:68001bbfc9f4**// 2015-06-02 21:15 +1000<wrap center 90%> // missed from 210 and 211 //</wrap> 
+
+
+<wrap em>214</wrap>//**:3d5af206f79a**// 2015-06-02 21:14 +1000<wrap center 90%> // Development: #58 Prep for app installer to use service worker. //</wrap> 
+
+
+<wrap em>213</wrap>//**:15c11ff0351e**// 2015-06-02 20:59 +1000<wrap center 90%> // Development: #58 method rename //</wrap> 
+
+
+<wrap em>212</wrap>//**:573c2c37ea5a**// 2015-06-02 20:58 +1000<wrap center 90%> // Development: #58 pre method rename //</wrap> 
+
+
+<wrap em>211</wrap>//**:1b8b14d22ebf**// 2015-06-02 20:42 +1000<wrap center 90%> // Development: #58 Service worker //</wrap> 
+
+
+<wrap em>210</wrap>//**:1820e590b458**// 2015-06-02 20:32 +1000<wrap center 90%> // Development: #58 Client Poling for notification //</wrap> 
+
+
+<wrap em>209</wrap>//**:03d2d6c3b9ef**// 2015-06-02 19:11 +1000<wrap center 90%> // Development: #58 Cleanup //</wrap> 
+
+
+<wrap em>208</wrap>//**:1f6a16f070d0**// 2015-06-02 18:31 +1000<wrap center 90%> // Development: #58 display //</wrap> 
+
+
+<wrap em>207</wrap>//**:f869c31526da**// 2015-06-02 17:46 +1000<wrap center 90%> // Development: #58 Comm wkg with auth //</wrap> 
+
+
+<wrap em>206</wrap>//**:d6cb7401ce49**// 2015-06-02 12:07 +1000<wrap center 90%> // Development: #58 Moved to client library. //</wrap> 
+
+
+<wrap em>205</wrap>//**:82b2abea8a16**// 2015-06-02 11:58 +1000<wrap center 90%> // Development: #58 Before move to client library. //</wrap> 
+
+
+<wrap em>204</wrap>//**:2c83c0c11d6f**// 2015-06-02 11:37 +1000<wrap center 90%> // Development: #58 Communication Methods //</wrap> 
+
+
+<wrap em>203</wrap>//**:0270f27d1010**// 2015-06-02 11:32 +1000<wrap center 90%> // Development: #58 Archive //</wrap> 
+
+
+<wrap em>202</wrap>//**:7cbbaf1fba3e**// 2015-06-02 11:30 +1000<wrap center 90%> // Development: #58 Archive old Tests //</wrap> 
+
+
+<wrap em>201</wrap>//**:d9adb4fc4881**// 2015-06-01 16:28 +1000<wrap center 90%> // Development: #58 Desktop message Notification //</wrap> 
+
+
+<wrap em>200</wrap>//**:9589a1e51f28**// 2015-06-01 14:36 +1000<wrap center 90%> // Testing: #58 archive //</wrap> 
+
+
+<wrap em>199</wrap>//**:3e952a439182**// 2015-06-01 13:53 +1000<wrap center 90%> // Testing: #58 working, sec //</wrap> 
+
+
+<wrap em>198</wrap>//**:ba0588f2bd9b**// 2015-06-01 13:35 +1000<wrap center 90%> // Testing: #58 working //</wrap> 
+
+
+<wrap em>197</wrap>//**:7506318f3c88**// 2015-06-01 05:22 +1000<wrap center 90%> // Testing: #58 //</wrap> 
+
+
+<wrap em>196</wrap>//**:92070a602220**// 2015-06-01 04:38 +1000<wrap center 90%> // Testing: #58 //</wrap> 
+
+
+<wrap em>195</wrap>//**:e99a16cbfbfb**// 2015-06-01 03:23 +1000<wrap center 90%> // Testing: #58 //</wrap> 
+
+
+<wrap em>194</wrap>//**:c465ccd16cbf**// 2015-05-31 21:10 +1000<wrap center 90%> // Development: #58 Interface refinements. //</wrap> 
+
+
+<wrap em>193</wrap>//**:0342be44b036**// 2015-05-31 21:09 +1000<wrap center 90%> // Development: #58 Initial Desktop Notification Dialog //</wrap> 
+
+
+<wrap em>192</wrap>//**:9b252c6715f7**// 2015-05-31 17:27 +1000<wrap center 90%> // Development: #58 Interface //</wrap> 
+
+
+<wrap em>191</wrap>//**:35ce02618412**// 2015-05-31 17:25 +1000<wrap center 90%> // Improvement: adjusted registry //</wrap> 
+
+
+<wrap em>190</wrap>//**:6fd32b327fce**// 2015-05-31 16:18 +1000<wrap center 90%> // Feature: Added Key exists method. //</wrap> 
+
+
+<wrap em>189</wrap>//**:e22dba1ce1ec**// 2015-05-31 16:17 +1000<wrap center 90%> // Feature: Added Default Registry Location. //</wrap> 
+
+
+<wrap em>188</wrap>//**:7e67402d1c25**// 2015-05-30 21:51 +1000<wrap center 90%> // Development: #58 interface. //</wrap> 
+
+
+<wrap em>187</wrap>//**:62b24721429a**// 2015-05-30 19:00 +1000<wrap center 90%> // Development: #58 Initial creation of Application Manager Interface. //</wrap> 
+
+
+<wrap em>186</wrap>//**:b38afdcea59a**// 2015-05-19 19:44 +1000<wrap center 90%> // Development: #58 Adjusted XML tag. //</wrap> 
+
+
+<wrap em>185</wrap>//**:053b013aa8df**// 2015-05-19 19:28 +1000<wrap center 90%> // Development: #58 Adjusted XML tag. //</wrap> 
+
+
+<wrap em>184</wrap>//**:f244fcf24be3**// 2015-05-18 20:08 +1000<wrap center 90%> // Development: #58 Added Command Task. //</wrap> 
+
+
+<wrap em>183</wrap>//**:d2e96dc3a779**// 2015-05-18 19:46 +1000<wrap center 90%> // Development: #58 Changed Method Name //</wrap> 
+
+
+<wrap em>182</wrap>//**:3f4ff5f7ef7e**// 2015-05-17 20:25 +1000<wrap center 90%> // Development: #58 Refinements //</wrap> 
+
+
+<wrap em>181</wrap>//**:66b59c63a5d6**// 2015-05-17 18:52 +1000<wrap center 90%> // Development: #58 Amended logging to output status //</wrap> 
+
+
+<wrap em>180</wrap>//**:6820f18e0251**// 2015-05-17 16:05 +1000<wrap center 90%> // Development: #58 fixed path.....TESTING //</wrap> 
+
+
+<wrap em>179</wrap>//**:ffaa9208f24c**// 2015-05-17 15:48 +1000<wrap center 90%> // Development: #58 Refinements //</wrap> 
+
+
+<wrap em>178</wrap>//**:f228da07376a**// 2015-05-17 15:22 +1000<wrap center 90%> // Development: #58 Fetaure, check registry, and if dependency install first //</wrap> 
+
+
+<wrap em>177</wrap>//**:8e331ee603dc**// 2015-05-17 13:39 +1000<wrap center 90%> // Development: #58 class creation //</wrap> 
+
+
+<wrap em>176</wrap>//**:d217991ece0f**// 2015-05-17 13:32 +1000<wrap center 90%> // Development: #58 class creation //</wrap> 
+
+
+<wrap em>175</wrap>//**:c33242ac15e1**// 2015-05-17 13:31 +1000<wrap center 90%> // Development: #58 renamed Class //</wrap> 
+
+
+<wrap em>174</wrap>//**:d489b54cbd6d**// 2015-05-17 12:02 +1000<wrap center 90%> // Improvement: Added dynamic collection of Common AppData folder //</wrap> 
+
+
+<wrap em>173</wrap>//**:30b174e44fb1**// 2015-05-17 11:26 +1000<wrap center 90%> // Development: #58 Added logging method and moved all output to it. //</wrap> 
+
+
+<wrap em>172</wrap>//**:4c73965dee2c**// 2015-05-17 11:25 +1000<wrap center 90%> // Development: #58 REmoved old class //</wrap> 
+
+
+<wrap em>171</wrap>//**:ba9530ed4d4b**// 2015-05-17 11:08 +1000<wrap center 90%> // Development: #58 Refinements //</wrap> 
+
+
+<wrap em>170</wrap>//**:9e5953e0eb02**// 2015-05-17 11:03 +1000<wrap center 90%> // Development: #58 relocated Classes //</wrap> 
+
+
+<wrap em>169</wrap>//**:1447dc0b52cb**// 2015-05-17 11:02 +1000<wrap center 90%> // Development: #58 these need to be here. //</wrap> 
+
+
+<wrap em>168</wrap>//**:eeb8b80c0659**// 2015-05-17 10:17 +1000<wrap center 90%> // Development: #58 relocated Classes //</wrap> 
+
+
+<wrap em>167</wrap>//**:7ce1e1243270**// 2015-05-17 10:12 +1000<wrap center 90%> // Development: #58 Refinements //</wrap> 
+
+
+<wrap em>166</wrap>//**:823be89ffbb0**// 2015-05-16 21:14 +1000<wrap center 90%> // Development: #58 Testing of classes and functions. Updating XML file layout. //</wrap> 
+
+
+<wrap em>165</wrap>//**:a7aabf59f613**// 2015-05-16 18:14 +1000<wrap center 90%> // Development: #58 Functions //</wrap> 
+
+
+<wrap em>164</wrap>//**:f6bd013724eb**// 2015-05-15 22:18 +1000<wrap center 90%> // Development: #58 class creation and refinements //</wrap> 
+
+
+<wrap em>163</wrap>//**:e2961afbd792**// 2015-05-15 14:43 +1000<wrap center 90%> // Development:58 Moved Class. //</wrap> 
+
+
+<wrap em>162</wrap>//**:287134ed3ae8**// 2015-05-15 14:42 +1000<wrap center 90%> // Development: #58 Class Creation //</wrap> 
+
+
+<wrap em>161</wrap>//**:aa35e141f094**// 2015-05-15 13:20 +1000<wrap center 90%> // Development: #58 relocated Classes //</wrap> 
+
+
+<wrap em>160</wrap>//**:054fd53c2952**// 2015-05-14 21:18 +1000<wrap center 90%> // Development: #58 Class Creation and logic layout //</wrap> 
+
+
+<wrap em>159</wrap>//**:6c859af1f77d**// 2015-05-13 21:13 +1000<wrap center 90%> // Development: #58 checks, and registry //</wrap> 
+
+
+<wrap em>158</wrap>//**:7ce4b763e905**// 2015-05-12 20:52 +1000<wrap center 90%> // Development: #58 Class Creation //</wrap> 
+
+
+<wrap em>157</wrap>//**:a06a3adc7970**// 2015-05-11 20:38 +1000<wrap center 90%> // Development: #58 Class Creation //</wrap> 
+
+
+<wrap em>156</wrap>//**:c164348daea9**// 2015-05-10 20:38 +1000<wrap center 90%> // Development: #58 Class layout. //</wrap> 
+
+
+<wrap em>155</wrap>//**:d8d54c6be8da**// 2015-05-10 19:59 +1000<wrap center 90%> // Development: #58 Code Cleanup. //</wrap> 
+
+
+<wrap em>154</wrap>//**:803d81988a1d**// 2015-05-10 19:55 +1000<wrap center 90%> // Development: #58 Renamed Functions.vb->ReadXML.vb //</wrap> 
+
+
+<wrap em>153</wrap>//**:c6ec30a301f2**// 2015-05-10 17:07 +1000<wrap center 90%> // Development: #58 Refined the Layout of the XML File. //</wrap> 
+
+
+<wrap em>152</wrap>//**:42a9ca44021d**// 2015-05-10 00:15 +1000<wrap center 90%> // Development: #58 Created Application Classes and Initial layout of XML file reader function. //</wrap> 
+
+
+<wrap em>151</wrap>//**:188989eac2b1**// 2015-04-19 14:53 +1000<wrap center 90%> // Release: scms.dll 1.1.13.1 and SCMSService.exe V 2.1.2.1. scms.dll needs to be updated fist to prevent stop errors for the service. //</wrap> 
+
+
+<wrap em>150</wrap>//**:d2cb1ce90e2d**// 2015-04-19 13:54 +1000<wrap center 90%> // Bug: #136 Don't Include System Components within Inventory Scan. //</wrap> 
+
+
+<wrap em>149</wrap>//**:95cfff8e5f41**// 2015-04-11 13:56 +1000<wrap center 90%> // Bug: #150 Added installation of root CA to Machine Store. //</wrap> 
+
+
+<wrap em>148</wrap>//**:4a385f61013c**// 2015-04-11 13:49 +1000<wrap center 90%> // Cleanup: Code Cleanup //</wrap> 
+
+
+<wrap em>147</wrap>//**:d4de89ce2bac**// 2015-04-11 13:42 +1000<wrap center 90%> // Bug: #92 Added command to Service. //</wrap> 
+
+
+<wrap em>146</wrap>//**:489598c2e796**// 2015-04-11 10:41 +1000<wrap center 90%> // Bug: #92 Added sub routine to add the service recovery options to the registry. //</wrap> 
+
+
+<wrap em>145</wrap>//**:eb83931703ad**// 2015-04-06 16:33 +1000<wrap center 90%> // Release: SCMS.dll V1.1.12.1 //</wrap> 
+
+
+<wrap em>144</wrap>//**:21f24f51df50**// 2015-04-06 16:28 +1000<wrap center 90%> // Feature: #156 added Driver collection to Hardware Inventory. //</wrap> 
+
+
+<wrap em>143</wrap>//**:0aeefbdcd91e**// 2015-04-06 11:09 +1000<wrap center 90%> // Feature: Support for collecting .sys file details. //</wrap> 
+
+
+<wrap em>142</wrap>//**:0cb112e4f918**// 2015-04-05 20:55 +1000<wrap center 90%> // Featuere: #156 created initial methods. //</wrap> 
+
+
+<wrap em>141</wrap>//**:59bb8db2d24f**// 2015-04-05 15:46 +1000<wrap center 90%> // Test: testing certifiacte methods. //</wrap> 
+
+
+<wrap em>140</wrap>//**:5ada58e611d9**// 2015-04-05 15:46 +1000<wrap center 90%> // Bug: #150 Added Certificate methods. //</wrap> 
+
+
+<wrap em>139</wrap>//**:56208fc935e6**// 2015-04-05 15:44 +1000<wrap center 90%> // Bug: #150 Added Root CA Certificate to resources //</wrap> 
+
+
+<wrap em>138</wrap>//**:eb68b1a2c673**// 2015-04-05 08:56 +1000<wrap center 90%> // Bug: #92 Test Build, Installer 2.1.5. //</wrap> 
+
+
+<wrap em>137</wrap>//**:2d0d857be074**// 2015-04-05 08:56 +1000<wrap center 90%> // Bug: #92 Added Service recovery actions to installer. //</wrap> 
+
+
+<wrap em>136</wrap>//**:7c90420117e3**// 2015-03-01 12:10 +1100<wrap center 90%> // Release: scms.dll V1.1.11.1 (Same as prev release but correct Signing Certificate) //</wrap> 
+
+
+<wrap em>135</wrap>//**:5e999a77278a**// 2015-02-15 17:18 +1100<wrap center 90%> // Bug: adjusted version number to include a zero in front of single digits. //</wrap> 
+
+
+<wrap em>134</wrap>//**:c5ca8f430086**// 2015-02-15 16:17 +1100<wrap center 90%> // Release: SCMS.dll V1.1.10.1 //</wrap> 
+
+
+<wrap em>133</wrap>//**:77920305a290**// 2015-02-15 12:01 +1100<wrap center 90%> // Improvement: Added Service File Category to file details. //</wrap> 
+
+
+<wrap em>132</wrap>//**:fe2390410887**// 2015-02-09 20:21 +1100<wrap center 90%> // Test: #134 Installed Software file detail collection. //</wrap> 
+
+
+<wrap em>131</wrap>//**:0be5a0bc58e1**// 2015-02-09 15:55 +1100<wrap center 90%> // Feature: #149 Added the collection of Service File Details. //</wrap> 
+
+
+<wrap em>130</wrap>//**:5cfa7f8020d0**// 2015-02-09 12:52 +1100<wrap center 90%> // Bug: #143 / #146 Fixed Coding Bug. //</wrap> 
+
+
+<wrap em>129</wrap>//**:de9aca66559e**// 2015-02-09 11:14 +1100<wrap center 90%> // Fix: #146 added ability for client to report command complete if no work was carried out. //</wrap> 
+
+
+<wrap em>128</wrap>//**:40ea25dd9361**// 2015-02-09 11:13 +1100<wrap center 90%> // Fix: #146 Adjusted Check so it works as per default. //</wrap> 
+
+
+<wrap em>127</wrap>//**:a750c65cb036**// 2015-02-09 10:30 +1100<wrap center 90%> // Fix: #146 Fixed the invalid cast exception. //</wrap> 
+
+
+<wrap em>126</wrap>//**:dd2af704d074**// 2015-02-07 13:31 +1100<wrap center 90%> // Fix: #143 Removed Empty Variable Check. //</wrap> 
+
+
+<wrap em>125</wrap>//**:fdcd76ce13f4**// 2015-01-24 17:50 +1100<wrap center 90%> // Fix: #87 Migration to new global logging objects. //</wrap> 
+
+
+<wrap em>124</wrap>//**:2b25fcb96881**// 2015-01-24 16:57 +1100<wrap center 90%> // VersionIncrement: SCMS.dll 1.1.9.2->1.1.10.1 //</wrap> 
+
+
+<wrap em>123</wrap>//**:387fee541b3b**// 2015-01-24 16:28 +1100<wrap center 90%> // Release: scms.dll V1.1.9.2 //</wrap> 
+
+
+<wrap em>122</wrap>//**:b810249a98f9**// 2015-01-24 16:23 +1100<wrap center 90%> // Version Number: Adjusted from 1.1.9.1 -> 1.1.9.2 as this release will be a bug fix. //</wrap> 
+
+
+<wrap em>121</wrap>//**:acc417480b50**// 2015-01-24 15:37 +1100<wrap center 90%> // Fix: #148 Corrected bug in code. //</wrap> 
+
+
+<wrap em>120</wrap>//**:8a8aae65fa22**// 2015-01-24 15:37 +1100<wrap center 90%> // Release: SCMS.dll V1.1.8.1 //</wrap> 
+
+
+<wrap em>119</wrap>//**:3871cd95f024**// 2015-01-24 14:10 +1100<wrap center 90%> // Fix: #87 Corrected logging details. //</wrap> 
+
+
+<wrap em>118</wrap>//**:16ee4352a136**// 2015-01-24 13:35 +1100<wrap center 90%> // Fix: 87 Corrcted spelling mistake. //</wrap> 
+
+
+<wrap em>117</wrap>//**:c68706d97f28**// 2015-01-24 13:27 +1100<wrap center 90%> // Plugin-DuplicateCheck: Adjusted logging to use Global Strings. //</wrap> 
+
+
+<wrap em>116</wrap>//**:3364125ca5c9**// 2015-01-24 13:26 +1100<wrap center 90%> // Fix: #87 Additional Global Log Strings. //</wrap> 
+
+
+<wrap em>115</wrap>//**:7e89a0d3f45e**// 2015-01-24 13:26 +1100<wrap center 90%> // Plugin-DuplicateCheck: Global Variable. //</wrap> 
+
+
+<wrap em>114</wrap>//**:2afd80f221f9**// 2015-01-24 12:11 +1100<wrap center 90%> // Fix: #87 Logging cleanup. //</wrap> 
+
+
+<wrap em>113</wrap>//**:fb4ec7d8e5ef**// 2015-01-24 11:57 +1100<wrap center 90%> // Improvement: #87 Added Global Source strings. //</wrap> 
+
+
+<wrap em>112</wrap>//**:2127b66c6d2f**// 2015-01-24 11:49 +1100<wrap center 90%> // Improvement: #87 Added Global Source strings. //</wrap> 
+
+
+<wrap em>111</wrap>//**:720877d6d7f0**// 2015-01-24 11:38 +1100<wrap center 90%> // Adjustment: #87 severity level update to RFC5424. //</wrap> 
+
+
+<wrap em>110</wrap>//**:8c7c0f223d05**// 2015-01-24 11:36 +1100<wrap center 90%> // Code Cleanup: #87 Removed old variables. //</wrap> 
+
+
+<wrap em>109</wrap>//**:7cd12a0b956a**// 2015-01-24 11:32 +1100<wrap center 90%> // Improvement: #87 RFC5424 Severity Levels added. //</wrap> 
+
+
+<wrap em>108</wrap>//**:bcb521647c5e**// 2015-01-24 10:53 +1100<wrap center 90%> // Fix: #87 Added global Error Numbers. //</wrap> 
+
+
+<wrap em>107</wrap>//**:5440416b8216**// 2015-01-24 10:52 +1100<wrap center 90%> // Code Cleanup: Adjusted location of method. //</wrap> 
+
+
+<wrap em>106</wrap>//**:54497efada9b**// 2015-01-24 10:43 +1100<wrap center 90%> // Plugin-DuplicatFiles: Adjusted file chunk sizes into array. //</wrap> 
+
+
+<wrap em>105</wrap>//**:681e594ca0dc**// 2015-01-23 21:50 +1100<wrap center 90%> // Improvement: #87 Log Message Formatting for WMI Messages. //</wrap> 
+
+
+<wrap em>104</wrap>//**:d128b8cd6f99**// 2015-01-23 17:35 +1100<wrap center 90%> // Fix: #144 Added Baseboard collection Method. //</wrap> 
+
+
+<wrap em>103</wrap>//**:699bab3dea18**// 2015-01-23 16:35 +1100<wrap center 90%> // Release: SCMS.dll V1.1.7.1 //</wrap> 
+
+
+<wrap em>102</wrap>//**:d12447fa5202**// 2015-01-23 15:05 +1100<wrap center 90%> // Fix: #143 Headers not added to array fix. //</wrap> 
+
+
+<wrap em>101</wrap>//**:2b40a7262d54**// 2015-01-18 18:03 +1100<wrap center 90%> // Fix: #142 Amended so Service Filename is shown in error message. //</wrap> 
+
+
+<wrap em>100</wrap>//**:63715b79ae19**// 2015-01-18 17:04 +1100<wrap center 90%> // Version Number Increment //</wrap> 
+
+
+<wrap em>99</wrap>//**:7e50f8dfb6f5**// 2015-01-18 16:54 +1100<wrap center 90%> // Build: scms.dll V1.1.6.2 Beta Released //</wrap> 
+
+
+<wrap em>98</wrap>//**:11b6eb75daa8**// 2015-01-18 16:48 +1100<wrap center 90%> // Fix: #142 Adjust function to remove the new line after Write, also adjust to use supplied filename. //</wrap> 
+
+
+<wrap em>97</wrap>//**:24aa91625d5a**// 2015-01-18 12:57 +1100<wrap center 90%> // Fix: #138 Added Debugging to service file errors //</wrap> 
+
+
+<wrap em>96</wrap>//**:8b8eb5798a2e**// 2015-01-18 11:59 +1100<wrap center 90%> // Fix: #138 Remove quotes from filepath //</wrap> 
+
+
+<wrap em>95</wrap>//**:3560b263ba61**// 2015-01-18 09:38 +1100<wrap center 90%> // Impriovement: #138 Moved all references to file to only run after file check. //</wrap> 
+
+
+<wrap em>94</wrap>//**:22c3aee39a20**// 2015-01-17 21:14 +1100<wrap center 90%> // Fix: #138 Added Sanitize Method to Machine Services. //</wrap> 
+
+
+<wrap em>93</wrap>//**:b131526dc80b**// 2015-01-17 21:13 +1100<wrap center 90%> // Fix: #138 Added Logging to Method. //</wrap> 
+
+
+<wrap em>92</wrap>//**:cee5477665de**// 2015-01-17 21:08 +1100<wrap center 90%> // Fix: #138 Created a Service file name Sanitize method. //</wrap> 
+
+
+<wrap em>91</wrap>//**:5f3ca40c030e**// 2015-01-17 16:34 +1100<wrap center 90%> // Build: scms.dll V1.1.5.1 Beta Released //</wrap> 
+
+
+<wrap em>90</wrap>//**:8062019a56c1**// 2015-01-17 14:29 +1100<wrap center 90%> // Fix: #87 Added Full WMI Debugging. //</wrap> 
+
+
+<wrap em>89</wrap>//**:6e3f3ab08b3f**// 2015-01-17 12:47 +1100<wrap center 90%> // Fix: #87 Added Error handling to Inventory categories. //</wrap> 
+
+
+<wrap em>88</wrap>//**:2df50803023d**// 2015-01-17 11:59 +1100<wrap center 90%> // Development: Added WMI Class-Names as variable to classes. //</wrap> 
+
+
+<wrap em>87</wrap>//**:8266a0cd20a9**// 2015-01-17 11:07 +1100<wrap center 90%> // Development: Tidy up class locations. //</wrap> 
+
+
+<wrap em>86</wrap>//**:95f2dc2a2f6b**// 2015-01-17 10:01 +1100<wrap center 90%> // Development: Tidy up class locations. //</wrap> 
+
+
+<wrap em>85</wrap>//**:61ea2869c46b**// 2015-01-16 20:44 +1100<wrap center 90%> // Fix: #137 Added ability for App to load if plugin folder missing. //</wrap> 
+
+
+<wrap em>84</wrap>//**:06ef1d462aa8**// 2015-01-16 20:42 +1100<wrap center 90%> // Fix: #137 removed as the end user may not have permission to create Directory. //</wrap> 
+
+
+<wrap em>83</wrap>//**:70cb8b7e759c**// 2015-01-10 21:43 +1100<wrap center 90%> // Development: #28 Interface and Filtering Duplicate Files. //</wrap> 
+
+
+<wrap em>82</wrap>//**:50d80162c52d**// 2015-01-02 20:14 +1100<wrap center 90%> // Developement: #28 Interface, Cache and Searching. //</wrap> 
+
+
+<wrap em>81</wrap>//**:cab75b606f51**// 2015-01-01 22:27 +1100<wrap center 90%> // Development: #28 Interface, Discovering Duplicates. //</wrap> 
+
+
+<wrap em>80</wrap>//**:e5c075d1bb29**// 2014-12-31 22:33 +1100<wrap center 90%> // Development: #28 Interface and filesystem scanning. //</wrap> 
+
+
+<wrap em>79</wrap>//**:6b2602f3644b**// 2014-12-30 21:22 +1100<wrap center 90%> // Development: #28 Early Stages //</wrap> 
+
+
+<wrap em>78</wrap>//**:54e101555101**// 2014-12-30 11:06 +1100<wrap center 90%> // Plugin: Duplicate File Finder Initial Commit. v1.0.0.0 //</wrap> 
+
+
+<wrap em>77</wrap>//**:610617b98a58**// 2014-12-30 09:30 +1100<wrap center 90%> // Improvement: #92 Error Catching added to startup routine. //</wrap> 
+
+
+<wrap em>75</wrap>//**:f0df435adf3d**// 2014-12-24 14:02 +1100<wrap center 90%> // Post Release: Version Number increment after Installer Build 14 12 24 v2.1.1 Beta //</wrap> 
+
+
+<wrap em>74</wrap>//**:4732d39c988a**// 2014-12-24 13:51 +1100<wrap center 90%> // Build x86 SCMS Installer 2.1.1 Beta //</wrap> 
+
+
+<wrap em>73</wrap>//**:c1b8c3f7c75f**// 2014-12-24 13:26 +1100<wrap center 90%> // Build x64 SCMS Installer 2.1.1 Beta //</wrap> 
+
+
+<wrap em>72</wrap>//**:30c9034a1072**// 2014-12-24 13:06 +1100<wrap center 90%> // Improvement: #92 removed project level import. //</wrap> 
+
+
+<wrap em>71</wrap>//**:5fabb6697d93**// 2014-12-24 11:47 +1100<wrap center 90%> // Improvement: #92 Uncommented out un-used commands. //</wrap> 
+
+
+<wrap em>70</wrap>//**:e6888b8530a8**// 2014-12-24 11:46 +1100<wrap center 90%> // Improvement: #92 Added Service status reporting with a 100 second delay. //</wrap> 
+
+
+<wrap em>69</wrap>//**:43657f832459**// 2014-12-24 11:44 +1100<wrap center 90%> // Adjusted to reflect beta //</wrap> 
+
+
+<wrap em>68</wrap>//**:ec69fa5ad159**// 2014-12-22 21:23 +1100<wrap center 90%> // Fix: #139 Check if Path variable empty. //</wrap> 
+
+
+<wrap em>67</wrap>//**:3cbcb8bbdfda**// 2014-12-22 14:03 +1100<wrap center 90%> // Debug commit #138 //</wrap> 
+
+
+<wrap em>66</wrap>//**:318de9de4ecc**// 2014-12-22 13:34 +1100<wrap center 90%> // Improvement: #138 added data Dir to installer. //</wrap> 
+
+
+<wrap em>65</wrap>//**:d8655ce7c722**// 2014-12-21 22:11 +1100<wrap center 90%> // Debugging //</wrap> 
+
+
+<wrap em>64</wrap>//**:53ef513b5427**// 2014-12-21 22:11 +1100<wrap center 90%> // Fix: #134 Inventory file now only as large as 700kb pre encoding before a new file is created. //</wrap> 
+
+
+<wrap em>63</wrap>//**:6425217a34dc**// 2014-12-21 10:19 +1100<wrap center 90%> // Fix: #134 Filename now optional. //</wrap> 
+
+
+<wrap em>62</wrap>//**:3d3167887779**// 2014-12-21 10:18 +1100<wrap center 90%> // Upload command now scans the data dir for files to upload if no filename is provided. //</wrap> 
+
+
+<wrap em>61</wrap>//**:6235c2219a9e**// 2014-12-21 10:09 +1100<wrap center 90%> // Fix: file output now corrected. //</wrap> 
+
+
+<wrap em>60</wrap>//**:4de119f7032c**// 2014-12-21 10:08 +1100<wrap center 90%> // Fix: Added PC Details to functions. //</wrap> 
+
+
+<wrap em>59</wrap>//**:023f16dfb8d2**// 2014-12-21 10:06 +1100<wrap center 90%> // Improvement: adjusted string parameters //</wrap> 
+
+
+<wrap em>58</wrap>//**:9d2a1d298321**// 2014-12-21 10:06 +1100<wrap center 90%> // Improvement: adjusted function to check if file input was an array. //</wrap> 
+
+
+<wrap em>57</wrap>//**:377c44ea5369**// 2014-12-20 16:46 +1100<wrap center 90%> // Development: #134 DirectoryHashes Function edit to delete save file if exist. //</wrap> 
+
+
+<wrap em>56</wrap>//**:43dc8e10a128**// 2014-12-20 16:45 +1100<wrap center 90%> // Improvement: #134 Code cleanup of DirectoryHashes. //</wrap> 
+
+
+<wrap em>55</wrap>//**:38b0a4e8c46f**// 2014-12-20 16:43 +1100<wrap center 90%> // Improvement: #134 Amended function FileEncode to use a given filename. //</wrap> 
+
+
+<wrap em>54</wrap>//**:9e5700dfef06**// 2014-12-19 22:05 +1100<wrap center 90%> // Debugging //</wrap> 
+
+
+<wrap em>53</wrap>//**:f942574b9858**// 2014-12-19 22:04 +1100<wrap center 90%> // Code Cleanup //</wrap> 
+
+
+<wrap em>52</wrap>//**:4504bad70b7c**// 2014-12-19 21:47 +1100<wrap center 90%> // Fix: #134 Created Function DirectoryHashes to gather file information and hash all files within a directory tree. //</wrap> 
+
+
+<wrap em>51</wrap>//**:77f7eb371d8e**// 2014-12-19 21:45 +1100<wrap center 90%> // Code Cleanup //</wrap> 
+
+
+<wrap em>50</wrap>//**:d41a960355ec**// 2014-12-19 21:44 +1100<wrap center 90%> // Improvement: #136 Cleaned and redesigned directory string sanitize function for efficiency. //</wrap> 
+
+
+<wrap em>49</wrap>//**:902b96af0157**// 2014-12-19 21:39 +1100<wrap center 90%> // Improvement: #136 Created a function to log to the SCMS file. //</wrap> 
+
+
+<wrap em>48</wrap>//**:5730e38f59bd**// 2014-12-19 15:52 +1100<wrap center 90%> // Improvement: #136 Created a directory string sanitize function. //</wrap> 
+
+
+<wrap em>47</wrap>//**:4d75f375f223**// 2014-12-19 14:05 +1100<wrap center 90%> // Improvement: #136 Created InstalledApplicationKeys() Function to output registry paths containing installed software. //</wrap> 
+
+
+<wrap em>46</wrap>//**:78533255bb87**// 2014-12-18 21:03 +1100<wrap center 90%> // Fix: Adjusted function output to match the return so an exception would not be thrown. //</wrap> 
+
+
+<wrap em>45</wrap>//**:ddb71f6be861**// 2014-12-18 13:21 +1100<wrap center 90%> // Feature: Added trim trailing slash from directory path //</wrap> 
+
+
+<wrap em>44</wrap>//**:e125ff93fdc0**// 2014-12-18 13:20 +1100<wrap center 90%> // Feature: sha256 File Hashing //</wrap> 
+
+
+<wrap em>43</wrap>//**:e35ce3f0f8ec**// 2014-12-18 08:25 +1100<wrap center 90%> // Improvement: #134 Moved inventory functions into their own file. //</wrap> 
+
+
+<wrap em>42</wrap>//**:3e88ba7fb95a**// 2014-12-14 12:06 +1100<wrap center 90%> // Increment version number after release //</wrap> 
+
+
+<wrap em>41</wrap>//**:050cbe0efe86**// 2014-12-14 12:00 +1100<wrap center 90%> // Release: x64 Beta Installer V 2.1.0. scms.dll v1.1.3.1 soetray.exe v2.1.0.0 scmsservice.exe v2.1.0.0 and update.exe v1.1.0.0 //</wrap> 
+
+
+<wrap em>40</wrap>//**:de1930b7b274**// 2014-12-14 11:55 +1100<wrap center 90%> // Fix: #20 Adjusts the msi DB install sequence. //</wrap> 
+
+
+<wrap em>39</wrap>//**:45917dd40427**// 2014-12-14 10:13 +1100<wrap center 90%> // Fix: #132 Adjusted installer to include project output instead of pre-staged files. //</wrap> 
+
+
+<wrap em>38</wrap>//**:21ae06395ac6**// 2014-12-14 10:12 +1100<wrap center 90%> // Code cleanup //</wrap> 
+
+
+<wrap em>37</wrap>//**:c249ffb3802c**// 2014-12-14 10:12 +1100<wrap center 90%> // Improvement: Adjusted Debug settings //</wrap> 
+
+
+<wrap em>36</wrap>//**:4ac33d7a7539**// 2014-12-14 10:11 +1100<wrap center 90%> // Fix: #132 Added siging attributes to out put to sign all output locations. //</wrap> 
+
+
+<wrap em>35</wrap>//**:acb58eb7f0a4**// 2014-12-14 09:55 +1100<wrap center 90%> // Improvement: added Build Output Log //</wrap> 
+
+
+<wrap em>34</wrap>//**:c771886024f3**// 2014-12-13 10:42 +1100<wrap center 90%> // Fix: #125 Increased timeout value of http request //</wrap> 
+
+
+<wrap em>33</wrap>//**:e58d666dbf42**// 2014-12-13 10:41 +1100<wrap center 90%> // Improvement: Adjusted Debug settings //</wrap> 
+
+
+<wrap em>32</wrap>//**:67e0a57a817c**// 2014-12-05 13:26 +1100<wrap center 90%> // Improvement: Adjusted Debug settings //</wrap> 
+
+
+<wrap em>31</wrap>//**:05f4daaaefe6**// 2014-12-03 17:44 +1100<wrap center 90%> // Fixed:Version number was incorrectly inputted. Version Major 1, Minor 1 Build 3 Release 1 //</wrap> 
+
+
+<wrap em>30</wrap>//**:63a7eb584650**// 2014-12-03 17:31 +1100<wrap center 90%> // Build: v1.1.1.2 //</wrap> 
+
+
+<wrap em>29</wrap>//**:945bdc74e063**// 2014-12-03 17:24 +1100<wrap center 90%> // Fix: #125 Added additional logging to catch other errors. //</wrap> 
+
+
+<wrap em>28</wrap>//**:24f775088bf1**// 2014-12-03 17:20 +1100<wrap center 90%> // Improvement: Adjusted Debug settings //</wrap> 
+
+
+<wrap em>27</wrap>//**:c94314572bc1**// 2014-12-03 17:19 +1100<wrap center 90%> // Fix: #125 Increased Timeout Value //</wrap> 
+
+
+<wrap em>26</wrap>//**:846ec6cac96f**// 2014-12-02 19:03 +1100<wrap center 90%> // Fix: Removed unmanaged code debugging so Debugging could occur on x64 machine. //</wrap> 
+
+
+<wrap em>25</wrap>//**:ef651ccab9fa**// 2014-12-02 19:02 +1100<wrap center 90%> // Fix: Returned missing CPUDetail Function that was removed accidently //</wrap> 
+
+
+<wrap em>24</wrap>//**:9c6db89a6bdd**// 2014-11-30 16:29 +1100<wrap center 90%> // Fix: #100: Windows Service Hash Incorrect //</wrap> 
+
+
+<wrap em>23</wrap>//**:bba4d85bfcd8**// 2014-11-29 16:10 +1100<wrap center 90%> // Increment after Release: SCMS.dll v1.1.0.0. to v 1.1.0.1 //</wrap> 
+
+
+<wrap em>22</wrap>//**:8fab76e25e5c**// 2014-11-29 14:38 +1100<wrap center 90%> // Fix: Ref Ticket #101. Added Service File Hash details. //</wrap> 
+
+
+<wrap em>21</wrap>//**:c74966118221**// 2014-10-19 08:38 +1100<wrap center 90%> // FIX: Updated version numbers to NFC standard system //</wrap> 
+
+
+<wrap em>19</wrap>//**:6cd3c1588735**// 2014-09-02 12:40 +1000<wrap center 90%> // Installer Built: SCMS_Client_x64_V2.0.0.0-R7_Beta_S1 //</wrap> 
+
+
+<wrap em>18</wrap>//**:e25afa5d22d7**// 2014-09-02 12:30 +1000<wrap center 90%> // (Code Cleanup) Moved each server command into its own file //</wrap> 
+
+
+<wrap em>16</wrap>//**:577a3972d56b**// 2014-06-21 11:50 +1000<wrap center 90%> // Updated Post build command to sign files every time the project is built. //</wrap> 
+
+
+<wrap em>15</wrap>//**:3e84cfd15731**// 2014-06-21 10:25 +1000<wrap center 90%> // added client installer ignore from root dir //</wrap> 
+
+
+<wrap em>14</wrap>//**:e941b594b484**// 2014-06-21 10:23 +1000<wrap center 90%> // Installer Build: SCMS_Client_x86_V2.0.0.0-R6_Beta_S1 //</wrap> 
+
+
+<wrap em>13</wrap>//**:747fa51313ae**// 2014-06-21 10:21 +1000<wrap center 90%> // added installer MSI to ignore //</wrap> 
+
+
+<wrap em>12</wrap>//**:98b2616b62fa**// 2014-06-21 10:20 +1000<wrap center 90%> // Installer Build: SCMS_Client_x64_V2.0.0.0-R6_Beta_S1 //</wrap> 
+
+
+<wrap em>11</wrap>//**:66f7e133d4c1**// 2014-06-21 10:18 +1000<wrap center 90%> // re-Added installer Header //</wrap> 
+
+
+<wrap em>10</wrap>//**:48588cf61d12**// 2014-06-13 22:02 +1000<wrap center 90%> // Rebuilt SCMSService.exe, SOETray.exe, SCMS.dll to confirm there is still a bug. Bug #07 //</wrap> 
+
+
+<wrap em>9</wrap>//**:b3be60a88f03**// 2014-06-13 21:23 +1000<wrap center 90%> // Merge with Master //</wrap> 
+
+
+<wrap em>8</wrap>//**:ea0f5b913cbe**// 2014-06-13 21:19 +1000<wrap center 90%> // Created //</wrap> 
+
+
+<wrap em>5</wrap>//**:54d17c8568e4**// 2014-06-13 21:03 +1000<wrap center 90%> // Original Development Repo Import //</wrap> 
+
+
+<wrap em>4</wrap>//**:90d54eece8fe**// 2014-06-13 21:01 +1000<wrap center 90%> // Original Master repo import //</wrap> 
+
+
+<wrap em>3</wrap>//**:dcb716ab0491**// 2014-06-01 11:23 +1000<wrap center 90%> // Bug: 19 Create Plugin Folder. //</wrap> 
+
+
+<wrap em>2</wrap>//**:ca6ad8ba8b5a**// 2014-06-13 20:53 +1000<wrap center 90%> // Bug #37 Code Cleanup //</wrap> 
+
+
+<wrap em>1</wrap>//**:fbee5d77fe42**// 2014-06-13 20:51 +1000<wrap center 90%> // Initial Commit //</wrap> 
+
+
+ 
+Auto Generated File 

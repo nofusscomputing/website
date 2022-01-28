@@ -1,0 +1,43 @@
+====== Available Applications XML File ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+This file is used by the Application Manager to display a list of available applications.
+
+===== ApplicationPackage =====
+This node is sub node of 'Packages' but the root node for the application available for install. This node has no sub-nodes. This node contains attributes that pertinent to the application that are displayed within the GUI. There must be a minimum of one node but can contain as many as you wish. 
+
+
+==== Attributes ====
+
+^  Attribute Name  ^  Type  ^  Valid Values  ^  Max Length  ^  Description  ^
+| Arch  |  String  |  AMD64\\ Any\\ x86  | 5  | Used to determine what processor architecture to process this application on.  |
+| Category  |  String  |  ???  |   | What category the application will be displayed under.  |
+| [Logo]  |  String  |  ???  |   | The image name for the Application, inc file extension.  |
+| ID  |  String  |  ASCII Chars  | 5  | This is a unique value assigned to each application. if you use a SHA256 then our database will be queried for the application details. |
+| Name  |  String  |  ASCII Chars  | 255  | The value used here is what is presented to the end user in the log file.  |
+| [Description]  |  String  |  ASCII Chars  | ????  | The is used to display the description on the GUI.  |
+| Version  |  Float  |  Major.Minor[.Build[.Revision]]\\ i.e.\\ 1.2\\ 1.2.3\\ 1.2.3.4  |   | This attribute contains the version to be installed. A valid Value is the version that is found in the registry after it has been installed.  |
+| Reboot  |  Boolean  |  TRUE\\ FALSE  | 5  | Regardless for what exit codes tell the Application manager to do if this is set to true then a reboot will occur after installation.  |
+| [Uninstall]  |  String  |  ASCII Chars  |   | This value contains the Registry Key Name that will be used to determine if the Application is installed.  | 
+| [InstallerSize]  |  Sting  |  ASCII Chars  | ???  | The download size of the installer.  |
+| //Values in '[ ]' are optional//  |||||
+
+
+====== Example Download ======
+<WRAP center download 95%>
+<code xml Available-Applications-Template.xml>
+<Packages>
+	<ApplicationPackage
+		Category=""
+		Logo=""
+		Arch=""
+		ID=""
+		Name=""
+		InstallerSize=""
+		Version=""
+		Reboot="" 
+		Uninstall="" />
+</Packages>	
+</code>
+</WRAP>
