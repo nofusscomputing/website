@@ -27,6 +27,7 @@ Lint Markdown:
 
 Static Pages:
   extends: .MKDocs_Build
+  needs: [ 'Lint Markdown' ]
 
 
 pages:
