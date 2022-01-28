@@ -78,6 +78,28 @@ class Data:
 
             self.driver.get(check_url)
 
+            links =  self.driver.find_elements_by_css_selector("a")
+
+            for link in links:
+
+              link_location = link.location
+
+              url = link.get_attribute('href')
+
+              link = self.parse_url(url)
+
+              hyperlink_source_file = {'name': source_file, 'location': link_location}
+
+              if link['url_id'] in data['hyperlinks']:
+
+                data['hyperlinks'][link['url_id']]['source_files'].append(hyperlink_source_file)
+
+              else:
+
+                link['source_files'] = [ hyperlink_source_file ]
+                data['hyperlinks'][link['url_id']] = link
+
+
             events = [self.process_browser_log_entry(entry) for entry in self.driver.get_log('performance')]
 
             for entry in events:
