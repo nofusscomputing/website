@@ -25,6 +25,8 @@ class Test:
 
             check_url = data['url']
 
+            print(str(data))
+
             assert data['request_protocol'] == 'https', f"Insecure Request to domain [{data['request_path']}] in source files [{data['source_files']}]"
 
             assert data['domain'] in self.approved_external_requests, f"A request is being made to a non-approved domain [{data['domain']}] path [{data['request_path']}] in source files [{data['source_files']}]"
