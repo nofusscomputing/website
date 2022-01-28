@@ -84,13 +84,13 @@ Unit Tests:
     - echo "[DEBUG] python_exit[$python_exit]"
 
 
-Integration Tests:
-  extends: .Pytest_template
-  needs: 
-    - pages
-    - 'Unit Tests'
+#Integration Tests:
+#  extends: .Pytest_template
+#  needs: 
+#    - pages
+#    - 'Unit Tests'
   script:
-   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
+#   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
 
 Gitlab Release:
     extends:
