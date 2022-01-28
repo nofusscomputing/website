@@ -87,7 +87,7 @@ Integration Tests:
     - pages
     - 'Unit Tests'
   script:
-   - echo "placeholder job for integration tests"
+   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
 
 Gitlab Release:
     extends:
