@@ -16,6 +16,32 @@ class Data:
       response = json.loads(entry['message'])['message']
       return response
 
+    def parse_url(self, url):
+
+      request_protocol = re.match("^[http|file]+s?", url).group(0)
+
+      url_id = hashlib.md5(bytes(url, 'utf-8')).hexdigest()
+
+      if re.match("^http.*", url) is not None:
+        
+        domain = re.match(r'^([a-z]+[\.|a-z|]+)',url.replace(request_protocol + '://', '')).group(0)
+        
+        request_path = url.replace(request_protocol + '://','').replace(domain, '')[1:]
+        
+      elif re.match("^file.*", url) is not None:
+        
+        domain = 'file'
+        
+        request_path = url.replace(request_protocol + '://','')[1:]
+
+      return {
+        'url_id': url_id,
+        'request_protocol': request_protocol,
+        'domain': domain,
+        'request_path': request_path
+         }
+
+
     def __init__(self):
 
         caps = DesiredCapabilities.CHROME
