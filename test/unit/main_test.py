@@ -15,7 +15,7 @@ class Test:
         argvalues=[link for url_id, link in data.test_data['hyperlinks'].items() if link['request_protocol'][0:4] =='http'], 
         ids=[url_id for url_id, link in data.test_data['hyperlinks'].items() if link['request_protocol'][0:4] =='http']
     )
-    def test_hyperlink_alive_check(self, data):
+    def test_hyperlink_external_alive_check(self, data):
         """Test hyperlinks that are found within each page of the site.
 
         SSL verification has been disabled as this test only checks if the link is alive and valid.
