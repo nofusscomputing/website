@@ -36,3 +36,6 @@ class Test:
     def teardown_method(self):
         pass
 
+    def teardown_class(self):
+        del self.data
+
