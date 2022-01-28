@@ -1,7 +1,7 @@
 {
     "python.pythonPath": "dev_env/bin/python",
     "python.testing.pytestArgs": [
-        "--verbose", "--junit-xml=./unit_test.junit.xml", "--override-ini=pytest.ini", "--tb=line", "test"
+        "--verbose", "--junit-xml=unit_test.junit.xml", "--tb=line", "test"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
