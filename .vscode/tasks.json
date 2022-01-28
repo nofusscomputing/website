@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "command": "bash",
+    "showOutput": "always",
+    "args": [
+        "-c"
+    ],
+    "tasks": [
+        {
+            "suppressTaskName": true,
+            "args": [
+                "cd ${workspaceFolder}; . dev_env/bin/activate; pip install -r gitlab-ci/mkdocs/requirements.txt; pip install -r requirements.txt; mkdocs build --clean --strict"
+            ],
+            "problemMatcher": [],
+            "label": "MKDocs Build Static Site",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
