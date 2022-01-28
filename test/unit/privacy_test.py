@@ -34,6 +34,28 @@ class Test:
             assert data['request_path'] in self.approved_external_requests[data['domain']], f"A request is being made to a non-approved path [{data['request_path']}] on domain [{data['domain']}] in source files [{data['source_files']}]"
 
 
+    @pytest.mark.parametrize(
+        argnames='data', 
+        argvalues=[link 
+            for url_id, link in data.test_data['hyperlinks'].items() 
+                if link['request_protocol'][0:4] =='http'], 
+        ids=[url_id for url_id, link in data.test_data['hyperlinks'].items() if link['request_protocol'][0:4] =='http']
+    )
+    def test_ssl_hyperlinks_only(self, data):
+        """Ensure all hyperlinks from our site are to https ONLY
+
+        Tests to ensure that all hyperlinks from our site are to 'https' links only. Any link that is not secure will fail this test.
+
+        Args:
+            data (dict): A dictionary of hyperlinks constructed within conftest.py
+        """
+
+        print(str(data))
+        
+        assert data['request_protocol'] == 'https', (
+            f"Hyperlink [{data['url_id']}] to location [{data['url']}] is insecure"
+        )
+
 
     def teardown_method(self):
         pass
