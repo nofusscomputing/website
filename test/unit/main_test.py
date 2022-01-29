@@ -64,6 +64,12 @@ class Test:
 
         request_path = str(data['request_path'])
 
+        if request_path[0:1] == '/':
+            if request_path[0:1] == request_path:
+                request_path = 'index.html'
+            else:
+                request_path = request_path[1:]
+
         if '#' in request_path:
             request_path_split = request_path.split('#')
             request_path = str(request_path_split[0])
@@ -81,9 +87,6 @@ class Test:
         ):
 
             request_path = request_path
-
-        request_path = request_path.replace('/' + path_suffix[1:] + '/','')
-        request_path = request_path.replace(path_suffix[1:] + '/','')
 
         print('DEBUG consructed path:' + request_path)
 

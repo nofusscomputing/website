@@ -34,6 +34,8 @@ class Data:
         
         request_path = url.replace(request_protocol + '://','')[1:]
 
+      request_path = request_path.replace(self.suffux_path[1:], '')
+
       return {
         'url_id': url_id,
         'url': url,
