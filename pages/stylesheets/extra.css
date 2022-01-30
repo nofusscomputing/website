@@ -70,3 +70,52 @@ a.tags:hover {
 .mdx-author p > span {
   display: block;
 }
+
+
+.container{
+  width: 100%;
+}
+.container .row {
+  width: 95%; 
+  margin: 0 auto;
+  height: fit-content;
+}
+
+.container .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container .column {
+  float:  left;
+  width: 50%;
+  padding-top: 30px;
+  
+}
+
+.container .column .mdx-author {
+  padding-left: 30px;
+}
+
+.container .column h2 {
+  margin: 0px;
+  text-align: center;
+}
+
+.container .column ul {
+  margin: 0px;
+}
+
+.container .column h3 {
+  margin: 0px;
+}
+
+.container .column img {
+  height: 22px;
+}
+@media screen and ( max-width: 700px ) { 
+  .container .column { 
+    float: none;
+    width: 100%;
+  }
+}
