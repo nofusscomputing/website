@@ -89,6 +89,7 @@ a.tags:hover {
 .container .column {
   float:  left;
   width: 50%;
+  padding-top: 30px;
   
 }
 
@@ -98,6 +99,7 @@ a.tags:hover {
 
 .container .column h2 {
   margin: 0px;
+  text-align: center;
 }
 
 .container .column ul {
