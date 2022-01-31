@@ -2,18 +2,18 @@
 
 {% block content %}
   {{ page.content }}
-  {% set blog_posts = [] %}
+  {% set article_posts = [] %}
   {% for page in nav.pages %}
     {% if page.url.startswith(config.extra.blog.dir) and page.meta.date is defined %}
       <!-- or "" suppresses "None" output-->
-      {{ blog_posts.append( page ) or "" }}
+      {{ article_posts.append( page ) or "" }}
     {% endif %}
   {% endfor %}
 
-  {% for page in (blog_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
+  {% for page in (article_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
       <h2><a href="{{ page.url|url }}">{{ page.title }}</a></h2>
       <hr>
-      {% include "partials/blog_metadata.html" %}
+      {% include "partials/article_metadata.html" %}
       <p>
         {{ page.meta.description }}
       </p>

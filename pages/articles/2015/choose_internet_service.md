@@ -2,7 +2,7 @@
 title: Choosing an Internet Service
 description: The Internet has now become a mainstream item within the average Australian home. The Internet has become so ingrained within our daily lives that for those of us that were around when the Internet was born have actually forgotten what life was like without it. I remember when I was growing up that if we wanted to learn about something you would go to the local library or to a family/friends house to look through their Encyclopaedia Britannica which more often than not was at least five years out of date. Believe it or not that was only 15 to 20 years ago. Now if I haven't lost you already and hopefully by the end of this article I have been able to provide you with more insight on being able to choose an Internet service from an ISP with a little more of an understanding of the technology behind that Internet connection.
 date: 2015-02-25
-template: blog_post.html
+template: article.html
 type: blog
 author: jon
 tags:

@@ -2,7 +2,7 @@
 title: How I use Microsoft Deployment Toolkit
 description: This article is a record of how I setup my Microsoft Deployment Toolkit. There are many ways to set it up. However this is how I do it.
 date: 2014-09-01
-template: blog_post.html
+template: article.html
 type: blog
 author: jon
 about: https://en.wikipedia.org/wiki/Microsoft_Deployment_Toolkit
