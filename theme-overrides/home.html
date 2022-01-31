@@ -3,21 +3,27 @@
 {% block content %}
 <div itemscope itemtype="https://schema.org/WebSite">
   {{ page.content }}
-  {% set blog_posts = [] %}
+  {% set article_posts = [] %}
   {% for page in nav.pages %}
     {% if page.url.startswith(config.extra.blog.dir) and page.meta.date is defined %}
       <!-- or "" suppresses "None" output-->
-      {{ blog_posts.append( page ) or "" }}
+      {{ article_posts.append( page ) or "" }}
     {% endif %}
   {% endfor %}
 
 <div class="container">
   <div class="row" >
-    <div itemprop="hasPart" itemscope itemtype="https://schema.org/Blog" class="column">
+    <div itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork" class="column">
       <a itemprop="url" href="articles/index.html"><h2 itemprop="name">Articles</h2></a>
       <ul>
-      {% for page in (blog_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
-      <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      {% for page in (article_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
+      {% if page.meta.type == "blog" %}
+        <li itemprop="hasPart" itemscope itemtype="https://schema.org/BlogPosting">
+      {% elif  page.meta.type == "article" %}
+        <li itemprop="hasPart" itemscope itemtype="https://schema.org/Article">
+      {% else %} 
+        <li>
+      {% endif %}
         <p>
           <h3><a itemprop="url" href="{{ page.url|url }}"><span itemprop="name">{{ page.title }}</span></a></h3>
           <aside class="mdx-author">

@@ -1,6 +1,6 @@
 ---
 
-template: blog_list.html
+template: article_list.html
 title: No Fuss Computing Articles
 
 ---

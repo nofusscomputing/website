@@ -2,9 +2,10 @@
 title: Choosing an Internet Service
 description: The Internet has now become a mainstream item within the average Australian home. The Internet has become so ingrained within our daily lives that for those of us that were around when the Internet was born have actually forgotten what life was like without it. I remember when I was growing up that if we wanted to learn about something you would go to the local library or to a family/friends house to look through their Encyclopaedia Britannica which more often than not was at least five years out of date. Believe it or not that was only 15 to 20 years ago. Now if I haven't lost you already and hopefully by the end of this article I have been able to provide you with more insight on being able to choose an Internet service from an ISP with a little more of an understanding of the technology behind that Internet connection.
 date: 2015-02-25
-template: blog_post.html
+template: article.html
 type: blog
 author: jon
+copyrightHolder: jon
 tags:
   - ADSL
   - Archive
@@ -26,14 +27,17 @@ Below I will cover a little of the technical details and hopefully bringing into
 
 <p hidden>#more</p>
 
+
 ## Bandwidth
 
 Bandwidth is the actual speed of your Internet connection and its unit of measure is bits per second. So basically if you think water pipe, only so much water will flow through a water pipe but if you increase it’s pressure you will receive more water. For the actual Internet connection different technology is used to essentially achieve the same
 thing.
 
+
 ## Quota
 
 This is how much you can download and/or upload from the Internet. Its unit of measure is bytes. Think of a water tank, larger the tank the more quota you have available. This will be set by your ISP and 9 times out of 10 will be limited. Every Time you connect to the Internet you are using this available quota.
+
 
 ## Theory
 
@@ -43,25 +47,31 @@ Communication between different components or computers (network or The Internet
 
 So why use different units of measure for the same data? simply put, computers are electronic devices which communicate with an electronic signal with 1 being on and zero being off; basically the signal is either on or off. So the transmission of data is serial or singular and storage is in parallel or stored in octets which is a group of bits. Hence bits and bytes. generally you will find lowercase letters are used to represent bits and uppercase letters are used for bytes.
 
+
 ### Connection types
 
 The common Internet connection types in Australia are ADSL or via the Mobile network. Very rarely used but still available if you look hard enough dial-up. and the newest and greatest is the National Broadband Network or NBN. With the exception of the NBN all of the above connection types will have a max speed. This max speed is a theoretical maximum speed and there are many factors which generally slow down your connection. All connection methods have a technological peak, which basically means there is no known way to improve that technology any further.
+
 
 ### Dial-Up
 
 Dial-UpInternet was the first mainstream way to connect to the Internet. For this to happen you needed an active phone line, a computer with a MODEM (short for modulator/demodulator) and you would plug a phone cable into your computer, which would dial a number to connect to the Internet. At its technological peak the max theoretical download speed was 56kb and approx 33kb up. Dial-up modems are generally part of the computer. The downside to Dial-up is that it relies on good quality phone cables, basically if you have a bad phone line you will have unstable and slower Internet. Dial-up also suffers from signal attenuation which means the further away from the telephone exchange the lower the speed your Internet is going to be. The biggest downside to having Dial-up Internet is that you can either be connected to the Internet or on the phone, not both.
 
+
 ### ADSL
 
 Asynchronous Digital Subscriber Line or ADSL is the most common Internet in Australia. This is also commonly referred to as broadband Internet, the biggest difference between ADSL and Dial-up is that it is always on. When ADSL first arrived it had a speed of 1.5mb, which was a massive increase over Dial-up. As ADSL evolved its speed increased, when this occurred its name slightly changed to suit the technological level, ADSL1, ADSL2 and finishing with ADSL2+ which has a maximum theoretical download speed of 24Mb and 2Mb Up. An ADSL connection like dial-up Internet requires a modem and suffers with the same line issues. Where ADSL is an improvement over Dial-up is that you can still make telephone calls when you are have an active Internet connection for this you will need a line filter. To utilise an ADSL connection you require an ADSL modem.
+
 
 ### Mobile Network
 
 Again this method of connecting to the Internet has been around for a while and with the invention of the smartphone has become quite a common way to “surf the Web”. 4th generation or 4G being the current technology has a max theoretical speed of 50Mb. The connection speed is shared amongst all users utilizing that mobile tower to connect to the Internet, and if you don’t have good mobile reception you will not have a stable Internet connection.
 
+
 ### NBN
 
 The National broadband network or NBN as it is known is the new way to connect to the Internet. The NBN unlike Dial-up or ADSL does not use a phone line to connect to the Internet. The NBN uses fiber optic cable, which uses light not electricity to communicate. Fiber optic cable can be thinner than a human hair. Fiber Optic cable, or fiber networks have one purpose; transmit data, not voice or electronic signals like a copper cable Since fiber is designed for networking you require a router to connect to it. A router looks very similar to an ADSL modem. Unlike the other Internet connection methods above, communication in either direction is the same. Within Australia this is not the case, and for whatever reason you will find most NBN capable ISPs will still have packages with different upload and download speeds. Fiber networks are very mature and their speed is actual, not theoretical maximums and are capable of transmitting data at 10gbps. Using that speed for connecting to the Internet is overkill and you will find that most ISPs offer no connection speed above 100mbps at the moment.
+
 
 ## Choosing a suitable Internet service
 
@@ -73,13 +83,16 @@ Now hopefully by now I have given you a little better understanding of the conne
 
 - bang for buck
 
+
 ### Availability in Your Area
 
 For a majority of Australians, ADSL is the best Internet service you will have available. The most annoying thing when trying to connect an ADSL service is the wait time. This wait time is due to the requirement for a technician to have to go to your local telephone exchange to actually connect you, that is if there are spare ports available in the exchange. If though, you can get the NBN, go for it. Seriously you are being foolish if you don't. Why? the NBN is an actual data network and the speed you pay for is what you get, overall the NBN is more reliable.
 
+
 ### What You Will be Using the Internet For?
 
 Most website designers will aim for a page load time of within one-two seconds; Even now how website technology is becoming more media focused, I would not recommend any speed lower that ADSL2+(24mbps) or 12mbps for the NBN. Why the different speeds? Remember that ADSL is a theoretical maximum, on average. Most ADSL users will have an actual connection speed of between 8mbps-22mbps and the NBN is actual speed. Anything faster than this for just “surfing the web” is overkill, and a waste of money. Where would you require a faster connection speed? if you start to use services like netflix and/or Foxtel IPTV to stream videos. Having more than ~5 users, may also be a consideration for a speed increase. How much quota do you need? if you have had the Internet before, go look at your previous bills, most of the time you will see what you used for the billing period, use this figure as a basis to guesstimate how much quota you are going to need. If you have never had an Internet package before then as a guide I would recommend nothing less than 10GB quota per month for the average light Internet user. I can't emphasize this enough, please do your research before you take this as gospel. Most people do know someone who <s>“knows boats”</s> would be able to assist in assessing how much quota you may require.
+
 
 ### Bang for Buck
 
@@ -102,6 +115,7 @@ Read the fine print………. READ THE FINE PRINT……… oh, did I mention fin
 - support
 
 - your responsibilities
+
 
 ### Further Considerations
 
@@ -127,6 +141,7 @@ Read the fine print………. READ THE FINE PRINT……… oh, did I mention fin
 - **Support** It's common practice for ISPs to outsource the first stage of customer support. This problem is a plague that needs to be truncated from the IT((Information Technology)) industry. Why? 9 times out of 10 the person on the other end of the phone either does not have a good grasp on our native language or has an accent that is so thick you can not understand them, which makes it very difficult for the hearing impaired. When this occurs the assistance you called for doesn't happen, and is escalated to someone else in the chain who may or may not be able to help you. In the end you are stuck with no internet and built up frustration from a 1:30h phone call.
 
 There are however some ISPs who are old school. they will give you a callback after being on hold for a few minutes and if your assistance call needs to be escalated will either call you back or give a detailed handover to the next person you need to speak to. bottom line if you are not technically minded than ask around to find a good ISP who can assist you and be wary of outsourced tech support.
+
 
 ## Conclusion
 

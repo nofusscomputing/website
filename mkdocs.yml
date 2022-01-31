@@ -114,6 +114,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 #  - pymdownx.emoji:
 #      emoji_index: !!python/name:materialx.emoji.twemoji 
 #      emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -150,14 +152,6 @@ nav:
 - Operations: 
 
   - operations/index.md
-
-  - Development:
-
-    - operations/syntax.md
-
-- Wiki: 
-
-  - wiki/index.md
 
 - Contact Us: contact.md
 

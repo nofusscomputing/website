@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ page.content }}
+  {% set article_posts = [] %}
+  {% for page in nav.pages %}
+    {% if page.url.startswith(config.extra.blog.dir) and page.meta.date is defined %}
+      <!-- or "" suppresses "None" output-->
+      {{ article_posts.append( page ) or "" }}
+    {% endif %}
+  {% endfor %}
+  <span itemscope itemtype="https://schema.org/CreativeWork">
+  {% for page in (article_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
+    {% if page.meta.type == "blog" %}
+      <span itemprop="hasPart" itemscope itemtype="https://schema.org/BlogPosting">
+    {% elif  page.meta.type == "article" %}
+      <span itemprop="hasPart" itemscope itemtype="https://schema.org/Article">    
+    {% endif %}
+      <h2 itemprop="name"><a href="{{ page.url|url }}" itemprop="url">{{ page.title }}</a></h2>
+      <hr>
+      {% include "partials/article_metadata.html" %}
+      <p>
+        {{ page.meta.description }}
+      </p>
+      <!-- Use a hidden p tag to provide a preview -->
+      {% if config.extra.blog.extended_preview %}
+        <a href="{{ page.url|url }}#more">
+          <span class="twemoji">
+            {% include ".icons/octicons/arrow-right-24.svg" %}
+          </span>
+          Continue reading
+          <hr>
+        </a>
+      {% endif %}
+      {% if page.meta.type %}</span>{% endif %}
+  {% endfor %}
+  </span>
+{% endblock %}

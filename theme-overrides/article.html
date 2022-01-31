@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<span itemscope itemtype="https://schema.org/CreativeWork">
+  {% if page.meta.type == "blog" %}
+  <span itemprop="hasPart" itemscope itemtype="https://schema.org/BlogPosting">
+  {% elif  page.meta.type == "article" %}
+  <span itemprop="hasPart" itemscope itemtype="https://schema.org/Article">    
+  {% endif %}
+   
+    <h1 itemprop="name">{{ page.title }}</h1>
+    {% include "partials/article_metadata.html" %}
+    <hr>
+    <span itemprop="text">{{ page.content }}</span>
+
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="font-size: 10px;">
+      Published by: <span itemprop="name">{{ config.site_name }}</span>, <span itemprop="url">{{ config.site_url }}</span>
+    </span>
+    {% if page.meta.copyrightHolder %}
+    <br>
+    <span itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person" style="font-size: 10px;">
+      Copyright <span itemprop="name">{{ page.meta.copyrightHolder }}</span>
+    </span>
+    {% endif %}
+    {% if page.meta.type %}</span>{% endif %}
+</span>
+{% endblock %}

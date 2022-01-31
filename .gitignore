@@ -5,9 +5,11 @@ aux/
 # ignore dev env
 dev_env
 __pycache__
+package*json
 
 # ignore junit
 *.junit.xml
+.markdownlint-cli2.jsonc
 
 # ignore log files
 *.log

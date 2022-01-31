@@ -5,28 +5,28 @@
     </p>
   {% endif %}
   <p>
-    <span>
+    <span itemprop="author" itemscope itemtype="https://schema.org/Person">
       {% if config.extra.blog.author %}
-        <strong>{{ config.extra.blog.author }}</strong>
+        <strong itemprop="name">{{ config.extra.blog.author }}</strong>
          ·
       {% endif %}
-      {% include "partials/blog_social.html" %}
+      {% include "partials/article_social.html" %}
     </span>
     <span>
       <span class="twemoji">
         {% include ".icons/octicons/calendar-24.svg" %}
       </span>
-      {{ page.meta.date.strftime("%Y-%m-%d") }} ·
-      {% if page.meta.git_revision_date_localized %}Updated {{ page.meta.git_revision_date_localized.replace("\n", "").replace("\r", "") }} <br>{% endif %}
+      <span itemprop="dateCreated">{{ page.meta.date.strftime("%Y-%m-%d") }}</span> ·
+      {% if page.meta.git_revision_date_localized %}Updated <span itemprop="dateModified">{{ page.meta.git_revision_date_localized.replace("\n", "").replace("\r", "") }}</span> <br>{% endif %}
       <span class="twemoji">
         {% include ".icons/octicons/clock-24.svg" %}
-      </span>
+      </span> 
       <!--Min reading time is 1 minute-->
       {% set read_time = page.content | wordcount // config.extra.blog.words_read_per_minute|default(300, true) %}
       {% if read_time == 0 %}
         {% set read_time = 1 %}
       {% endif %}
-      {{ read_time }} min read
+      <span itemprop="timeRequired">{{ read_time }} min </span>read
     </span>
   </p>
 </aside>
