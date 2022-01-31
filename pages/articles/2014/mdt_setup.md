@@ -67,6 +67,7 @@ Each suite folder is setup as follows.
 
 
 ### Add New Application
+
 To add a new application the following process is followed.
 
 - Import an application with source files into the AppTree Folder ensuring you hide it from the deployment wizard.
@@ -74,6 +75,7 @@ To add a new application the following process is followed.
 - Create an application Bundle under the Suite root folder and set its dependency to the application you wish to install, from the AppTree folder.
 
 - if the application you wish to install has dependent applications, select the dependent application bundle from the suite root folder making sure it is set to install before the application that requires it does.
+
 
 ### Update an Application
 
@@ -83,11 +85,14 @@ To add a new application the following process is followed.
 
 - return to the AppTree folder and move the old app to the Archive directory making sure you 'uncheck' the 'hide from deployment wizard'.
 
+
 ### other useful info
 
 - utilize the uninstall key, within each application it will prevent the app from trying to install again.
 
+
 ### Reasoning
+
 This structure was adopted for the following reasons:
 
 - Create Deployment media based on suites (Departments / Groups / ETC.)

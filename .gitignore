@@ -9,6 +9,7 @@ package*json
 
 # ignore junit
 *.junit.xml
+.markdownlint-cli2.jsonc
 
 # ignore log files
 *.log

@@ -12,6 +12,7 @@ We can be found in the following places on the internet:
 
 - [:books: Read the Docs](https://readthedocs.org/profiles/nofusscomputing/)
 
+
 ## Found an issue with a page on this website?
 
 On every page of this website that you are able to edit, you will find this icon :material-pencil:. Located in the top right hand corner of the content. After clicking on this icon, you will be taken to the git repository that contains the page in question for you to edit. An understanding of Git and Gitlab is required for the use of this method.
