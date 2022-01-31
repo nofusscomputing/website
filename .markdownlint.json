@@ -4,7 +4,7 @@
     "indent": 4
   },
   "MD033": {
-    "allowed_elements": [ "div", "s", "span", "u" ]
+    "allowed_elements": [ "div", "s", "span", "u", "p" ]
   },
   "blanks-around-headings":{
     "lines_above": 2,
