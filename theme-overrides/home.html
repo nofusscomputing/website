@@ -13,11 +13,17 @@
 
 <div class="container">
   <div class="row" >
-    <div itemprop="hasPart" itemscope itemtype="https://schema.org/Blog" class="column">
+    <div itemprop="hasPart" itemscope itemtype="https://schema.org/CreativeWork" class="column">
       <a itemprop="url" href="articles/index.html"><h2 itemprop="name">Articles</h2></a>
       <ul>
       {% for page in (article_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
-      <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      {% if page.meta.type == "blog" %}
+        <li itemprop="hasPart" itemscope itemtype="https://schema.org/BlogPosting">
+      {% elif  page.meta.type == "article" %}
+        <li itemprop="hasPart" itemscope itemtype="https://schema.org/Article">
+      {% else %} 
+        <li>
+      {% endif %}
         <p>
           <h3><a itemprop="url" href="{{ page.url|url }}"><span itemprop="name">{{ page.title }}</span></a></h3>
           <aside class="mdx-author">

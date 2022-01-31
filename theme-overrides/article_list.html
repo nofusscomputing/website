@@ -9,9 +9,14 @@
       {{ article_posts.append( page ) or "" }}
     {% endif %}
   {% endfor %}
-
+  <span itemscope itemtype="https://schema.org/CreativeWork">
   {% for page in (article_posts|sort(attribute="meta.date", reverse=True))[:config.extra.blog.list_length] %}
-      <h2><a href="{{ page.url|url }}">{{ page.title }}</a></h2>
+    {% if page.meta.type == "blog" %}
+      <span itemprop="hasPart" itemscope itemtype="https://schema.org/BlogPosting">
+    {% elif  page.meta.type == "article" %}
+      <span itemprop="hasPart" itemscope itemtype="https://schema.org/Article">    
+    {% endif %}
+      <h2 itemprop="name"><a href="{{ page.url|url }}" itemprop="url">{{ page.title }}</a></h2>
       <hr>
       {% include "partials/article_metadata.html" %}
       <p>
@@ -27,5 +32,7 @@
           <hr>
         </a>
       {% endif %}
+      {% if page.meta.type %}</span>{% endif %}
   {% endfor %}
+  </span>
 {% endblock %}
