@@ -5,6 +5,7 @@ date: 2014-09-01
 template: article.html
 type: blog
 author: jon
+copyrightHolder: jon
 about: https://en.wikipedia.org/wiki/Microsoft_Deployment_Toolkit
 tags:
   - Administration
