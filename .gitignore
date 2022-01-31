@@ -5,6 +5,7 @@ aux/
 # ignore dev env
 dev_env
 __pycache__
+package*json
 
 # ignore junit
 *.junit.xml
