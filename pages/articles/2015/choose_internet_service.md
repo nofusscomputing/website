@@ -5,6 +5,7 @@ date: 2015-02-25
 template: article.html
 type: blog
 author: jon
+copyrightHolder: jon
 tags:
   - ADSL
   - Archive
