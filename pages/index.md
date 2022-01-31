@@ -7,6 +7,7 @@ hide:
   - navigation
   - toc
 ---
-# No Fuss Computing
+
+![No Fuss Computing](assets/nfc_header.png)
 
 Home Page
