@@ -56,8 +56,8 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
-    - mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
-  needs: [ 'Static Pages' ]
+    - echo mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
+  needs: [ 'Sub-Repo Pages' ]
   environment: 
     name: staging
     url: $CI_PAGES_URL
