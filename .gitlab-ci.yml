@@ -56,7 +56,7 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
-    - echo mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
+    - mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
   needs: [ 'Sub-Repo Pages' ]
   environment: 
     name: staging
@@ -112,6 +112,50 @@ Unit Tests:
 #    - 'Unit Tests'
 #  script:
 #   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
+
+
+
+.Add_SSHKey: &Add_SSHKey_Before_Script |
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    eval $(ssh-agent -s)
+    SSH_KEY_NAME=SSH_PRIVATE_KEY_${ANSIBLE_USER}
+    echo "Debug SSH_KEY_NAME[$SSH_KEY_NAME]"
+    chmod 700 "${!SSH_KEY_NAME}"
+    ssh-add "${!SSH_KEY_NAME}"
+    #update next line so that ca key can be obtained. original source is ansible repo
+    HOST_SSH_ID=$(cat roles/openssh-server/files/nww-nl/host_ca.pub)
+    echo DEBUG HOST_SSH_ID[$HOST_SSH_ID]
+    echo "@cert-authority *.networkedweb.com $HOST_SSH_ID" > ~/.ssh/known_hosts
+    chmod 700 ~/.ssh/known_hosts
+    ls -la ~/.ssh
+
+
+public_website:
+  stage: publish
+  image: debian:buster-slim
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - echo mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
+    - *Add_SSHKey_Before_Script
+  script:
+    - echo scp -r /public ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
+  needs: [ 'Sub-Repo Pages', 'Unit Tests']
+  environment: 
+    name: production
+    url: https://nofusscomputing.com
+  artifacts:
+    paths:
+    - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "master"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "development" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+      when: manual
+    - when: never
+
+
 
 Gitlab Release:
     extends:
