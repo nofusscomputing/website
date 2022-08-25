@@ -31,6 +31,26 @@ Static Pages:
   needs: [ 'Lint Markdown' ]
 
 
+Sub-Repo Pages:
+  extends: .MKDocs_Build
+#  stage: prepare
+#  image: python:3.7.5-buster
+# turn mkdocs build template script section to a command template so that customizations can be added.
+#  script:
+#    - echo fetch artifacts from child repo's
+#    - echo copy to child repo artifacts to their destination
+#    - *Command_MKDocs_Build
+#    - mv "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build" public
+  needs: [ 'Lint Markdown' ]
+  artifacts:
+    paths:
+    - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+    - when: never
+
+
 pages:
   stage: deploy
   variables:
