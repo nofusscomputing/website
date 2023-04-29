@@ -178,7 +178,7 @@ public_website:
     - echo Debug ANSIBLE_USER[$ANSIBLE_USER]
     - apt update
     - apt install --no-install-recommends -y ssh
-    - echo mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
+    - mv "$CI_PROJECT_DIR/artifacts/prepare/Assemble Site/build" public
     - *Add_SSHKey_Before_Script
   script:
     - echo scp -r /public ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
