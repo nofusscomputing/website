@@ -47,20 +47,30 @@ Assemble Site:
     - mv "$CI_PROJECT_DIR/artifacts/build/Main Site/build" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/"
     #- ls -laR $CI_PROJECT_DIR
     # remove ops placeholder index.html
-    - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/operations/index.html"
-    - echo "cp -rvn" "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+
+    # below 2 lines commented out as need to ffigure out how to download artifacts.
+    #- rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/operations/index.html"
+    #- echo "cp -rvn" "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    
+    
     # copy ops pages into main site, not overwriting
     #- cp -rvn "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/"* "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
-    - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    
+
+    # below line commented out as need to ffigure out how to download artifacts.
+    #- cp -rvf "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    
     - echo "copy prepare files (sitemap, search file) to fullsite (overwrite)"
     - echo "copy each sub-repo build to fullsite (merge)"
 #    - echo mv "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/full-site" public
   needs: 
     - 'Main Site'
-    - project: nofusscomputing/ops
-      job: Static Pages
-      ref: development
-      artifacts: true
+    # only available in gitlab premium
+    # use: - "curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://gitlab.example.com/api/v4/projects/${PROJECT_A_ID}/jobs/${REMOTE_JOB_ID}/artifacts/${REMOTE_FILENAME}"
+    # - project: nofusscomputing/ops
+    #   job: Static Pages
+    #   ref: development
+    #   artifacts: true
   artifacts:
     expire_in: 24 hrs
     when: always
