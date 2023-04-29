@@ -161,7 +161,7 @@ Unit Tests:
     ssh-add "${!SSH_KEY_NAME}"
     #update next line so that ca key can be obtained. original source is ansible repo
     #HOST_SSH_ID=$(cat roles/openssh-server/files/nww-nl/host_ca.pub)
-    HOST_SSH_ID=$(cat ${!SSH_HOST_CA})
+    HOST_SSH_ID=$(cat ${SSH_HOST_CA})
     echo DEBUG HOST_SSH_ID[$HOST_SSH_ID]
     echo "@cert-authority *.networkedweb.com $HOST_SSH_ID" > ~/.ssh/known_hosts
     chmod 700 ~/.ssh/known_hosts
