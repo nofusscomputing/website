@@ -49,7 +49,7 @@ Assemble Site:
     # remove ops placeholder index.html
     
 
-    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: glpat-QA_${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Static%20Pages"'
+    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Static%20Pages"'
     - unzip operations-artifacts.zip
 
 
