@@ -176,6 +176,8 @@ public_website:
   before_script:
     - if [ "0$ANSIBLE_USER" == "0" ]; then ANSIBLE_USER=deploy; fi
     - echo Debug ANSIBLE_USER[$ANSIBLE_USER]
+    - apt update
+    - apt install --no-install-recommends -y ssh
     - echo mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
     - *Add_SSHKey_Before_Script
   script:
