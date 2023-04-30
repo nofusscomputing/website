@@ -186,7 +186,7 @@ public_website:
     - *Add_SSHKey_Before_Script
   script:
     - ssh ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE} sudo rm -Rf ${PUBLIC_WEBSITE_PATH}/*
-    - scp -r "$CI_PROJECT_DIR/public/*" ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
+    - scp -r public/* ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
   needs: [ 'Assemble Site', 'Unit Tests']
   environment: 
     name: production
