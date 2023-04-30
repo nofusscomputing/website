@@ -180,11 +180,13 @@ public_website:
     - apt install --no-install-recommends -y ssh
     - ls -la "$CI_PROJECT_DIR/artifacts/prepare/Assemble Site/build"
     - mv "$CI_PROJECT_DIR/artifacts/prepare/Assemble Site/build" "$CI_PROJECT_DIR/public"
+    - rm -Rf "$CI_PROJECT_DIR/public/build"
     - ls -la "$CI_PROJECT_DIR"
     - ls -la "$CI_PROJECT_DIR/public"
     - *Add_SSHKey_Before_Script
   script:
-    - scp -r "$CI_PROJECT_DIR/public" ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
+    - ssh ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE} sudo rm -Rf ${PUBLIC_WEBSITE_PATH}/*
+    - scp -r "$CI_PROJECT_DIR/public/*" ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
   needs: [ 'Assemble Site', 'Unit Tests']
   environment: 
     name: production
