@@ -49,13 +49,13 @@ Assemble Site:
     # remove ops placeholder index.html
     
 
-    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Static%20Pages"'
+    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Website.Build"'
     - unzip operations-artifacts.zip
 
 
     # below 2 lines commented out as need to ffigure out how to download artifacts.
     - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/operations/index.html"
-    - echo "cp -rvn" "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    - echo "cp -rvn" "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
     
     
     # copy ops pages into main site, not overwriting
@@ -63,7 +63,7 @@ Assemble Site:
     
 
     # below line commented out as need to ffigure out how to download artifacts.
-    - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
     
     - echo "copy prepare files (sitemap, search file) to fullsite (overwrite)"
     - echo "copy each sub-repo build to fullsite (merge)"
