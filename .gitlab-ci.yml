@@ -18,7 +18,7 @@ include:
     file:
       - conventional_commits/.gitlab-ci.yml
       - mkdocs/.gitlab-ci.yml
-      - lint/markdown.gitlab-ci.yml
+      - lint/markdown.gitlab-ci.yaml
       - gitlab_release/.gitlab-ci.yml
 
 
