@@ -27,7 +27,7 @@ nav:
 
   - Ansible Roles: projects/ansible-roles/README.md
 
-  - Gitlab CI Templates: projects/gitlab-ci/README.md
+  - Gitlab CI: projects/gitlab-ci/index.md
 
   - Python Gitlab Management: projects/python-gitlab-management/README.md
 
