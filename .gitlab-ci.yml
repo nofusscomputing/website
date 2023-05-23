@@ -1,6 +1,7 @@
 stages:
     - validation
     - build
+    - prepare
     - deploy
     - test
     - release
@@ -13,11 +14,11 @@ variables:
 
 include:
   - project: nofusscomputing/projects/gitlab-ci
-    ref: f6d7ebeeb2b9d643c37ccbe6e25fa8d7e9dd970d
+    ref: development
     file:
       - conventional_commits/.gitlab-ci.yml
       - mkdocs/.gitlab-ci.yml
-      - validation/.gitlab-ci.yml
+      - lint/markdown.gitlab-ci.yaml
       - gitlab_release/.gitlab-ci.yml
 
 
@@ -25,9 +26,79 @@ Lint Markdown:
     extends: .Lint_Markdown
 
 
-Static Pages:
+Main Site:
   extends: .MKDocs_Build
   needs: [ 'Lint Markdown' ]
+  resource_group: preperation
+
+
+Assemble Site:
+#  extends: .MKDocs_Build
+  stage: prepare
+#  image: python:3.7.5-buster
+# turn mkdocs build template script section to a command template so that customizations can be added.
+  script:
+    - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/source"
+#    - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build"
+    - echo "fetch artifacts from child repo's"
+    - echo "copy static pages source to" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/source"
+    - echo "copy sub-repo source to (merge)" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/source"
+    - echo "mkdocs build source dir"
+#    - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/full-site"
+    - mv "$CI_PROJECT_DIR/artifacts/build/Main Site/build" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/"
+    #- ls -laR $CI_PROJECT_DIR
+    # remove ops placeholder index.html
+    
+
+    - echo "[DEBUG] fetch operations docs"
+    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Website%2EBuild"'
+    - unzip operations-artifacts.zip
+    - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/operations/index.html"
+    - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    - rm -Rf "$CI_PROJECT_DIR/artifacts/build/Website.Build"
+
+
+    - echo "[DEBUG] fetch gitlab-ci project docs"
+    - 'curl --location --output gitlab-ci-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/28543717/jobs/artifacts/development/download?job=Website%2EBuild"'
+    - unzip gitlab-ci-artifacts.zip
+    - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/gitlab-ci"
+    - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/projects/gitlab-ci" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/gitlab-ci/"
+    - rm -Rf "$CI_PROJECT_DIR/artifacts/build/Website.Build"
+
+
+    # # below 2 lines commented out as need to ffigure out how to download artifacts.
+    # - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/operations/index.html"
+    # - echo "cp -rvn" "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    
+    
+    # # copy ops pages into main site, not overwriting
+    # #- cp -rvn "$CI_PROJECT_DIR/artifacts/build/Static Pages/build/"* "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    
+
+    # # below line commented out as need to ffigure out how to download artifacts.
+    # - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
+    
+    - echo "copy prepare files (sitemap, search file) to fullsite (overwrite)"
+    - echo "copy each sub-repo build to fullsite (merge)"
+#    - echo mv "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/full-site" public
+  needs: 
+    - 'Main Site'
+    # only available in gitlab premium
+    # use: - "curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://gitlab.example.com/api/v4/projects/${PROJECT_A_ID}/jobs/${REMOTE_JOB_ID}/artifacts/${REMOTE_FILENAME}"
+    # - project: nofusscomputing/ops
+    #   job: Static Pages
+    #   ref: development
+    #   artifacts: true
+  artifacts:
+    expire_in: 24 hrs
+    when: always
+    paths:
+    - "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/*"
+  resource_group: preperation
+  rules:
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "master"'
+      when: always
+    - when: never
 
 
 pages:
@@ -35,11 +106,12 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
-    - mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" public
-  needs: [ 'Static Pages' ]
+    - mv "$CI_PROJECT_DIR/artifacts/prepare/Assemble Site/build" public
+  needs: [ 'Assemble Site' ]
   environment: 
     name: staging
     url: $CI_PAGES_URL
+  resource_group: preperation
   artifacts:
     paths:
     - public
@@ -68,17 +140,19 @@ pages:
     reports:
       junit:
         - "*.junit.xml"
+  resource_group: preperation
   rules:
     - if: '$CI_COMMIT_BRANCH'
-      when: always
+      when: on_success
     - when: never
 
 
 Unit Tests:
   extends: .Pytest_template
-  needs: [ 'Static Pages' ]
+  needs: [ 'Main Site' ]
+  resource_group: preperation
   script:
-    - mv "$CI_PROJECT_DIR/artifacts/build/Static Pages/build" build
+    - mv "$CI_PROJECT_DIR/artifacts/build/Main Site/build" build
     - pytest --verbose --junitxml=unit_test.junit.xml --tb=line test/unit
     - cp *.junit.xml "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/"
     - echo "[DEBUG] python_exit[$python_exit]"
@@ -91,6 +165,64 @@ Unit Tests:
 #    - 'Unit Tests'
 #  script:
 #   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
+
+
+
+.Add_SSHKey: &Add_SSHKey_Before_Script |
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    eval $(ssh-agent -s)
+    SSH_KEY_NAME=SSH_PRIVATE_KEY_${ANSIBLE_USER}
+    echo "Debug SSH_KEY_NAME[$SSH_KEY_NAME]"
+    chmod 700 "${!SSH_KEY_NAME}"
+    ssh-add "${!SSH_KEY_NAME}"
+    #update next line so that ca key can be obtained. original source is ansible repo
+    #HOST_SSH_ID=$(cat roles/openssh-server/files/nww-nl/host_ca.pub)
+    HOST_SSH_ID=$(cat ${SSH_HOST_CA})
+    echo DEBUG HOST_SSH_ID[$HOST_SSH_ID]
+    echo "@cert-authority *.networkedweb.com $HOST_SSH_ID" > ~/.ssh/known_hosts
+    chmod 700 ~/.ssh/known_hosts
+    ls -la ~/.ssh
+
+
+public_website:
+  stage: publish
+  image: debian:buster-slim
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - if [ "0$ANSIBLE_USER" == "0" ]; then ANSIBLE_USER=deploy; fi
+    - echo Debug ANSIBLE_USER[$ANSIBLE_USER]
+    - apt update
+    - apt install --no-install-recommends -y ssh
+    - ls -la "$CI_PROJECT_DIR/artifacts/prepare/Assemble Site/build"
+    - mv "$CI_PROJECT_DIR/artifacts/prepare/Assemble Site/build" "$CI_PROJECT_DIR/public"
+    - rm -Rf "$CI_PROJECT_DIR/public/build"
+    - ls -la "$CI_PROJECT_DIR"
+    - ls -la "$CI_PROJECT_DIR/public"
+    - *Add_SSHKey_Before_Script
+  script:
+    - ssh ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE} sudo rm -Rf ${PUBLIC_WEBSITE_PATH}/*
+    - scp -r public/* ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
+  needs: [ 'Assemble Site', 'Unit Tests']
+  resource_group: production
+  environment: 
+    name: production
+    url: https://nofusscomputing.com
+  artifacts:
+    paths:
+    - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "master"'
+      when: on_success
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "development" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "development" && $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+      when: manual
+      allow_failure: true
+    - when: never
+
+
 
 Gitlab Release:
     extends:

@@ -1,127 +1,9 @@
-site_name: No Fuss Computing
-site_description: A wiki with random bits of information you may find useful.
-site_url: https://nofusscomputing.com
-
-site_author: No Fuss Computing
-copyright: Copyright &copy; No Fuss Computing 2021
-
-#site_favicon: favicon.ico
-# site_dir: 'docs/static/mkdocs_build'
-
-docs_dir: 'pages'
-site_dir: build
+INHERIT: website-template/mkdocs.yml
 
 repo_name: Website
-#repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
 repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
-#edit_uri: '-/blob/pages'
-#edit_uri: '-/blob/master/pages/'
 edit_uri: ''
 
-theme: 
-  name: material
-  logo: assets/logo.png
-  custom_dir: theme-overrides
-  icon:
-    repo: fontawesome/brands/gitlab # (1)!
-  locale: en
-  font: false
-  features:
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.expand
-    - navigation.indexes
-    - toc.integrate
-    - navigation.top
-    - header.autohide
-    - navigation.sections
-
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/lightbulb-outline
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/lightbulb
-        name: Switch to light mode
-
-
-plugins:
-  - tags:
-        filename: tags.md
-        folder: pages
-        css_name: ".tags"
-  - search:
-      lang: en
-
-  - git-revision-date-localized:
-      type: iso_date
-      enable_creation_date: true
-      exclude:
-        - index.md
-        - tags.md
-#  - minify:
-#      minify_html: true
-
-extra:
-  homepage: https://nofusscomputing.com
-  version: 1.0
-  social:
-    - link: https://hub.docker.com/u/nofusscomputing
-      name: DockerHub
-      icon: fontawesome/brands/docker
- 
-    - link: https://facebook.com/NoFussComputing
-      name: Facebook
-      icon: fontawesome/brands/facebook
-
-    - link: https://gitlab.com/nofusscomputing
-      name: Gitlab
-      icon: fontawesome/brands/gitlab
-      
-    - link: https://github.com/NoFussComputing
-      name: Github
-      icon: fontawesome/brands/github
-
-#    - link: https://readthedocs.org/profiles/nofusscomputing/
-#       nane: ReadTheDocs
-#       icon: fontawesome/brands/readthedocs
-#      link: https://
-  blog:
-    dir: articles
-    author: jon_nfc
-    author_image: https://gitlab.com/uploads/-/system/user/avatar/4125177/avatar.png
-    words_read_per_minute: 300
-    list_length: 25
-    extended_preview: true
-
-extra_css:
-  - stylesheets/extra.css
-
-
-markdown_extensions:
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - meta
-  - attr_list
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-#  - pymdownx.emoji:
-#      emoji_index: !!python/name:materialx.emoji.twemoji 
-#      emoji_generator: !!python/name:materialx.emoji.to_svg
-#      options:
-#        custom_icons:
-#          - .icons
 nav:
 - Home: index.md
 
@@ -145,7 +27,7 @@ nav:
 
   - Ansible Roles: projects/ansible-roles/README.md
 
-  - Gitlab CI Templates: projects/gitlab-ci/README.md
+  - Gitlab CI: projects/gitlab-ci/index.md
 
   - Python Gitlab Management: projects/python-gitlab-management/README.md
 

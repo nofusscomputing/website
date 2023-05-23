@@ -13,3 +13,8 @@ package*json
 
 # ignore log files
 *.log
+
+#gitlab temp files
+artifacts.zip
+artifacts/
+public/
