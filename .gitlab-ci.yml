@@ -208,7 +208,7 @@ public_website:
     - public
   rules:
     - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "master"'
-      when: always
+      when: on_success
     - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "development" && $CI_PIPELINE_SOURCE != "merge_request_event"'
       when: manual
     - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "development" && $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE != "merge_request_event"'
