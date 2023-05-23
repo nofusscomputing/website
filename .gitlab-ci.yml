@@ -29,6 +29,7 @@ Lint Markdown:
 Main Site:
   extends: .MKDocs_Build
   needs: [ 'Lint Markdown' ]
+  resource_group: preperation
 
 
 Assemble Site:
@@ -93,6 +94,7 @@ Assemble Site:
     when: always
     paths:
     - "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/*"
+  resource_group: preperation
   rules:
     - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "master"'
       when: always
@@ -109,6 +111,7 @@ pages:
   environment: 
     name: staging
     url: $CI_PAGES_URL
+  resource_group: preperation
   artifacts:
     paths:
     - public
@@ -137,6 +140,7 @@ pages:
     reports:
       junit:
         - "*.junit.xml"
+  resource_group: preperation
   rules:
     - if: '$CI_COMMIT_BRANCH'
       when: on_success
@@ -146,6 +150,7 @@ pages:
 Unit Tests:
   extends: .Pytest_template
   needs: [ 'Main Site' ]
+  resource_group: preperation
   script:
     - mv "$CI_PROJECT_DIR/artifacts/build/Main Site/build" build
     - pytest --verbose --junitxml=unit_test.junit.xml --tb=line test/unit
@@ -200,6 +205,7 @@ public_website:
     - ssh ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE} sudo rm -Rf ${PUBLIC_WEBSITE_PATH}/*
     - scp -r public/* ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
   needs: [ 'Assemble Site', 'Unit Tests']
+  resource_group: production
   environment: 
     name: production
     url: https://nofusscomputing.com
