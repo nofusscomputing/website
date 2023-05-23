@@ -123,7 +123,7 @@ pages:
     - public
   rules:
     - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "master"'
-      when: always
+      when: on_success
     - when: never
 
 
