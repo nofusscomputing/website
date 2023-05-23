@@ -2,7 +2,7 @@ INHERIT: website-template/mkdocs.yml
 
 repo_name: Website
 repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
-edit_uri: ''
+edit_uri: '/-/ide/project/nofusscomputing/projects/docker-mail/edit/development/-/pages/'
 
 nav:
 - Home: index.md
@@ -26,6 +26,8 @@ nav:
   - projects/index.md
 
   - Ansible Roles: projects/ansible-roles/README.md
+
+  - Docker Mail: projects/docker-mail/index.md
 
   - Gitlab CI: projects/gitlab-ci/index.md
 
