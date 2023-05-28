@@ -16,11 +16,16 @@ include:
   - project: nofusscomputing/projects/gitlab-ci
     ref: development
     file:
-      - conventional_commits/.gitlab-ci.yml
-      - mkdocs/.gitlab-ci.yml
-      - lint/markdown.gitlab-ci.yaml
-      - gitlab_release/.gitlab-ci.yml
-
+      # ToDo: on merge of https://gitlab.com/nofusscomputing/projects/gitlab-ci/-/issues/30
+      # remove lines with mark '1'
+      # uncomment lines with mark '2'
+      # also remove jobs from this ci that are part of the automagic template.
+      - conventional_commits/.gitlab-ci.yml # 1
+      - mkdocs/.gitlab-ci.yml # 1
+      - lint/markdown.gitlab-ci.yaml # 1
+      - gitlab_release/.gitlab-ci.yml # 1
+      # - .gitlab-ci_common.yaml # 2
+      # - template/automagic.gitlab-ci.yaml # 2
 
 Lint Markdown:
     extends: .Lint_Markdown
