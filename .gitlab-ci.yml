@@ -1,18 +1,25 @@
----
+stages:
+    - validation
+    - build
+    - prepare
+    - deploy
+    - test
+    - release
+    - publish
+
+variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    MY_PROJECT_ID: "13001358"
+
 
 include:
   - project: nofusscomputing/projects/gitlab-ci
     ref: development
     file:
+      - conventional_commits/.gitlab-ci.yml
       - mkdocs/.gitlab-ci.yml
       - lint/markdown.gitlab-ci.yaml
-      - .gitlab-ci_common.yaml
-      - template/automagic.gitlab-ci.yaml
-
-
-variables:
-    GIT_SUBMODULE_STRATEGY: recursive
-    MY_PROJECT_ID: "13001358"
+      - gitlab_release/.gitlab-ci.yml
 
 
 Lint Markdown:
@@ -221,5 +228,10 @@ public_website:
       allow_failure: true
     - when: never
 
+
+
+Gitlab Release:
+    extends:
+        - .gitlab_release
 
 
