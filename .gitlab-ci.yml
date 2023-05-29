@@ -56,21 +56,21 @@ Assemble Site:
     
 
     - echo "[DEBUG] fetch operations docs"
-    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Website%2EBuild"'
+    - 'curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Documentation%2EBuild"'
     - unzip operations-artifacts.zip
     - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/operations/index.html"
     - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/operations" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/"
     - rm -Rf "$CI_PROJECT_DIR/artifacts/build/Website.Build"
 
     - echo "[DEBUG] fetch gitlab-ci project docs"
-    - 'curl --location --output gitlab-ci-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/28543717/jobs/artifacts/development/download?job=Website%2EBuild"'
+    - 'curl --location --output gitlab-ci-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/28543717/jobs/artifacts/development/download?job=Documentation%2EBuild"'
     - unzip gitlab-ci-artifacts.zip
     - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/gitlab-ci"
     - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/projects/gitlab-ci" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/gitlab-ci/"
     - rm -Rf "$CI_PROJECT_DIR/artifacts/build/Website.Build"
 
     - echo "[DEBUG] fetch docker-mail project docs"
-    - 'curl --location --output docker-mail-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/33611657/jobs/artifacts/development/download?job=Website%2EBuild"'
+    - 'curl --location --output docker-mail-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/33611657/jobs/artifacts/development/download?job=Documentation%2EBuild"'
     - unzip docker-mail-artifacts.zip
     - rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/docker-mail"
     - cp -rvf "$CI_PROJECT_DIR/artifacts/build/Website.Build/build/projects/docker-mail" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/docker-mail/"
