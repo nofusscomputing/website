@@ -1,3 +1,13 @@
+## 1.0.0rc3 (2023-05-31)
+
+### Bug Fixes
+
+- **ci**: [c40dc037](https://gitlab.com/nofusscomputing/infrastructure/website/-/commit/c40dc037b3b7e0e0be97e9421c7c0097c8c494fe) - website.lint paths updated [ [!13](https://gitlab.com/nofusscomputing/infrastructure/website/-/merge_requests/13) ]
+
+### Continious Integration
+
+- **chore**: [aec1b98e](https://gitlab.com/nofusscomputing/infrastructure/website/-/commit/aec1b98e9a6f466d18981f84902964446ba50b88) - add nfc automation config [ [!12](https://gitlab.com/nofusscomputing/infrastructure/website/-/merge_requests/12) ]
+
 ## 1.0.0rc2 (2023-05-29)
 
 ### Bug Fixes
