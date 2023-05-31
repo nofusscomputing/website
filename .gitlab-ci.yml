@@ -14,7 +14,9 @@ include:
 
 
 Website.Lint:
-    extends: .Lint_Markdown
+    extends: .Lint_Markdown_Docs
+    variables:
+      MDLINT_PATHS: "pages/*.md pages/**/*.md pages/**/**/*.md pages/**/**/**/*.md pages/**/**/**/**/**/*.md #CHANGELOG.md !gitlab-ci !website-template"
 
 
 Website.Build:
