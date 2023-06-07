@@ -214,6 +214,7 @@ pages:
             ||
           $CI_PIPELINE_SOURCE == "schedule"
         )
+        # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
       exists:
         - '{docs/**,pages/**}/*.md'
       # No changes check # See nofusscomputing/projects/gitlab-ci#34
@@ -279,13 +280,22 @@ pages:
 
     - if:  # condition_dev_branch_push
         $CI_COMMIT_BRANCH == "development" && 
-        $CI_PIPELINE_SOURCE == "push"
+        ( 
+          $CI_PIPELINE_SOURCE == "pipeline"
+            ||
+          $CI_PIPELINE_SOURCE == "push"
+            ||
+          $CI_PIPELINE_SOURCE == "schedule"
+        )
+        # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
       exists:
         - '{docs/**,pages/**}/*.md'
-      changes:
-        paths:
-          - '{docs/**,pages/**}/*.md'
-        compare_to: 'master'
+      
+      # No changes check # See nofusscomputing/projects/gitlab-ci#34
+      # changes:
+      #   paths:
+      #     - '{docs/**,pages/**}/*.md'
+      #   compare_to: 'master'
       when: on_success
 
     - if:  # condition_not_master_or_dev_push
@@ -393,14 +403,22 @@ public_website:
       when: on_success
 
     - if:  # condition_dev_branch_push
-        $CI_COMMIT_BRANCH == "development" && 
-        $CI_PIPELINE_SOURCE == "push"
+        $CI_COMMIT_BRANCH == "development" &&  
+        ( 
+          $CI_PIPELINE_SOURCE == "pipeline"
+            ||
+          $CI_PIPELINE_SOURCE == "push"
+            ||
+          $CI_PIPELINE_SOURCE == "schedule"
+        )
+        # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
       exists:
         - '{docs/**,pages/**}/*.md'
-      changes:
-        paths:
-          - '{docs/**,pages/**}/*.md'
-        compare_to: 'master'
+      # No changes check # See nofusscomputing/projects/gitlab-ci#34
+      # changes:
+      #   paths:
+      #     - '{docs/**,pages/**}/*.md'
+      #   compare_to: 'master'
       when: manual
 
     # - if:  # condition_not_master_or_dev_push
