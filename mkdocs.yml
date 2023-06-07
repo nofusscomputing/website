@@ -25,7 +25,11 @@ nav:
 
   - projects/index.md
 
-  - Ansible Roles: projects/ansible-roles/README.md
+  - Ansible Roles:
+
+    - Git Configuration:
+
+      - projects/git_configuration/index.md
 
   - Docker Mail: projects/docker-mail/index.md
 
