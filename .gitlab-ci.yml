@@ -21,7 +21,7 @@ Website.Lint:
 Website.Build:
   extends: .MKDocs_Build
   needs: [ 'Website.Lint' ]
-  resource_group: preperation
+  resource_group: build
 
 
 Assemble.Website.Prepare:
@@ -118,7 +118,7 @@ Assemble.Website.Prepare:
     when: always
     paths:
     - "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/*"
-  resource_group: preperation
+  resource_group: build
   rules:
     # - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE == "push"'
     #   when: always
@@ -182,7 +182,6 @@ pages:
   environment: 
     name: staging
     url: $CI_PAGES_URL
-  resource_group: preperation
   artifacts:
     paths:
     - public
@@ -258,7 +257,6 @@ pages:
     reports:
       junit:
         - "*.junit.xml"
-  resource_group: preperation
   rules:
     # - if: '$CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push"'
     #   when: on_success
@@ -316,7 +314,6 @@ pages:
 Unit Tests:
   extends: .Pytest_template
   needs: [ 'Website.Build' ]
-  resource_group: preperation
   script:
     - mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" build
     - pytest --verbose --junitxml=unit_test.junit.xml --tb=line test/unit
