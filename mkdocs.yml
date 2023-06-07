@@ -25,10 +25,18 @@ nav:
 
   - projects/index.md
 
-  - Ansible Roles: projects/ansible-roles/README.md
+  - Ansible Execution Environment:
+
+      - projects/execution_environment/index.md
+
+  - Ansible Roles:
+
+    - Git Configuration:
+
+      - projects/git_configuration/index.md
 
   - Docker Mail: projects/docker-mail/index.md
-
+  
   - Gitlab CI: projects/gitlab-ci/index.md
 
   - Python Gitlab Management: projects/python-gitlab-management/README.md
