@@ -13,6 +13,8 @@ nav:
 
   - 2022:
 
+    - articles/2022/fail2ban_running_considerations.md
+
     - articles/2022/fail2ban_permanent_whitelist.md
 
     - articles/2022/fail2ban_permanent_ban_closed_port_access.md
