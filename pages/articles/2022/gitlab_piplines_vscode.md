@@ -86,16 +86,29 @@ Add the following keybindings to the keybindings settings file:
 
 These keybindings assign the "Run GitLab CI/CD Pipeline" task to `Ctrl+Shift+P` and the "Run Specific Job" task to `Ctrl+Shift+J`. Feel free to modify the keybindings according to your preference.
 
+## Step 4: Adjust `.gitignore` File
 
-## Step 4: Run the Pipeline or Specific Job
+To avoid inadvertently including artifacts generated during the local pipeline execution in your git commits, it's
 
-You're now ready to run your GitLab CI/CD pipeline or specific job using the VS Code tasks. Press the assigned keybinding (`Ctrl+
+ essential to update your `.gitignore` file.
 
-Shift+P` for the pipeline or `Ctrl+Shift+J` for a specific job) to launch the GitLab Runner container and execute the desired task.
+Open your project's `.gitignore` file and add the following line to exclude the generated artifacts:
+
+```
+# GitLab Runner artifacts
+/builds/
+```
+
+This ensures that any files or directories created within the `/builds/` directory (which is used by the GitLab Runner container) will be ignored by git.
+
+
+## Step 5: Run the Pipeline or Specific Job
+
+You're now ready to run your GitLab CI/CD pipeline or specific job using the VS Code tasks. Press the assigned keybinding (`Ctrl+Shift+P` for the pipeline or `Ctrl+Shift+J` for a specific job) to launch the GitLab Runner container and execute the desired task.
 
 
 ## Conclusion
 
-By creating VS Code tasks, we've made it even easier to run GitLab CI/CD pipelines or specific jobs locally using the GitLab Runner. With a simple keyboard shortcut, we can now execute our pipelines or test individual jobs directly from within the VS Code environment.
+By creating VS Code tasks, we've made it even easier to run GitLab CI/CD pipelines or specific jobs locally using the GitLab Runner. With a simple keyboard shortcut, we can now execute our pipelines or test individual jobs directly from within the VS Code environment. Additionally, by adjusting the `.gitignore` file, we can ensure that artifacts generated during the local execution are not inadvertently included in git commits.
 
-That's it! You've learned how to set up VS Code tasks to launch the GitLab Runner. Enjoy the streamlined process of running your pipelines and jobs with ease.
+That's it! You've learned how to set up VS Code tasks to launch the GitLab Runner and exclude artifacts from being committed. Enjoy the streamlined process of running your pipelines and jobs with ease.
