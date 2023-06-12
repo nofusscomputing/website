@@ -11,6 +11,12 @@ nav:
 
   - articles/index.md
 
+  - 2022:
+
+    - articles/2022/gitlab_piplines_vscode.md
+
+    - articles/2022/local_gitlab_pipeline.md
+
   - 2015:
  
     - articles/2015/choose_internet_service.md
