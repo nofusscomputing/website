@@ -13,6 +13,8 @@ nav:
 
   - 2022:
 
+    - articles/2022/fail2ban_permanent_ban_closed_port_access
+
     - articles/2022/fail2ban_block_suspisious_activity.md
 
     - articles/2022/gitlab_piplines_vscode.md

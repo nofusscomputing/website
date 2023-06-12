@@ -28,7 +28,7 @@ In this article, we'll explore how to set up an existing installation of Fail2ba
 1. Open the iptables configuration file in a text editor using root privileges:
 
    ```bash
-   sudo nano /etc/iptables/rules.v4
+   sudo nano /etc/iptables/log_closed_ports.v4
    ```
 
 2. Add the following rules for each specified port to log access to that port:
