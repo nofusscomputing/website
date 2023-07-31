@@ -11,6 +11,10 @@ nav:
 
   - articles/index.md
 
+  - 2023:
+
+    - articles/2023/new_website.md
+
   - 2015:
  
     - articles/2015/choose_internet_service.md
