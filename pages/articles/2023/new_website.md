@@ -26,4 +26,4 @@ Other things of note worthy mention:
 
 - Website updating now occurs automagically. We do this via Gitlab using CD/CI pipelines. Now I just edit a file, push the changes and the changes deploy my site on the interwebs.
 
-- Our projects from [GitHub](https://github.com/NoFussComputing) and [GitLab](https://gitlab.com/nofusscomputing) deploy their docs to our site, again automagically.
+- Our [projects](../../projects/index.md) from [GitHub](https://github.com/NoFussComputing) and [GitLab](https://gitlab.com/nofusscomputing) deploy their docs to our site, again automagically.

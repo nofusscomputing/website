@@ -91,18 +91,20 @@ class Data:
 
               if 'gitlab.com/-/ide/project' not in url: # ignore gitlab ide links
 
-                link = self.parse_url(url)
+                if 'nofusscomputing.com' not in url: # ignore gitlab ide links
 
-                hyperlink_source_file = {'name': source_file, 'location': link_location}
+                  link = self.parse_url(url)
 
-                if link['url_id'] in data['hyperlinks']:
+                  hyperlink_source_file = {'name': source_file, 'location': link_location}
 
-                  data['hyperlinks'][link['url_id']]['source_files'].append(hyperlink_source_file)
+                  if link['url_id'] in data['hyperlinks']:
 
-                else:
+                    data['hyperlinks'][link['url_id']]['source_files'].append(hyperlink_source_file)
 
-                  link['source_files'] = [ hyperlink_source_file ]
-                  data['hyperlinks'][link['url_id']] = link
+                  else:
+
+                    link['source_files'] = [ hyperlink_source_file ]
+                    data['hyperlinks'][link['url_id']] = link
 
 
             events = [self.process_browser_log_entry(entry) for entry in self.driver.get_log('performance')]
