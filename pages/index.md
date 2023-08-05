@@ -8,6 +8,6 @@ hide:
   - toc
 ---
 
-![No Fuss Computing](assets/nfc_header.png)
-
-Home Page
+<div style="background: url(assets/nfc_revamp.png) no-repeat center top; background-size: 282px 90px; width: 100%; height: 120px; display: flex;">
+<span style="align-self: flex-end; width: 100%; text-align: center; color: #009900; font-weight: bold; font-size: 14pt;">Using Technology to make life easier</span>
+</div>
