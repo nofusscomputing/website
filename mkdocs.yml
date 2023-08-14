@@ -43,6 +43,8 @@ nav:
   
   - Gitlab CI: projects/gitlab-ci/index.md
 
+  - LDAP Self Service: projects/ldap_self_service/index.md
+
   - Python Gitlab Management: projects/python-gitlab-management/README.md
 
 - Operations: 
