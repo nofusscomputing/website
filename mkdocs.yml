@@ -45,6 +45,8 @@ nav:
 
   - Docker GLPI: projects/glpi/index.md
 
+  - Kubernetes Monitoring: projects/kubernetes_monitoring/index.md
+
   - LDAP Self Service: projects/ldap_self_service/index.md
 
   - Python Gitlab Management: projects/python-gitlab-management/README.md
