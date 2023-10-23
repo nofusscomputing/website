@@ -33,7 +33,15 @@ nav:
 
       - projects/execution_environment/index.md
 
-  - Ansible Roles:
+  - Ansible:
+  
+    - Playbooks:
+
+      - projects/ansible/playbooks/index.md
+
+    - Roles:
+
+      - projects/ansible/roles/index.md
 
     - Git Configuration:
 
