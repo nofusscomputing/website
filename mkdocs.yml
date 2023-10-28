@@ -34,6 +34,8 @@ nav:
       - projects/execution_environment/index.md
 
   - Ansible:
+
+    - projects/ansible/playbooks/index.md
   
     - Playbooks:
 
@@ -42,6 +44,18 @@ nav:
     - Roles:
 
       - projects/ansible/roles/index.md
+
+      - Firewall:
+      
+        - projects/ansible/roles/firewall/index.md
+
+      - Home Assistant:
+      
+        - projects/ansible/roles/homeassistant/index.md
+
+      - Kubernetes:
+      
+        - projects/ansible/roles/kubernetes/index.md
 
     - Git Configuration:
 
