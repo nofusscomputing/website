@@ -29,14 +29,14 @@ nav:
 
   - projects/index.md
 
-  - Ansible Execution Environment:
-
-      - projects/execution_environment/index.md
-
   - Ansible:
 
-    - projects/ansible/playbooks/index.md
-  
+    - projects/ansible/index.md
+
+    - Ansible Execution Environment:
+
+        - projects/execution_environment/index.md
+
     - Playbooks:
 
       - projects/ansible/playbooks/index.md
@@ -60,6 +60,10 @@ nav:
     - Git Configuration:
 
       - projects/git_configuration/index.md
+
+  - Docker:
+
+    - projects/docker/index.md
 
   - Docker Mail: projects/docker-mail/index.md
   
