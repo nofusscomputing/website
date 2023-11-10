@@ -88,7 +88,7 @@ Ansible inventory directory structure.
 | files | _directory_ | Contain files that a host may require. Playbook task iterates over by hostname and group name. Sub-directories for hostname / group-name |
 | .inventory_root | _file_  | This file is used by `nfc_common` role to determin the root directory of the inventory. |
 | inventory | _directory_ | Ansible inventory. If multiple inventories exist can use sub folders. |
-| playbooks | _directory_ | Should not be included, however if included should be a git submodule. _This keeps inventory and playbooks SCM related to each only._ |
+| playbooks | _directory_ | Should be a git submodule. _This keeps inventory and playbooks SCM related to each only._ |
 | README.md | _file_  | Inventory readme with applicable info. |
 | templates | _directory_ | This directory is the same as the `files` directory except contains jinja templates. |
 
@@ -103,7 +103,7 @@ The hosts file `host.yaml` contains all hosts and by which group they are part o
 If you use a system like AWX / Tower / Automation Platform the inventory should be designed in a way that you have a prime host. The prime host is a single host that once it exists, it's capable of rebuilding all of the infrastructure within the inventory. Using the prime host method, you only require the variable secrets (vault encrypted) of the prime host and only those pertinent to rebuilding the prime host. This should only be the backup decryption key (vault encrypted).
 
 !!! warning Warning
-    Prime Host requires that the backup decryption key be updated whenever it changes. There is also a requirement that the vault encryption key be available and not stored on any infrastructure that without or that infrastructure not existing you cant access the vault key. i.e. password manager.
+    Prime Host requires that the backup decryption key be updated within the inventory whenever it changes. There is also a requirement that the vault encryption key be available and not stored on infrastructure that without or that infrastructure not existing you cant access the vault key. i.e. password manager.
 
 
 ## Playbooks
