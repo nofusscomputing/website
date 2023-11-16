@@ -45,6 +45,10 @@ nav:
 
       - projects/ansible/roles/index.md
 
+      - Common:
+      
+        - projects/ansible/roles/firewall/common.md
+
       - Firewall:
       
         - projects/ansible/roles/firewall/index.md
