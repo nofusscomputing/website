@@ -64,9 +64,11 @@ nav:
   - Docker:
 
     - projects/docker/index.md
-
-  - Docker Mail: projects/docker-mail/index.md
   
+    - BIND DNS Server: projects/docker/bind/index.md
+
+    - Docker Mail: projects/docker-mail/index.md
+
   - Gitlab CI: projects/gitlab-ci/index.md
 
   - Docker GLPI: projects/glpi/index.md
