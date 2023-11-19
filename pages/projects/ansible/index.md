@@ -77,9 +77,11 @@ Ansible inventory directory structure.
 │   ├── all.yaml
 ├── README.md
 └── templates
-    └── k3s-prod
-        └── HelmChart-manifest-NginX-ingress.yaml
-
+    ├── hosts
+    │   └── k3s-prod
+    │       └── HelmChart-manifest-NginX-ingress.yaml
+    │
+    └── groups
 ```
 
 | name | Type | Description |
@@ -93,9 +95,51 @@ Ansible inventory directory structure.
 | templates | _directory_ | This directory is the same as the `files` directory except contains jinja templates. |
 
 
-### hosts file
+### Inventory
+
+
+
+#### hosts file
 
 The hosts file `host.yaml` contains all hosts and by which group they are part of.
+
+
+### Playbooks
+
+
+### Templates
+
+Templates directory contains only two sub-deirectories `groups` and `hosts` under each of these folders are folders by group/host name that contain template files. Preferernece is leaning toards not using the `.j2` extension as the IDE may loose functionality by using.
+
+Naming of template files is in format `{item-type}-{what-uses}-{friendly name that uses underscores not hyphon}.{file_extension}`
+
+| Item Type | what uses | Notes
+|:---|:---:|:---|
+| config | bind | Configuration file for bind dns server |
+| dnszone | bind | a bind server DNS zone |
+| `{kubernetes kind}` | manifest | A kubernetes manifest |
+
+
+#### Feature gates
+
+Templates when added to the group folder should be setup with a feature gate. This eanbles simple yaml to be defined to allow the template to deploy.
+
+example of yaml declaration that host/group would read.
+``` yaml
+feature_gates:
+  is_prime: false
+  monitoring: true
+  operator_awx: true
+  operator_grafana: true
+  operator_prometheus: true
+  postgres_cluster: true
+  rook_ceph: true
+```
+
+Seting a feature gate on a template is as simple as enclosing the entire contents of the file with a jinja if statement. i.e. `{% if path.feature_gates.monitoring | default(false) | bool %}the content here{% endif %}`
+
+
+## AWX / Tower / Automation Platform
 
 
 ### Prime host
@@ -106,17 +150,6 @@ If you use a system like AWX / Tower / Automation Platform the inventory should 
     Prime Host requires that the backup decryption key be updated within the inventory whenever it changes. There is also a requirement that the vault encryption key be available and not stored on infrastructure that without or that infrastructure not existing you cant access the vault key. i.e. password manager.
 
 
-## Playbooks
-
-
-## AWX / Tower / Automation Platform
-
-
-
-
-
-
-
 ## ToDo
 
-- Explain usage of file `.inventory_root` which must exist as nfc_common _(todo: see kubernetes playbook/master)_
+- Explain usage of file `.inventory_root` which must exist as nfc_common _(todo: see kubernetes playbook/master)_ _may no longer be required a project structure is known along with using variable `playbook_dir`_
