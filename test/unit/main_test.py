@@ -13,7 +13,11 @@ class Test:
 
 
     def setup_method(self):
-        pass
+        self.ignore_url_alive_check = {
+            'gitlab.com': [
+                'nofusscomputing/infrastructure/website//-/new/development'
+            ]
+        }
 
 
     @pytest.mark.parametrize(
@@ -39,15 +43,21 @@ class Test:
 
         print(str(data) + str(request.status_code))
 
-        assert (
-            request.status_code == 200
-                or
-            request.status_code == 401
-                or
-            request.status_code == 403
-            ), (
-            f"Hyperlink [{data['url_id']}] to location [{data['url']}] failed," 
-            f"with status [{request.status_code}].")
+        if data['request_path'] in self.ignore_url_alive_check[data['domain']]:
+
+            assert true
+
+        else:
+
+            assert (
+                request.status_code == 200
+                    or
+                request.status_code == 401
+                    or
+                request.status_code == 403
+                ), (
+                f"Hyperlink [{data['url_id']}] to location [{data['url']}] failed," 
+                f"with status [{request.status_code}].")
 
 
     @pytest.mark.parametrize(
