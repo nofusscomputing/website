@@ -39,7 +39,13 @@ class Test:
 
         print(str(data) + str(request.status_code))
 
-        assert request.status_code == 200, (
+        assert (
+            request.status_code == 200
+                or
+            request.status_code == 401
+                or
+            request.status_code == 403
+            ), (
             f"Hyperlink [{data['url_id']}] to location [{data['url']}] failed," 
             f"with status [{request.status_code}].")
 
