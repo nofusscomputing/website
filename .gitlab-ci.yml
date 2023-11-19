@@ -11,6 +11,13 @@ include:
       - .gitlab-ci_common.yaml
       - template/automagic.gitlab-ci.yaml
 
+Documentation.Lint:
+  rules:
+    - when: never
+
+Documentation.Build:
+  rules:
+    - when: never
 
 Website.Lint:
     extends: .Lint_Markdown_Docs

@@ -40,14 +40,17 @@ class Test:
         packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
         request = get(data['url'], verify=False)
+        skip_test = False
 
         print(str(data) + str(request.status_code))
 
-        if data['request_path'] in self.ignore_url_alive_check[data['domain']]:
 
-            assert true
+        if data['domain'] in self.ignore_url_alive_check:
+            if data['request_path'] in self.ignore_url_alive_check[data['domain']]:
+                skip_test = True
 
-        else:
+        
+        if not skip_test:
 
             assert (
                 request.status_code == 200
@@ -58,6 +61,8 @@ class Test:
                 ), (
                 f"Hyperlink [{data['url_id']}] to location [{data['url']}] failed," 
                 f"with status [{request.status_code}].")
+        else:
+            assert True
 
 
     @pytest.mark.parametrize(
