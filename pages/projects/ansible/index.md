@@ -97,6 +97,7 @@ Ansible inventory directory structure.
 
 ### Inventory
 
+Naming of host inventory files is to use the hostname portion of the FQDN only. i.e. for a host with a FQDN of `myhostname.domain.tld` it's `inventory_hostname` would be `myhostname`. This requirement is a must as many parts of our roles and playbooks depend upon this value matching the DNS system.
 
 
 #### hosts file
