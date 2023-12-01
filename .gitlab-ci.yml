@@ -552,3 +552,6 @@ public_website:
       allow_failure: true
       when: manual
     - when: never
+  tags:
+    - production
+    - website
