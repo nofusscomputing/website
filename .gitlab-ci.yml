@@ -11,6 +11,13 @@ include:
       - .gitlab-ci_common.yaml
       - template/automagic.gitlab-ci.yaml
 
+Documentation.Lint:
+  rules:
+    - when: never
+
+Documentation.Build:
+  rules:
+    - when: never
 
 Website.Lint:
     extends: .Lint_Markdown_Docs
@@ -41,7 +48,7 @@ Assemble.Website.Prepare:
     #- ls -laR $CI_PROJECT_DIR
     # remove ops placeholder index.html
     
-
+# Project: Operations
     - echo "[DEBUG] fetch operations docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/32419575/jobs/artifacts/development/download?job=Documentation%2EBuild")'
     - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
@@ -57,7 +64,7 @@ Assemble.Website.Prepare:
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
-
+# Project: Gitlab-CI
     - echo "[DEBUG] fetch gitlab-ci project docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/28543717/jobs/artifacts/development/download?job=Documentation%2EBuild")'
     - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
@@ -73,7 +80,7 @@ Assemble.Website.Prepare:
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
-
+# Project: ansible role, git_configuration
     - echo "[DEBUG] fetch git_configuration project docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/45705596/jobs/artifacts/development/download?job=Documentation%2EBuild")'
     - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
@@ -89,7 +96,7 @@ Assemble.Website.Prepare:
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
-
+# Project: Docker Mail Server
     - echo "[DEBUG] fetch docker-mail project docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/33611657/jobs/artifacts/development/download?job=Documentation%2EBuild")'
     - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
@@ -105,7 +112,7 @@ Assemble.Website.Prepare:
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
-
+# Project: Ansible Execution Environment
     - echo "[DEBUG] fetch execution_environment project docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/45741845/jobs/artifacts/development/download?job=Documentation%2EBuild")'
     - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
@@ -121,7 +128,7 @@ Assemble.Website.Prepare:
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
-
+# Project: NodeRED LDAP Self Service
     - echo "[DEBUG] fetch nodered_ldap_self_service project docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/48321671/jobs/artifacts/development/download?job=Documentation%2EBuild")'
     - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
@@ -153,6 +160,7 @@ Assemble.Website.Prepare:
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
+
 # Project: kubernetes monitoring helm chart
     - echo "[DEBUG] fetch kubernetes_monitoring project docs"
     - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/50510268/jobs/artifacts/development/download?job=Documentation%2EBuild")'
@@ -168,6 +176,93 @@ Assemble.Website.Prepare:
         cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/kubernetes_monitoring" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/kubernetes_monitoring/";
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
+
+
+# Project: Ansible Public Playbooks
+    - echo "[DEBUG] fetch Ansible Public Playbooks project docs"
+    - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/46364551/jobs/artifacts/development/download?job=Documentation%2EBuild")'
+    - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
+    - |
+      if [ "0$HTTP_STATUS_FILE" != "0200" ]; then 
+        echo "[ERROR] Unable to fetch Job Artifacts due to HTTP status of $HTTP_STATUS_FILE"; 
+        # exit 1; 
+      else
+        curl --location --output ansible_playbooks.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/46364551/jobs/artifacts/development/download?job=Documentation%2EBuild";
+        unzip ansible_playbooks.zip;
+        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/playbooks";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/playbooks" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/playbooks/";
+        rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
+      fi
+
+
+# Project: Ansible role common
+    - echo "[DEBUG] fetch Ansible common project docs"
+    - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/52226103/jobs/artifacts/development/download?job=Documentation%2EBuild")'
+    - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
+    - |
+      if [ "0$HTTP_STATUS_FILE" != "0200" ]; then 
+        echo "[ERROR] Unable to fetch Job Artifacts due to HTTP status of $HTTP_STATUS_FILE"; 
+        # exit 1; 
+      else
+        curl --location --output nfc_common.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/52226103/jobs/artifacts/development/download?job=Documentation%2EBuild";
+        unzip nfc_common.zip;
+        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/common";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/roles/common" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/common/";
+        rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
+      fi
+
+
+# Project: Ansible role firewall
+    - echo "[DEBUG] fetch Ansible firewall project docs"
+    - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/51640016/jobs/artifacts/development/download?job=Documentation%2EBuild")'
+    - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
+    - |
+      if [ "0$HTTP_STATUS_FILE" != "0200" ]; then 
+        echo "[ERROR] Unable to fetch Job Artifacts due to HTTP status of $HTTP_STATUS_FILE"; 
+        # exit 1; 
+      else
+        curl --location --output nfc_firewall.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/51640016/jobs/artifacts/development/download?job=Documentation%2EBuild";
+        unzip nfc_firewall.zip;
+        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/firewall";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/roles/firewall" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/firewall/";
+        rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
+      fi
+
+
+# Project: Ansible role homeassistant
+    - echo "[DEBUG] fetch Ansible Public homeassistant project docs"
+    - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/51020674/jobs/artifacts/development/download?job=Documentation%2EBuild")'
+    - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
+    - |
+      if [ "0$HTTP_STATUS_FILE" != "0200" ]; then 
+        echo "[ERROR] Unable to fetch Job Artifacts due to HTTP status of $HTTP_STATUS_FILE"; 
+        # exit 1; 
+      else
+        curl --location --output nfc_homeassistant.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/51020674/jobs/artifacts/development/download?job=Documentation%2EBuild";
+        unzip nfc_homeassistant.zip;
+        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/homeassistant";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/roles/homeassistant" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/homeassistant/";
+        rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
+      fi
+
+
+# Project: Ansible role kubernetes
+    - echo "[DEBUG] fetch Ansible kubernetes project docs"
+    - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/51640029/jobs/artifacts/development/download?job=Documentation%2EBuild")'
+    - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
+    - |
+      if [ "0$HTTP_STATUS_FILE" != "0200" ]; then 
+        echo "[ERROR] Unable to fetch Job Artifacts due to HTTP status of $HTTP_STATUS_FILE"; 
+        # exit 1; 
+      else
+        curl --location --output nfc_kubernetes.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/51640029/jobs/artifacts/development/download?job=Documentation%2EBuild";
+        unzip nfc_kubernetes.zip;
+        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/kubernetes";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/roles/kubernetes" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/kubernetes/";
+        rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
+      fi
+
+
 
 
     # # below 2 lines commented out as need to ffigure out how to download artifacts.
@@ -410,43 +505,17 @@ Unit Tests:
 #   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
 
 
-
-.Add_SSHKey: &Add_SSHKey_Before_Script |
-    mkdir -p ~/.ssh
-    chmod 700 ~/.ssh
-    eval $(ssh-agent -s)
-    SSH_KEY_NAME=SSH_PRIVATE_KEY_${ANSIBLE_USER}
-    echo "Debug SSH_KEY_NAME[$SSH_KEY_NAME]"
-    chmod 700 "${!SSH_KEY_NAME}"
-    ssh-add "${!SSH_KEY_NAME}"
-    #update next line so that ca key can be obtained. original source is ansible repo
-    #HOST_SSH_ID=$(cat roles/openssh-server/files/nww-nl/host_ca.pub)
-    HOST_SSH_ID=$(cat ${SSH_HOST_CA})
-    echo DEBUG HOST_SSH_ID[$HOST_SSH_ID]
-    echo "@cert-authority *.networkedweb.com $HOST_SSH_ID" > ~/.ssh/known_hosts
-    chmod 700 ~/.ssh/known_hosts
-    ls -la ~/.ssh
-
-
 public_website:
   stage: publish
-  image: debian:buster-slim
+  image: alpine
   variables:
     GIT_STRATEGY: none
   before_script:
-    - if [ "0$ANSIBLE_USER" == "0" ]; then ANSIBLE_USER=deploy; fi
-    - echo Debug ANSIBLE_USER[$ANSIBLE_USER]
-    - apt update
-    - apt install --no-install-recommends -y ssh
-    - ls -la "$CI_PROJECT_DIR/artifacts/prepare/Assemble.Website.Prepare/build"
-    - mv "$CI_PROJECT_DIR/artifacts/prepare/Assemble.Website.Prepare/build" "$CI_PROJECT_DIR/public"
-    - rm -Rf "$CI_PROJECT_DIR/public/build"
-    - ls -la "$CI_PROJECT_DIR"
-    - ls -la "$CI_PROJECT_DIR/public"
-    - *Add_SSHKey_Before_Script
+    - ls -la /html
   script:
-    - ssh ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE} sudo rm -Rf ${PUBLIC_WEBSITE_PATH}/*
-    - scp -r public/* ${ANSIBLE_USER}@${HOST_PUBLIC_WEBSITE}:${PUBLIC_WEBSITE_PATH}
+    - rm -rf /html/*
+    - cp -r "$CI_PROJECT_DIR/{path_to_artifacts}"/* /html/
+    - ls -laR /html/
   needs: [ 'Assemble.Website.Prepare', 'Unit Tests']
   resource_group: production
   environment: 
@@ -456,22 +525,6 @@ public_website:
     paths:
     - public
   rules:
-    # - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE == "push"'
-    #   when: on_success
-    # - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH == "development" && $CI_PIPELINE_SOURCE != "merge_request_event" && $CI_PIPELINE_SOURCE == "push"'
-    #   when: manual
-    # - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "development" && $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE != "merge_request_event" && $CI_PIPELINE_SOURCE == "push"'
-    #   when: manual
-    #   allow_failure: true
-
-  # Build docs on tag so they can be downloaded from the tag job and are always available.
-    # - if:  # condition_git_tag
-    #     $CI_COMMIT_TAG != null &&
-    #     $CI_COMMIT_BRANCH == null
-    #   exists:
-    #     - '{docs/**,pages/**}/*.md'
-    #   when: always
-
     - if:  # condition_master_branch_push
         $CI_COMMIT_BRANCH == "master" && 
         $CI_PIPELINE_SOURCE == "push"
@@ -496,20 +549,6 @@ public_website:
       #   paths:
       #     - '{docs/**,pages/**}/*.md'
       #   compare_to: 'master'
+      allow_failure: true
       when: manual
-
-    # - if:  # condition_not_master_or_dev_push
-    #     $CI_COMMIT_BRANCH != "master" && 
-    #     $CI_COMMIT_BRANCH != "development" && 
-    #     $CI_PIPELINE_SOURCE == "push"
-    #   exists:
-    #     - '{docs/**,pages/**}/*.md'
-    #   changes:
-    #     paths:
-    #       - '{docs/**,pages/**}/*.md'
-    #     compare_to: 'development'
-    #   when: manual
-    #   allow_failure: true
-
     - when: never
-

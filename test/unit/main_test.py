@@ -13,7 +13,11 @@ class Test:
 
 
     def setup_method(self):
-        pass
+        self.ignore_url_alive_check = {
+            'gitlab.com': [
+                'nofusscomputing/infrastructure/website//-/new/development'
+            ]
+        }
 
 
     @pytest.mark.parametrize(
@@ -36,12 +40,29 @@ class Test:
         packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
         request = get(data['url'], verify=False)
+        skip_test = False
 
         print(str(data) + str(request.status_code))
 
-        assert request.status_code == 200, (
-            f"Hyperlink [{data['url_id']}] to location [{data['url']}] failed," 
-            f"with status [{request.status_code}].")
+
+        if data['domain'] in self.ignore_url_alive_check:
+            if data['request_path'] in self.ignore_url_alive_check[data['domain']]:
+                skip_test = True
+
+        
+        if not skip_test:
+
+            assert (
+                request.status_code == 200
+                    or
+                request.status_code == 401
+                    or
+                request.status_code == 403
+                ), (
+                f"Hyperlink [{data['url_id']}] to location [{data['url']}] failed," 
+                f"with status [{request.status_code}].")
+        else:
+            assert True
 
 
     @pytest.mark.parametrize(

@@ -2,7 +2,7 @@ INHERIT: website-template/mkdocs.yml
 
 repo_name: Website
 repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
-edit_uri: '/-/ide/project/nofusscomputing/projects/docker-mail/edit/development/-/pages/'
+edit_uri: '/-/ide/project/nofusscomputing/projects/website/edit/development/-/pages/'
 
 nav:
 - Home: index.md
@@ -29,18 +29,50 @@ nav:
 
   - projects/index.md
 
-  - Ansible Execution Environment:
+  - Ansible:
 
-      - projects/execution_environment/index.md
+    - projects/ansible/index.md
 
-  - Ansible Roles:
+    - Ansible Execution Environment:
+
+        - projects/execution_environment/index.md
+
+    - Playbooks:
+
+      - projects/ansible/playbooks/index.md
+
+    - Roles:
+
+      - projects/ansible/roles/index.md
+
+      - Common:
+      
+        - projects/ansible/roles/common/index.md
+
+      - Firewall:
+      
+        - projects/ansible/roles/firewall/index.md
+
+      - Home Assistant:
+      
+        - projects/ansible/roles/homeassistant/index.md
+
+      - Kubernetes:
+      
+        - projects/ansible/roles/kubernetes/index.md
 
     - Git Configuration:
 
       - projects/git_configuration/index.md
 
-  - Docker Mail: projects/docker-mail/index.md
+  - Docker:
+
+    - projects/docker/index.md
   
+    - BIND DNS Server: projects/docker/bind/index.md
+
+    - Docker Mail: projects/docker-mail/index.md
+
   - Gitlab CI: projects/gitlab-ci/index.md
 
   - Docker GLPI: projects/glpi/index.md
