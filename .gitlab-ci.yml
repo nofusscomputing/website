@@ -514,7 +514,7 @@ public_website:
     - ls -la /html
   script:
     - rm -rf /html/*
-    - cp -r "$CI_PROJECT_DIR/{path_to_artifacts}"/* /html/
+    - cp -r "$CI_PROJECT_DIR/artifacts/prepare/Assemble.Website.Prepare/build"/* /html/
     - ls -laR /html/
   needs: [ 'Assemble.Website.Prepare', 'Unit Tests']
   resource_group: production
