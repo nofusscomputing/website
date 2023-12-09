@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "dev_env/bin/python",
+    "python.testing.pytestArgs": [
+        "--verbose", "--junit-xml=${workspaceFolder}/unit_test.junit.xml", "--tb=line", "test"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

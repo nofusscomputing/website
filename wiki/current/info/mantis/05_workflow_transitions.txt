@@ -1,0 +1,109 @@
+====== 5. Ticket Workflow and Transitions ======
+The Management of tickets on our ticketing system is left to either an administrator, manager or developer. at each stage of the ticket being worked on the ticket status will be reflected to show what stage the ticket is at.
+
+===== 5.1 Status =====
+The status of a ticket is denoted on and publicly available to anyone who can view the ticket. The available status' for a ticket is as follows:
+  * New
+  * Feedback
+  * Acknowledged
+  * Confirmed
+  * Assigned
+  * Resolved
+  * Closed
+
+Each of the ticket status' will be explained further below.
+
+==== 5.1.1 New ====
+When a ticket is first created, it's status will be automatically set as 'New'. This status also reflects that the reporter has just left feedback, but only if the previous status was 'Feedback'. Normally, a ticket shouldn't remain marked as 'new' for too long; but that is dependant on a few factors. Being workload, or ticket priority.
+
+==== 5.1.2 Feedback ====
+A developer, Manager or administrator require feedback. there will always be a note added if this status is requested. on first instance the note left will denote who the feedback is required from. as soon as that person generally the ticket raiser leaves the feedback (Note) the ticket status will automatically change to 'New'.
+
+==== 5.1.3 Acknowledged ====
+A developer, Manager or administrator have acknowledged the ticket or feedback received. Also of note for this status. no one on the development team have attempted to reproduce this issue, if applicable.
+
+==== 5.1.4 Confirmed ====
+A developer, Manager or administrator have either confirmed this as an issue or are able to reproduce the cause. This status is optional and may not be used at all for the ticket workflow.
+
+==== 5.1.5 Assigned ====
+A developer, Manager or administrator have begun to work on a ticket. This status will always be assigned to a person on the development team, the actual person working on a resolution. the general workflow after this status is either, Acknowledged/Confirmed as applicable if the ticket is no longer being worked on or resolved.
+
+==== 5.1.6 Resolved ====
+The ticket has been resolved or deemed to be resolved by a developer, Manager or administrator. when a ticket is marked as resolved, it will have a designated resolution assigned by the developer, Manager or administrator as well.
+
+==== 5.1.7 Closed ====
+This status reflects that the issue is closed and no further action is required on it. 
+
+===== 5.2 Workflow =====
+As each ticket is worked on it's status will updated to reflect what is happening in relation to the ticket. This reflection is done by adjusting the ticket status. the basic workflow of a ticket is as follows
+
+  New -> Acknowledged -> Confirmed -> Assigned -> Resolved
+  
+This basic workflow can change depending on what the requirements to the ticket are for instance, if a developer needs to ask a question, then the 'Feedback' status will be used which can add additional steps i.e.
+
+  New -> Feedback -> New -> Acknowledged -> Confirmed -> Assigned -> Resolved.
+  
+After a ticket has been assigned it's workflow can either go backwards or forwards. for instance, a ticket is assigned to developer A as he has begun working on it, Now if developer A can not continue to work on the ticket, they would return it to either, Acknowledged or confirmed as applicable. now if Developer B decides to work on this ticket he would assign it to himself.
+
+  New -> Assigned -> Acknowledged -> Assigned -> Resolved.
+
+The workflow can spear off in many different directions, some status' can be or may be missed, but generally when this happens it is done as it may not be necessary to change to a certain status. i.e. ticket is new, developer notices that it is a small fix and can resolve the ticket straight away, so therefor would immediately resolve the ticket without following the basic workflow.
+
+There is however one exception, that being a ticket with a status of 'Feedback', which will always return to 'New' after the required person leaves feedback. when ever there is a change in status, there should always be notes to accompany them, depending on your level of access, unless you left the note you may not be able to view it if the note has been marked as private.
+
+==== 5.2.1 Transitions ====
+As per the workflows as denoted above the transitions between each status are as follows
+^  Current Status  ^  Next Available Status  |
+|  NEW  | acknowledged,feedback,confirmed,assigned,resolved  |
+|  FEEDBACK  | new,acknowledged,confirmed,assigned,resolved  |
+|  ACKNOWLEDGED  | confirmed,feedback,assigned,resolved  |
+|  CONFIRMED  | assigned,feedback,acknowledged,resolved  |
+|  ASSIGNED  | resolved,feedback,acknowledged,confirmed  |
+|  RESOLVED  | closed,feedback,assigned  |
+|  CLOSED  | feedback,assigned  |
+
+==== 5.2.2 Thresholds ====
+All status' have permissions or access levels on who can change that status. Typically these thresholds are set at developer or higher. Feedback is the only status that can be changed by anyone else. The reported if required to leave feedback, on leaving a note in this status will automatically set the status back to new.
+
+===== 5.3 Resolution =====
+When  ticket is marked as either resolved of closed there is a resolution field that is set as well. this resolution further denotes the resolution of the ticket. when the ticket is marked as resolved, a version should also be selected. This way the change log feature of the ticketing system will automagically record the changes for a particular version.  The available resolutions are:
+  * open
+  * Fixed
+  * reopened
+  * unable to reproduce
+  * Not Fixable
+  * duplicate
+  * No change required
+  * Suspended
+  * Won't fix
+
+when a ticket is either closed or resolved one of these will be selected to denote the final resolution in relation to the ticket.
+
+
+==== 5.3.1 Open ====
+Ticket is open, this should not be selected if the ticket is being resolved or closed.
+
+==== 5.3.2 Fixed ====
+The ticket is considered resolved with a devised fix.
+
+==== 5.3.3 reopened ====
+That the ticket has been reopened, this should not be used for a status of closed or resolved.
+
+==== 5.3.4 unable to reproduce ====
+A member of the development team can no reproduce your issue and is either closing or marking the ticket as resolved based on that.
+
+==== 5.3.5 Not Fixable ====
+The ticket issue can not be fixed. normally this resolution will only be used if the issue is outside of there control.
+
+==== 5.3.6 duplicate ====
+the ticket is a duplicate of another ticket. if this resolution is selected then the duplicate ticket number is to be entered in the applicable field (Applies to Development Team only)
+
+==== 5.3.7 No change required ====
+There is no action that the development team needs to implement.
+
+==== 5.3.8 Suspended ====
+There is no timeframe set for or if this ticket will be worked on. generally items that have been marked with this resolution are considered to be 'Wish list' items.
+
+==== 5.3.9 Won't fix ====
+Exactly as the resolution states. the development team will not be fixing the ticket. this could be for any number of reasons, a note will generally be added to support the reasons behind this resolution.
+

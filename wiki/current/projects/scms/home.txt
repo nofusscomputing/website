@@ -1,0 +1,41 @@
+====== SCMS Plugin Manager ======
+
+The SCMS plugin manager has been designed as a way for us to quickly and easily deploy Software to the end User and for us to extend our services to the user’s desktop. The plugin manager is provided to anyone free of charge. Why is it free? You ask, simple the plugin manager is just the interface to our software and the actual tasks it runs don't directly benefit you.
+
+Once installed you will notice a new icon in the notification area, this is where you can access all of the features the plugin Manager has to Offer .
+
+For this software to function you will periodically require an active internet connection.
+
+===== Background tasks =====
+
+There are numerous background tasks that run that we have added to the Plugin Manager that improves our services. The main task of the Plugin Manager is to conduct system inventories.
+
+We collect this data to improve our services, namely our computer information database. The information that we collect and provide as part of our services is not linked back to you. The only exception to this is if you are one of our beta testers we require this information to be linked to you, that way if we identify an issue we can contact the person who the Issue relates to so we can rectify any issue with our software.
+
+The data that we collect is the equivalent of us collecting the details of your residence i.e. your house colour, number of walls, how many cupboards, doors, windows, colours of objects and who made them etc. we don't collect the equivalent details of its occupants, visitors or activities that are carried out.
+
+The tasks that the SCMS runs are pre-programmed into the application meaning, we can't tell your computer to do something funky. These tasks only run when we require them to. Each pre-programmed task has been hard written into the application if we require your PC to run a task, when it checks in with the SCMS Server We send a unique task command that instructs the SCMS on what we would like done. We have not and do not intend to add to our Software in any way Shape or form the ability for us to run random Windows commands/scripts, to us we would consider this to be a Violation of your trust and leave your Computer available for abuse.
+
+
+===== Pre-Programmed tasks =====
+System inventory: the inventory task collects details on Your computer the details we collect are Via the windows management Interface (WMI) which is a part of windows and collects details on Your CPU, Ram, Hard drive, installed Software, Services, Start up applications, Computer Bios and Manufacture and model information.
+
+In the future we have plans to Increase the tasks that the SCMS can perform some of these tasks include but are not limited to ability to upload debug and crash logs and auto updating of SCMS.
+
+===== FAQ =====
+**why do we Collect this data?**\\
+If there was one answer given, it would be to improve our Services. Currently with the inventory information that we collect, it will be used by us to create our computer information database. This Information will be publicly available and enable people to have one location to find out things about computers. For example: what are the hardware specs for a particular computer, who IS the manufacture' for a piece of hardware you have Or IS my computer capable of running a piece of software/ hardware or operating System. Eventually this will link into a hardware Driver database we intend on creating and further assist as with future Software development.
+
+**will this Software Spy on me or monitor my computer activities?**\\
+NO! Even though this software does collect details about your computer it doesn't pertain to the who and what you do with your computer.
+
+**if this Software is sent Commands, does that mean anyone Can tell my computer what to do?**\\
+NO! Our Software has been built with Security In mind, only we can instruct the SCMS plugin manager what to do. All Communication to us From the SCMS IS encrypted and before any Communication Occurs the Software and SCMS Server run through Security checks including confirming it is the actual SCMS Server. Another check includes a Scenario where we ceased operations-if this was to occur the SCMS Manager Would cease having the ability to receive remote commands.
+
+
+===== See Also =====
+
+  - [[scms_client_changelog|SCMS Plugin Manager Changelog]]
+  - [[NFC>mantis/view_all_bug_page.php?project_id=3 | SCMS Plugin Manager bug and Feature Tickets]]
+  - [[NFC>mantis/changelog_page.php?project_id=3 | SCMS Bug and Feature Tracker Changelog]]
+  - [[NFC>mantis/roadmap_page.php?project_id=3 | SCMS Bug and Feature Tracker Roadmap]]

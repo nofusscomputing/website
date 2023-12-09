@@ -1,0 +1,23 @@
+====== User Documentation ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+
+===== Table of Contents =====
+
+  * [[.:application_categories]]
+  * [[..:features]]
+  * [[.:interface]]
+
+===== Random stuff that will probably disappear from the page =====
+{{pagequery>@. *;
+label=Sub Pages;
+limit=80;
+sort=pageid:asc;
+name;
+proper;
+cols=1;
+showstart;
+hidejump;
+hidemsg;
+display={title} }}

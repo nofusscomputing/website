@@ -1,0 +1,59 @@
+====== Configuration ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+
+The configuration/custom settings for the Application Manager are saved to the windows registry. The settings that are saved there are done so by using the GUI. Any setting an administrator places there will also be utilised by the Application Manager, as long as they are valid. 
+
+===== Settings =====
+All Settings for the Application Manager are saved under the root location of //HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager// within the Windows Registry. There are two subkeys available for use under this path and they are used for individual applications settings and they are:
+
+  * //HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager\Managed\[ApplicationID]// - Individual Application Settings for Managed Applications
+  * //HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager\User\[ApplicationID]// - Individual Application Settings for Custom Applications :TODO: Confirm this has custom settings
+
+Each application is a sub-key based on its [[.:application_xml_file#applicationpackage|Application ID]] under the root settings location. This Sub-Key name is derived by our system and by default will be a SHA256 of the Application. You can locate the package ID from our [[NFC>database/computer/applications/home|Application Database]]((Still Under development)) 
+
+
+<WRAP tip center 95%>All Application Manager settings can be exported to a registry file by using the following command
+  reg EXPORT HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager [PathtoFile]\ApplicationManager.reg
+
+Possible Reasons to export:
+  * Backup of settings/applications to manage
+  * to Import to a different machine to maintain consistent settings and managed applications
+
+Import with
+  reg EXPORT HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager [PathtoFile]\ApplicationManager.reg
+</WRAP>
+
+==== Application Manager Settings ====
+All Application Manager settings are saved within the same location within the Windows Registry under the HKLM hive.
+
+  * //HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager//
+
+These settings are 'REG_SZ' values and can be safely exported and re-imported without affecting the performance of the Application Manager.
+
+=== Settings ===
+By default, there are no settings placed in the registry by the Application Manager. The only time settings are placed there, is when a end user of the Application Manager customizes the setting within the GUI.
+
+^  Setting  ^  Type  ^  Value(s)  ^  Max Length  ^  Default Value  ^  Description  ^
+|  MinDriveSpace  |  Integer  |  #  |  2  |  5  | This is the amount in 'GigaBytes' of hard drive space to set aside as system reserved space.  |
+|  OverRideMinDriveSpace  |  Boolean  |  True  |  4  |  //Null//  | Override the the default of 5GB drive space reserved with the value in 'MinDriveSpace' |
+
+<WRAP center  important 90%>
+Using the setting 'OverRideMinDriveSpace' can have dire consequences for system stability, __ONLY__ use this setting if you know what you are doing. 
+</WRAP>
+
+
+==== Individual Application Install Settings ====
+Individual Applications are saved under the Application Package Key as a //REG_SZ// String Value. By default if the Setting Does not exist the Application Manager will choose the default action applicable to that setting.
+^  Name  ^  Type  ^  Value(s)  ^  Default Action  ^  Description  ^
+|  Architecture  |  String  |  AMD64\\  x86  | Install Architecture that matches OS.  | The processor architecture of the software to install.  |
+|  Update  |  String  |  False  | Update to new version when it becomes available.  | Tells the Application Manager not to update the application.  |
+|  Version  |  String  |  1.2//[.3[.4]]//  | Install Current and newest supported version  | The version of the software to install.  |
+| //items enclosed with '[ ]' are optional.// ||||
+
+
+
+
+
+All settings that the Application Manager uses are saved to the registry under //HKLM\SOFTWARE\NoFussComputing\SCMS\Plugins\ApplicationManager.//

@@ -1,0 +1,38 @@
+====== 4. Manage Account ======
+This section of the bug tracker will allow you to change your E-Mail and password. It also has subsections to manage and change other preferences.\\
+\\
+Each section can be navigated to by clicking on the links in the upper right corner; the following sub-sections are available:
+  * My Account
+  * Preferences
+  * Profiles
+
+===== 4.1. Pages =====
+
+==== 4.1.1 My Account ====
+This section gives you the ability to change your E-Mail address and password. within this section you also get a list of projects you have access to including the level of access.
+
+==== 4.1.2 Preferences ====
+Within this section you can customize the following preferences:
+
+   - Default Project - //This is the project you are automatically logged into when you log into the bug tracker//
+   - Refresh Delay - //You can set the view bugs pages to refresh every X minutes. 0 means never refresh, The  defeult is 30 minutes//
+   - Redirect Delay - //Each action page has a delay value that you can set. Minimum of 0//
+   - Email on New - //Email you if you are a Developer, Manager, or Administrator when a new bug report is filed.//
+   - Email on Assigned - //Email you when a bug you are attached to is set to assigned//
+   - Email on Feedback - //Email you when a bug you are attached to is set to feedback status//
+   - Email on Resolved - //Email you when a bug you are attached to is set to resolved status//
+   - Email on Closed - //Email you when a bug you are attached to is set to closed status//
+   - Email on Reopened - //Email you when a bug you are attached to is Reopened//
+   - Email on Bug note Added - //Email you when a bug you are attached to has a bug note added//
+   - Email on Status Change - //Email you when the status of a bug you are attached to is changed//
+   - Email on Priority Change - //Email you when the priority of a bug you are attached to is changed//
+   - Timezone - //the timezone your in, will enable the times on tickets to be displayed in your local timezone//
+   - Language - //Select your language// 
+
+You can reset the defaults with the "Reset Prefs" button. The administrator sets the default values in the configuration file.
+
+==== 4.1.3 Profiles ====
+Here you can add new profiles. This is useful when you don't want to keep re-entering your system configuration in the Advanced Bug Reports. It allows for multiple bug reports for multiple system configurations. There is a "Description" field as a catchall for more details
+
+===== 4.2 Notifications =====
+All notifications from us come from our helpdesk and if it is from or bug tracker the name will be "NFC Bug and Feature Tracker".

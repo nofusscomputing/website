@@ -1,0 +1,25 @@
+====== Application Manager ======
+<WRAP center info 80%>
+This Application is still under development. The documentation and or any information you find pertaining to this product may be different from the final release.
+</WRAP>
+<wrap center 95% em>//GOAL: Provide a solution for end users to easily install software on their computer and keep it up to date, regardless of their computing experience.//</wrap>
+
+The Application Manager has been designed as a point and click solution to install software on your computer. This point and click is so simple your grandma could use it. There are only two steps to install software
+  - Select the software you would like to install, and 
+  - Click //'install'//.
+
+As soon as you click install the Application Manager Confirms the software is not already installed, if not; downloads the application installer including any dependencies, installs the application, confirms the application installed and runs any additional tasks. All of this in the background __//without any user intervention.//__ Please check out our [[.:features|features]] page for more information.
+
+
+To make life easier and a little more logical we have broken our documentation up in to two sections.
+  * [[public:projects:application_manager:administration_documentation:home]], for those who want to get their hands dirty.
+  * [[public:projects:application_manager:user_documentation:home]], how to use the interface and application in general.
+
+  
+Useful Links
+  * [[NFC>mantis/set_project.php?project_id=48;49|Bug and Feature Tracker]], Request a feature or notify us of a bug.
+  * [[NFC>mantis/roadmap_page.php?project_id=49|Roadmap]], see what we are about to implement
+  * [[NFC>mantis/changelog_page.php?project_id=49|Changemap]], see what we have implemented.
+===== Management Interface =====
+{{ :public:projects:application_manager:management_interface.png?nolink |No Fuss Computing's Application Manager}}
+

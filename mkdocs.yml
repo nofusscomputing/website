@@ -1,0 +1,91 @@
+INHERIT: website-template/mkdocs.yml
+
+repo_name: Website
+repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
+edit_uri: '/-/ide/project/nofusscomputing/projects/website/edit/development/-/pages/'
+
+nav:
+- Home: index.md
+
+- Articles: 
+
+  - articles/index.md
+
+  - 2023:
+
+    - articles/2023/new_website.md
+
+  - 2015:
+ 
+    - articles/2015/choose_internet_service.md
+
+  - 2014:
+
+    - articles/2014/mdt_setup.md
+
+  - Content Tags: tags.md
+
+- Projects: 
+
+  - projects/index.md
+
+  - Ansible:
+
+    - projects/ansible/index.md
+
+    - Ansible Execution Environment:
+
+        - projects/execution_environment/index.md
+
+    - Playbooks:
+
+      - projects/ansible/playbooks/index.md
+
+    - Roles:
+
+      - projects/ansible/roles/index.md
+
+      - Common:
+      
+        - projects/ansible/roles/common/index.md
+
+      - Firewall:
+      
+        - projects/ansible/roles/firewall/index.md
+
+      - Home Assistant:
+      
+        - projects/ansible/roles/homeassistant/index.md
+
+      - Kubernetes:
+      
+        - projects/ansible/roles/kubernetes/index.md
+
+    - Git Configuration:
+
+      - projects/git_configuration/index.md
+
+  - Docker:
+
+    - projects/docker/index.md
+  
+    - BIND DNS Server: projects/docker/bind/index.md
+
+    - Docker Mail: projects/docker-mail/index.md
+
+  - Gitlab CI: projects/gitlab-ci/index.md
+
+  - Docker GLPI: projects/glpi/index.md
+
+  - Kubernetes Monitoring: projects/kubernetes_monitoring/index.md
+
+  - LDAP Self Service: projects/ldap_self_service/index.md
+
+  - Python Gitlab Management: projects/python-gitlab-management/README.md
+
+- Operations: 
+
+  - operations/index.md
+
+- Contact Us: contact.md
+

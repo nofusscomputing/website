@@ -1,0 +1,16 @@
+====== SCMS Command Line Switches ======
+When you use our installer to install the SCMS it will automatically create the shortcuts you require to utilise the plugins of the SCMS.
+
+===== Switches =====
+To view the different switches for each component please review the relevant section of our wiki as listed below.
+  * [[public:projects:application_manager:administration_documentation:launch_managed_application_installer]]
+
+===== Application Exit Codes =====
+The SCMS will return exit codes when the application closes. in most case a success will be returned. depending on what you are doing the following are the exit code the application will return.
+
+^  Exit Code  ^  Name  ^  Description  ^
+|  0  |  Success  | Task Finished as it should have. |
+|  1  |  Warning/Error  | Check the log file for more information as a Warning or Error occurred during the task that was run  |
+|  99  |  Bad Argument  | The switch used to launch the application is invalid.  |
+|  666  |  Not an Admin User  | The installer was launched without administrative permissions.  |
+

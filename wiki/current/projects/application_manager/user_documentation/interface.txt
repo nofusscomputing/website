@@ -1,0 +1,14 @@
+====== User Interface ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+
+:TODO: Fix up this page
+
+
+==== Installed Status ====
+^  Colour  ^  Description  ^
+|  Green  | Application is not installed.  |
+|  Yellow  | User does not have access to view.  |
+|  Orange  | No uninstall information was provided within the [[public:projects:application_manager:administration_documentation:application_xml_file#Attributes|Application Configuration file]], or the uninstall information was left blank.  |
+|  Red  | Not Installed  |

@@ -1,0 +1,20 @@
+====== Logging ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+:TODO: Fix these docs
+
+The SCMS logs directly to the Event log under the application Log 'SCMS'
+
+===== Error Numbers =====
+The error numbers for the logging derive from the severity levels as defined in [[https://tools.ietf.org/html/rfc5424| RFC5424]]. this Enables easy identification of the output of the logging entry.
+
+
+[[public:projects:scms:logging]]
+
+Session Log
+C:\Windows\Temp\
+
+
+Application Log
+C:\Program Data\NoFussComputing\ApplicationManager\

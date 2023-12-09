@@ -1,0 +1,154 @@
+====== Windows Logon Script GUI ======
+ 
+===== 1. Introduction =====
+The logon GUI is a VB.net application designed to run shell scripts or programs and display their progress in a GUI. Initially I just planned to update my old HTA Logon scripts but soon discovered that a Logon GUI would look more professional and provide the end user with just enough information to be informed if the logon process was a success. See [[mantis>66|Ticket #66]].
+
+
+
+
+===== 2. How it Works =====
+The Logon GUI is added as a users logon script, either by using Group Policy or the Logon Script within the Users Profile Tab the script will run when a user logs on. The GUI will load before the desktop and call each of the four pre-designated scripts simultaneously. As each script runs and when they provide feedback, the GUI will update the progress bars accordingly.\\ The Logon GUI will as a minimum, run for seven seconds. there is a two second pause before script processing starts and a further five second pause after all scripts complete.
+
+
+==== 2.1 Progress Bars ====
+The progress bars are an indication of how far each stage of the logon process has come; generally the bar will be blue. The following table denotes the colours available.
+^  Script Code  ^  Colour  ^  Explaination  ^
+|  0  |  Blue  |  Normal  |
+|  1  |  Red  |  Error  |
+|  2  |  Orange  |  Warning  |
+|  3  |  Light Gray  |  No Script Found  |
+
+
+==== 2.2 Features ====
+  - Provide feedback to users by changing colour of the progress bars.(Assists admins to quickly fault find.)
+  - Automatic exit after five minutes. regardless of if the shell scripts have finished processing. (This will stop script errors from locking the logon at the GUI)
+
+
+===== 3. Scripts =====
+Any command line script that outputs to the command line will work with this GUI((As soon as I extend it past VBScripts.)). The scripts are stored in the same path as the LogonGUI executable.
+
+
+==== 3.1 Pre-defined Script Names ====
+The following script names can be used for the Logon GUI(( Supported File Extensions: .vbs (VB Script) )).
+  - NetworkDrives
+  - UserProfile
+  - Other
+  - SOECheck
+
+ 
+==== 3.2 Output String ====
+The script that runs must output a correctly formatted string. This string provides information to update the GUI accordingly and without a valid output string the GUI may freeze or crash.\\ Example Script output for the Logon GUI:
+  5-,-32-,-0-,-Finished mapping G Drive
+
+Output Key
+|  Example  |  |  5  |  -,-  |  25  |  -,-  |  0  |  -,-  |  StartedLogon  |
+^  Key  ^  ^  Total \\ Commands  ^  Seperator  ^  Progress Level  ^  Seperator  ^  Error  ^  Seperator  ^  Message  ^
+|  Variable Type  |  |  Integer  |  -,-  |  Integer (< = 100)  |  -,-  |  Integer  |  -,-  |  String  |
+
+
+=== Total Commands ===
+This is the total commands that the script is going to run and is hard coded into the script.
+
+
+=== Progress Level ===
+The progress bar is incremented upto a max value of 100. This value will increase each time a command runs and is stepped up to a value of 100/TotalCommands.
+
+=== Error ===
+:TODO: Not yet implemented\\
+This value is an integer, if this value changes to anything other than 0 the highest number will remain and so to will the colour of the progress bar. so if the script returns a 2, the progress bar will remain the same colour as warning.
+
+
+=== Message ===
+The message that is placed here is what will be added to the log file. The logfile is saved to %USERPROFILE%\LogonGUI-{SCRIPTNAME}.log and gets over written every time the user logos on.
+
+
+===== 4. Other info =====
+
+
+==== 4.1 System Requirements ====
+
+|  **Operating System:** \\ (Tested) | Windows 7 |
+| :::| Windows Server 2008 |
+|  **Domain Client:** | Netlogon Share on Domain Controller |
+|  **Standalone Client:** | Netlogon Share on the local machine |
+|  **Hard Drive Space:**| |
+|  LogonGUI: | 150kb |
+|  Scripts: | as Large as they are |
+|  .NET 2.0 Runtime Installed  ||
+|  good understanding of scripting  ||
+
+
+==== 4.2 Troubleshooting ====
+  - **LogonGUI.exe Crashes:** generally this indicates a script error, quite possably in the script output.
+  - **Progress Bar Orange:** if it is only one bar then a warning command has been issued by the adjacent script, if there was a five minute delay and all progress bars went orange then one or more of the scripts failed to complete.
+  - **Progress Bar Light Gray:** The adjacent script was not found.
+  
+  
+==== 4.3 Logon GUI Screenshots ====
+{{:public:applications:logongui:logonguinormal.png?nolink|}}\\
+Normal Operation: The progress bars look like this under normal operation. Once the applicable script is found it will step the progress bar to 3% before it commences to increment the progress bar.
+
+{{:public:applications:logongui:logonguinoscripts.png?nolink|}}\\
+No Script Found: progress bar will still complete but they will be gray in colour.
+
+{{:public:applications:logongui:logonguiwarning.png?nolink|}}\\
+Warning Demo: progress bar will change to orange.
+
+===== 5 Download =====
+This application is not freely availible and if you would like to utilise this application, for a small fee I may be able to provide it to you. Please use the contact us form at nofusscomputing.com.
+
+
+==== 5.1 VBScript Template File ====
+The scipt below has only been saved as a record of history. please use the [[.:logongui/script_template|new script template.]]
+<WRAP download><WRAP info>This file will download with a .txt file extension. Please rename the file so it has the right extension as per the mentioned filename.</WRAP>
+
+<file vbnet LogonGUI-Template.vbs>
+'************************************************************************
+'   			        No Fuss Computing
+'			    LogonGUI VBScript Template
+'
+' Created By: Jon @ No Fuss Computing
+' Created on 07 Jun 2014
+' Filename: LogonGUI-Template.vbs
+'************************************************************************
+	Set objShell = Wscript.CreateObject("Wscript.Shell")
+	Set objNetwork = CreateObject("Wscript.Network")
+	
+Dim iProgressStep, iTotalMappings, iIncrement
+' Default Integers Dont Modify!
+  iIncrement = 1
+	
+	
+	
+'SOF *******************Custom Variables**********************************
+	strUserName = ucase((objNetwork.UserName))
+'EOF *********************************************************************
+
+' Set Logon GUI Variables
+  iTotalMappings = 10 ' Change this as required
+  iProgressStep = 100 / iTotalMappings ' Don't Change!!
+	
+
+call main() ' Launch Script
+
+
+Sub Main()
+
+	' Insert your code in here.
+	' Don't forget to use progress out after each command so the progress bar increments and the GUI doesn't Freeze!!.
+
+End Sub ' EOF Sub Main
+
+'
+' *************************************** Functions ********************************************
+'
+Function ProgressOut(sMessage)
+  ' This is a default Function Don't remove!!
+	Wscript.Echo(iTotalMappings & "-,-" & (iIncrement * iProgressStep) & "-,-" & sMessage)
+	iIncrement = iIncrement + 1
+End Function
+'
+'********************** Your Custom Functions Below this Line **********************************
+'
+</file>
+</WRAP>

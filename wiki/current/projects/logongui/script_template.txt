@@ -1,0 +1,50 @@
+==== Logon GUI Script Template File ====
+Below you will find the script template file. the requirements for this script template are that you know how to read and write in VBScript. you are only limited by your imagination.
+
+<WRAP download><WRAP info>This file will download with a .txt file extension. Please rename the file so it has the right extension as per the mentioned filename.</WRAP>
+
+<file vbnet LogonGUI-Template.vbs>
+<job id="NetworkDrives">
+	<script language="VBScript" src="Includes\Functions.vbs"/>
+	<script language="VBScript" src="Includes\Variables.vbs"/>
+	<script language="VBScript">
+' The script includes directives above are only required if you need to 
+' include additional files or would like to cleanup your code by using additional files.
+'************************************************************************
+'                       No Fuss Computing Logon GUI
+'                             template.wsf
+'
+' Created By: Jon Lockwood
+' Created on 07 Jun 2014
+'
+' Modified BY:
+'              Jon Lockwood, 05 Sep 15 - changed script extension to .wsf
+'************************************************************************
+' Set Logon GUI Variables
+  iTotalMappings = 10 ' Change this as required
+  iProgressStep = 100 / iTotalMappings ' Don't Change!!
+
+' Launch
+call main()
+
+
+Sub Main()
+
+	'Your Code goes in here, don't forget to generate a progress out message
+	
+End Sub
+'
+' *************************************** Functions ********************************************
+'
+Function ProgressOut(sMessage)
+  ' This is a default Function Don't remove!!
+	Wscript.Echo(iTotalMappings & "-,-" & (iIncrement * iProgressStep) & "-,-" & sMessage)
+	iIncrement = iIncrement + 1
+End Function
+'
+'********************** Your Custom Functions Below this Line **********************************
+' Place your cusom functions below this line.
+</script>
+</job>
+</file>
+</WRAP>

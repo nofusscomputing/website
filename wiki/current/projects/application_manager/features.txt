@@ -1,0 +1,32 @@
+====== Release Features ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+This page will eventually contain what features will be available in the releases.
+
+
+===== Home =====
+The home version is designed to be easy to use and to meet a majority of the requirements a home user would need.
+==== Features ====
+  * Install application in just a few clicks,
+  * Automatically deploys software
+  * Removes crap/bloat ware((Yet to be implemented))
+
+===== Professional =====
+:TODO: **This version is yet to be created.** The Professional Version is designed to have all of the bells and whistles. This version will not only enable you to have all of the same features as a home user but offer centralized management and more customizations.
+
+==== Features ====
+  * [[public:projects:application_manager:administration_documentation:launch_managed_application_installer#Managed Application Installer|Launch Installer from Command Line]]
+  
+===== Wishlist =====
+
+  * Central management of all clients
+  * auto updating of software
+  * write your own Deployable Software Package
+  * Deploy OS with it
+  * USMT Package
+  * Filter list by searching
+  * integrate into Active Directory Sites and services.
+  * Keep track of what users download
+  * tell users the approx install time
+  * 

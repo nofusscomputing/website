@@ -1,0 +1,31 @@
+====== Administration Documentation ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |
+</WRAP>
+
+Not only is the Application Manager a simple and easy to use application for those with a lack of computing knowledge, but we have added lots of [[..:features|features]] for the more savvy computer user as well. This section of the documentation covers those extra or more advanced [[..:features|features]].
+
+
+===== Table of Contents =====
+  * [[.configuration]]
+  * [[.application_xml_file]]
+  * [[.available_applications_xml_file]]
+  * [[.launch_managed_application_installer]] :TODO:
+  * [[.notes]]
+  * [[.logging]] :TODO: Create the rest of these docs.
+\\
+\\
+\\
+===== Stuff that is likely to disappear from this page =====
+
+{{pagequery>@. *;
+label=Sub Pages;
+limit=80;
+sort=pageid:asc;
+name;
+proper;
+cols=1;
+showstart;
+hidejump;
+hidemsg;
+display={title} }}

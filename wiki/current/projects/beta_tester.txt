@@ -1,0 +1,70 @@
+====== Policy - Application Beta Tester ======
+As an application BETA tester for No Fuss Computing (NFC) you will have access to the new features of our software as part of the program. These features may or may not make part of the end product, as your responsibility is to test this/these new features for but not limited to viability, usability and functionality. When ever a new feature is created and/or released you will be notified so you may test as required/instructed.
+ 
+
+
+
+===== Security and Privacy=====
+Our Privacy policy is also applicable to you as a beta tester, please refer to them in our [[#Useful Links|Useful Links]] Section. The Privacy Policy may change from time to time, it remains your responsibility to keep informed of its contents.
+
+All software installers and application files are signed and branded by us. This enables you to confirm that it was us, who have released it. For more information please take a look at our [[public/help/nfc_software|Software Branding page]]
+
+
+=====Installation=====
+Before the commencement of installing our software I will need to know your Windows flavor and architecture (Yes, it's windows only software). It would also be preferable to know how often you use your computer and how often it is shutdown/rebooted. When it is time to install or reinstall I will provide you with a link for this application. you will require administrative permissions to install this application.
+
+==== SCMS Plugin Manager ====
+ To install the [[public/projects/scms/home|SCMS Plugin Manager]], just double click and leave all settings as default in the installer. The app will install to C:\Program Files\NoFussComputing\SCMS\ (Program Files x86) on a AMD64. 
+
+ The files inside the directory should be 
+     - scms.dll, 
+     - SOETray.exe (a tray  application)
+     - SCMSService.exe (Background Service that does all of the tasks.)
+
+<WRAP center help 90%>
+All of these files should be signed to confirm right click the file and open properties and there should be a digital signatures tab, The name of the Signer or certificate provider should contain 'NFC Software Department'
+</WRAP>
+ 
+
+ After install you may also notice there is an additional log within event viewer called 'SCMS', this is where our application logs info to.
+
+===== Your Responsibilities =====
+
+==== Information Required ====
+To partake as a BETA tester for NFC, I may from time to time require additional information from you. Any additional information required will be requested from us and contain the reason for this additional information.
+As a minimum and prior to you commencement as a BETA tester I will require the following information:
+  * PCID  
+    * //(the PCID is generated from the app itself and can be found in the tray icon by right click it (spanner and orange+grey screw driver icon) and click about, the PCID is on the splash window, I should only need the first 8 and last 8 hex digits to marry your PC to the logs and add your PC to the beta testers group.)// 
+
+==== Registration ====
+You will be required to be registered on our Community Forum and our Bug and Feature tracker. The registration process for both areas of the site is quite simple and follows a simple methodology of "follow the bouncing ball" 
+
+Click the relevant name to register you account. [[nfc>community/ucp.php?mode=register|Community Forum]] and [[nfc>mantis/signup_page.php|NFC Bug and Feature Tracker]] for their respective registration pages.
+
+==== Reporting ====
+ If you identify any issues with our software you will be required to report them via our [[nfc>mantis/|bug and feature tracker]]. Any responses required by us will need to be answered within a suitable time frame, approx 24hrs. You can also request additional features be added to our software on the bug and feature tracker as well. There also maybe times when we require you to do additional things that we haven't or wont place in our software, these should be few and far between. also if we require you to send any files (Windows Error Reports, Crash dumps) these will need to be sent to helpdesk email address only.
+
+To locate the windows error reports, please navigate to [[public/help/windows_error_reports|Windows Error Reports]] for more info.
+
+ For an application crash, in the error box that pops up, within that window the location of the dmp and xml file will be provided, that you will need to send through.
+
+===== Summary =====
+ Hopefully and I say this lightly, 99% of the time you won't even notice this application on your computer. This part of the application is just the plugin manager and after a bit more testing I will begin to develop the plugins, this is where you can start to reap the rewards of installing my software and being a beta tester. If you didn't already know I am a single person not an entire organization with endless resources, to that end and around my day job and family life, I work as much a possible to make your computing experience with us a less than painful and enjoyable one. 
+
+If you have any further questions, please don't hesitate to contact me.
+
+
+**Please Note**: if you attempt to access our website with a secure connection, i.e. https you will be presented with a certificate error, if this occurs there is no need for concern. We create and self sign our own certificates due to it not being viable to spend thousands of dollars on buying a certificate from a registered Certificate Authority.
+
+
+Our Certificate Authority details can be found at [[/public/help/nfc_software]].
+
+
+
+=====Useful Links=====
+
+  * https://nofusscomputing.com/mantis/ - Bug and feature tracker
+  * http://nofusscomputing.com/wiki/public/projects/scms/scms_client_changelog - this is our changelog, and is updated everytime we are working on our code.
+  * http://nofusscomputing.com/mantis/changelog_page.php?project_id=3 - This is our bug and feature change log
+  * http://nofusscomputing.com/mantis/roadmap_page.php?project_id=3 - This is the road map for bugs a features for future releases.
+

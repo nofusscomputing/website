@@ -1,0 +1,18 @@
+====== No Fuss Confluence XBMC (Kodi) Skin ======
+<wrap tip center 80%>This page is still being developed....</wrap>
+
+I must admit that I am a fan of the default XBMC (Kodi) Confluence skin. But due to this like I have had to miss out on some of the other customizations available within other skins. So to this end I decided to start modifying and therefore creating my own skin, No Fuss Confluence.
+
+Mods
+  * Custom Video Information during Video Playback (Fig 1)
+  * Additional Studio/Video/Audio Icons
+  * Custom TV Shows / Movies Playlist
+  * //add the rest here//
+
+
+Some of the mods I have done to this skin came from ideas I seen in other skins. As I have borrowed and used these additions, I am more than happy to give credit where credit is due. //If you where the original creator of these ideas please contact me.//
+
+
+==== Video Information screen ====
+{{ :public:help:applications:software_install:xbmc:xbmcvideoinfo.png?nolink |}}
+Fig 1. Video Information Screen

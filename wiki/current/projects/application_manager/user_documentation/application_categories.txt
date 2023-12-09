@@ -1,0 +1,21 @@
+====== Software Categories ======
+<WRAP center 90%> 
+|  [[public:projects:application_manager:user_documentation:home]]  |  [[public:projects:application_manager:home|  Application Manager Home]]  |  [[public:projects:application_manager:administration_documentation:home]]  |
+</WRAP>
+
+Each Software package has been arranged into a category. Below you find all of the categories we use including a short description of each.
+
+
+^  Image  ^  Name  ^  Description  |
+|  {{:public:projects:application_manager:icons:compress.png?nolink|}}  |  Compress  | Software that offers file archiving i.e. .zip, ,7z, .gz etc.  |
+|  {{:public:projects:application_manager:icons:null.png?nolink|}}  |  Communication  | Communication software covers anything that would be used to offer voice or video communication with another person, i.e chat program  |
+|  {{:public:projects:application_manager:icons:developer.png?nolink|}}  |  Developer  | Developer Tools.  |
+|  {{:public:projects:application_manager:icons:driver.png?nolink|}}  |  Driver  | System drivers.  |
+|  {{:public:projects:application_manager:icons:null.png?nolink|}}  |  E-Mail  | E-Mail Applications.  |
+|  {{:public:projects:application_manager:icons:image.png?nolink|}}  |  Image  | Image Editing, manipulation Applications.  |
+|  {{:public:projects:application_manager:icons:multimedia.png?nolink|}}  |  Multimedia  | Multimedia Applications, including viewing, editing and processing.  |
+|  {{:public:projects:application_manager:icons:null.png?nolink|}}  |  Null  | this is a placeholder category, if an application shows under this category, the creator has made a typo in the [[..:administration_documentation:application_xml_file#ApplicationPackage|application.xml]].  |
+|  {{:public:projects:application_manager:icons:office.png?nolink|}}  |  Office  | Document editing/authoring applications.  |
+|  {{:public:projects:application_manager:icons:runtime.png?nolink|}}  |  Runtime  | Run Time Environments, i.e. browser plugin, IML applications.  |
+|  {{:public:projects:application_manager:icons:utility.png?nolink|}}  |  Utility  | System utility or administration tools.  |
+|  {{:public:projects:application_manager:icons:webbrowser.png?nolink|}}  |  Web Browser  | Web browsing applications.  |
