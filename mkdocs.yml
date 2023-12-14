@@ -53,6 +53,10 @@ nav:
       
         - projects/ansible/roles/firewall/index.md
 
+      - Git Configuration:
+
+        - projects/ansible/roles/git_configuration/index.md
+
       - Home Assistant:
       
         - projects/ansible/roles/homeassistant/index.md
@@ -60,10 +64,6 @@ nav:
       - Kubernetes:
       
         - projects/ansible/roles/kubernetes/index.md
-
-    - Git Configuration:
-
-      - projects/git_configuration/index.md
 
   - Docker:
 

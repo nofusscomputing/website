@@ -91,8 +91,8 @@ Assemble.Website.Prepare:
       else
         curl --location --output git_configuration-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/45705596/jobs/artifacts/development/download?job=Documentation%2EBuild";
         unzip git_configuration-artifacts.zip;
-        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/git_configuration";
-        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/git_configuration" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/git_configuration/";
+        rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/git_configuration";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/roles/git_configuration" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/roles/git_configuration/";
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
