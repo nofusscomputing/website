@@ -304,14 +304,14 @@ Assemble.Website.Prepare:
         $CI_COMMIT_BRANCH == null
       exists:
         - '{docs/**,pages/**}/*.md'
-      when: always
+      when: on_success
 
     - if:  # condition_master_branch_push
         $CI_COMMIT_BRANCH == "master" && 
         $CI_PIPELINE_SOURCE == "push"
       exists:
         - '{docs/**,pages/**}/*.md'
-      when: always
+      when: on_success
 
     - if:  # condition_dev_branch_push
         $CI_COMMIT_BRANCH == "development" && 
@@ -330,7 +330,7 @@ Assemble.Website.Prepare:
       #   paths:
       #     - '{docs/**,pages/**}/*.md'
       #   compare_to: 'master'
-      when: always
+      when: on_success
 
     - if:  # condition_not_master_or_dev_push
         $CI_COMMIT_BRANCH != "master" && 
@@ -344,7 +344,7 @@ Assemble.Website.Prepare:
         compare_to: 'development'
       when: always
 
-    - when: never
+    - when: on_success
 
 
 pages:
@@ -370,14 +370,14 @@ pages:
         $CI_COMMIT_BRANCH == null
       exists:
         - '{docs/**,pages/**}/*.md'
-      when: always
+      when: on_success
 
     - if:  # condition_master_branch_push
         $CI_COMMIT_BRANCH == "master" && 
         $CI_PIPELINE_SOURCE == "push"
       exists:
         - '{docs/**,pages/**}/*.md'
-      when: always
+      when: on_success
 
     - if:  # condition_dev_branch_push
         $CI_COMMIT_BRANCH == "development" && 
@@ -396,7 +396,7 @@ pages:
       #   paths:
       #     - '{docs/**,pages/**}/*.md'
       #   compare_to: 'master'
-      when: always
+      when: on_success
 
     - if:  # condition_not_master_or_dev_push
         $CI_COMMIT_BRANCH != "master" && 
@@ -408,7 +408,7 @@ pages:
         paths:
           - '{docs/**,pages/**}/*.md'
         compare_to: 'development'
-      when: always
+      when: on_success
 
     - when: never
 
