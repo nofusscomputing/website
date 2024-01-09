@@ -344,7 +344,7 @@ Assemble.Website.Prepare:
         compare_to: 'development'
       when: always
 
-    - when: on_success
+    - when: never
 
 
 pages:
