@@ -65,6 +65,10 @@ nav:
       
         - projects/ansible/roles/kubernetes/index.md
 
+      - Testing:
+      
+        - projects/ansible/roles/ansible_test/index.md
+
   - Docker:
 
     - projects/docker/index.md
