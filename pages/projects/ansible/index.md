@@ -105,8 +105,53 @@ Naming of host inventory files is to use the hostname portion of the FQDN only. 
 The hosts file `host.yaml` contains all hosts and by which group they are part of.
 
 
+### Variable Files
+
+Preference for variable files is that there is one file per subject. i.e. for the variables for a keycloak deployment, all be in one variable file, and under a directory matching the host/group name.
+
+
 ### Playbooks
 
+For playbook usage in AWX / Ansible Automation platform, the following changes are required to be made to **all** playbooks:
+
+- variable `nfc_pb_host` is used for a template survey variable for a host selector for limiting hosts when running a play.
+
+    Example implementaion
+    ``` yaml
+    - name: Desktops and Sub-groups
+      hosts: |-
+        {%- if 
+          nfc_pb_host is defined 
+            and
+          nfc_pb_host in groups.desktops 
+        -%}
+          {{ nfc_pb_host }}
+        {%- else -%}
+          {{ groups.desktops }}
+        {%- endif %}
+    ```
+
+    !!! warning "Important"
+        The building of the variable is dynamic and must check if the host is part of the group the playbook is for. this ensures that the playbook will only ever run for a host that is part of that group.
+
+- variable `nfc_pb_kubernetes_cluster_name` is used for a template survey variable for the dynamic building of the cluster group name.
+
+    Example implementaion
+    ``` yaml
+    - name: Kubernetes Group and sub-groups
+      hosts:  |-
+        {%- if 
+          nfc_pb_host is defined 
+            and
+          nfc_pb_host in groups.kubernetes 
+        -%}
+          {{ nfc_pb_host }}
+        {%- elseif nfc_pb_kubernetes_cluster_name is defined -%}
+          kubernetes_cluster_{{ nfc_pb_kubernetes_cluster_name }}
+        {%- else -%}
+          {{ groups.kubernetes }}
+        {%- endif %}
+    ```
 
 ### Templates
 
@@ -203,7 +248,6 @@ example playbook to set artifacts and variables
       ansible.builtin.set_fact:
         nfc_task_starttime: "{{ ('%Y-%m-%dT%H:%M:%S %z' | strftime) | string }}"
       no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
-      when: nfc_automation is not defined
       tags:
         - always
 
@@ -212,7 +256,6 @@ example playbook to set artifacts and variables
     - name: Set Automation Facts
       ansible.builtin.set_fact:
         nfc_automation: {
-          "error": 0,
           "time": {
             "start": "{{ nfc_task_starttime | string }}",
             "end": 0
@@ -229,6 +272,7 @@ example playbook to set artifacts and variables
       ansible.builtin.set_fact:
         nfc_task: {
           "name": "{{ ansible_play_name | lower | string }}",
+          "error": 0,
           "roles": "{{ ansible_play_role_names | string }}",
           "skip_tags": "{{ ansible_skip_tags | list }}",
           "start": "{{ nfc_task_starttime | string }}",
@@ -255,7 +299,7 @@ example playbook to set artifacts and variables
           # there was an error, set error object
         - name: Set error fact
           ansible.builtin.set_fact:
-            nfc_automation: "{{ nfc_automation | combine({
+            nfc_task: "{{ nfc_task | combine({
                 'error': 1
               }) }}"
           no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
@@ -270,7 +314,7 @@ example playbook to set artifacts and variables
         - name: Error Check
           ansible.builtin.assert:
             that:
-              - nfc_automation.error | int == 0
+              - nfc_task.error | int == 0
             msg: Error occured, Fail the play run
           tags:
             - always
@@ -295,7 +339,7 @@ example playbook to set artifacts and variables
         - name: Error Check
           ansible.builtin.assert:
             that:
-              - nfc_automation.error | int == 0
+              - nfc_task.error | int == 0
             msg: Error eccured, follow error path to fail play
 
 
@@ -311,7 +355,7 @@ example playbook to set artifacts and variables
           # there was an error, set error object
         - name: Set error fact
           ansible.builtin.set_fact:
-            nfc_automation: "{{ nfc_automation | combine({
+            nfc_task: "{{ nfc_task | combine({
                 'error': 1
               }) }}"
           no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
@@ -326,7 +370,7 @@ example playbook to set artifacts and variables
         - name: Error Check
           ansible.builtin.assert:
             that:
-              - nfc_automation.error | int == 0
+              - nfc_task.error | int == 0
             msg: Error occured, Fail the play run
           tags:
             - always
@@ -342,7 +386,7 @@ example playbook to set artifacts and variables
         - name: Error Check
           ansible.builtin.assert:
             that:
-              - nfc_automation.error | int == 0
+              - nfc_task.error | int == 0
             msg: Error occured, follow error path to fail play
           tags:
             - always
@@ -361,7 +405,7 @@ example playbook to set artifacts and variables
           # there was an error, set error object
         - name: Set error fact
           ansible.builtin.set_fact:
-            nfc_automation: "{{ nfc_automation | combine({
+            nfc_task: "{{ nfc_task | combine({
                 'error': 1
               }) }}"
           no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
@@ -425,7 +469,7 @@ example playbook to set artifacts and variables
         - name: Error Check
           ansible.builtin.assert:
             that:
-              - nfc_automation.error | int == 0
+              - nfc_task.error | int == 0
             msg: Error occured, Fail the play run
           tags:
             - always
