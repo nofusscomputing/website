@@ -355,7 +355,7 @@ pages:
     - mv "$CI_PROJECT_DIR/artifacts/prepare/Assemble.Website.Prepare/build" public
   needs: [ 'Assemble.Website.Prepare' ]
   environment: 
-    name: staging
+    name: Gitlab Pages
     url: $CI_PAGES_URL
   artifacts:
     paths:

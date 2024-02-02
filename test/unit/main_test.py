@@ -15,7 +15,7 @@ class Test:
     def setup_method(self):
         self.ignore_url_alive_check = {
             'gitlab.com': [
-                'nofusscomputing/infrastructure/website//-/new/development'
+                'nofusscomputing/infrastructure/website/-/new/development'
             ]
         }
 
