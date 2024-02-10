@@ -81,6 +81,12 @@ nav:
 
   - Docker GLPI: projects/glpi/index.md
 
+  - ITIL:
+
+    - Runbooks:
+
+      - projects/itil/runbooks/index.md
+
   - Kubernetes Monitoring: projects/kubernetes_monitoring/index.md
 
   - LDAP Self Service: projects/ldap_self_service/index.md
