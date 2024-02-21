@@ -10,8 +10,8 @@
 
   variables:
     GIT_STRATEGY: none
-  # before_script:
-  #   - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/project_docs/source"
+  before_script:
+    - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/project_docs"
 
   script:
     - echo "[DEBUG] Fetch Project ${ASSEMBLE_PROJECT_NAME}"
