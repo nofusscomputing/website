@@ -31,7 +31,7 @@ Get Project Documentation:
 
       - ASSEMBLE_PROJECT_NAME: operations
         ASSEMBLE_PROJECT_ID: 32419575
-        ASSEMBLE_PROJECT_PATH: operations/
+        ASSEMBLE_PROJECT_PATH: operations
 
       - ASSEMBLE_PROJECT_NAME: git_configuration
         ASSEMBLE_PROJECT_ID: 45705596
