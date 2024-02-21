@@ -86,6 +86,7 @@
   variables:
     GIT_STRATEGY: none
   before_script:
+    - mkdir -p $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs
     - mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/"
   script:
 
