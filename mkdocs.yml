@@ -37,6 +37,14 @@ nav:
 
         - projects/ansible/execution_environment/index.md
 
+    - Collections:
+
+      - projects/ansible/collection/index.md
+
+      - phpIPAM Scan Agent: 
+      
+        - projects/ansible/collection/phpipam_scan_agent/index.md
+
     - Playbooks:
 
       - projects/ansible/playbooks/index.md
@@ -73,13 +81,19 @@ nav:
 
     - projects/docker/index.md
   
-    - BIND DNS Server: projects/docker/bind/index.md
+    - BIND DNS Server:
+    
+      - projects/docker/bind/index.md
 
-    - Docker Mail: projects/docker-mail/index.md
+    - Docker GLPI: 
+    
+      - projects/glpi/index.md
+
+    - Docker Mail: 
+    
+      - projects/docker-mail/index.md
 
   - Gitlab CI: projects/gitlab-ci/index.md
-
-  - Docker GLPI: projects/glpi/index.md
 
   - ITIL:
 
