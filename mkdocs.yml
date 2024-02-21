@@ -37,6 +37,14 @@ nav:
 
         - projects/ansible/execution_environment/index.md
 
+    - Collections:
+
+      - projects/ansible/collection/index.md
+
+      - phpIPAM Scan Agent: 
+      
+        - projects/ansible/collection/phpipam_scan_agent/index.md
+
     - Playbooks:
 
       - projects/ansible/playbooks/index.md
