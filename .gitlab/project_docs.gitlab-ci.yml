@@ -98,9 +98,9 @@
 
         echo "set as project path [${JOIN_PROJECT_PATH}]";
 
-        echo "rm -Rf $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/${JOIN_PROJECT_PATH}";
+        rm -Rf $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/${JOIN_PROJECT_PATH};
 
-        echo "cp -rvf $CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/${JOIN_PROJECT_PATH} $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/build/${JOIN_PROJECT_PATH}/";
+        cp -rvf $CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/${JOIN_PROJECT_PATH} $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/build/${JOIN_PROJECT_PATH}/;
 
       done
 
