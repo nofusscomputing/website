@@ -76,7 +76,7 @@ Assemble.Website.Prepare:
         curl --location --output operations-artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/55052132/jobs/artifacts/development/download?job=Documentation%2EBuild";
         unzip operations-artifacts.zip;
         rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/collection/phpipam_scan_agent";
-        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/collection/phpipam_scan_agent" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/";
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/projects/ansible/collection/phpipam_scan_agent" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/ansible/collection/phpipam_scan_agent/";
         rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
       fi
 
