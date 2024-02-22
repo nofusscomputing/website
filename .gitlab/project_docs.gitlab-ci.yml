@@ -90,10 +90,10 @@
     - mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/"
   script:
 
-    - ls -l ${CI_PROJECT_DIR}/artifacts/chores/project_docs/
+    - ls -l ${CI_PROJECT_DIR}/artifacts/project_docs/
 
     - | # Merge Project docs to website
-      for i in `ls ${CI_PROJECT_DIR}/artifacts/chores/project_docs/`; do 
+      for i in `ls ${CI_PROJECT_DIR}/artifacts/project_docs/`; do 
 
         echo "Found Path - $i";
 
