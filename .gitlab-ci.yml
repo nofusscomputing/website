@@ -125,7 +125,9 @@ pages:
     GIT_STRATEGY: none
   script:
     - mv "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" public
-  needs: [ 'Merge Project Docs' ]
+  needs: 
+    - job: 'Merge Project Docs'
+      optional: true
   environment: 
     name: Gitlab Pages
     url: $CI_PAGES_URL
