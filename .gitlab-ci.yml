@@ -126,7 +126,13 @@ pages:
   script:
     - |
       if [ -d "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" ]; then
+
         mv "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" public;
+
+      else
+
+        mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" public;
+
       fi
   needs:
     - job: Website.Build
