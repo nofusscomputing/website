@@ -95,6 +95,10 @@ nav:
 
   - Gitlab CI: projects/gitlab-ci/index.md
 
+  - Infrastructure:
+
+    - projects/infrastructure/index.md
+
   - ITIL:
 
     - Runbooks:
