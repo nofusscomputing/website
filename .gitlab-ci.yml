@@ -124,7 +124,10 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
-    - mv "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" public
+    - |
+      if [ -d "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" ]; then
+        mv "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" public;
+      fi
   needs:
     - job: Website.Build
       artifacts: true
