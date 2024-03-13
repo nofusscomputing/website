@@ -21,8 +21,6 @@ Our roles:
 
 - [Home Assistant](homeassistant/index.md)
 
-- [Kubernetes](kubernetes/index.md)
-
 - SSH
 
 

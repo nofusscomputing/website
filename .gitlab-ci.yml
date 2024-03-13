@@ -25,6 +25,10 @@ Get Project Documentation:
         ASSEMBLE_PROJECT_ID: 55052132
         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/phpipam_scan_agent
 
+      - ASSEMBLE_PROJECT_NAME: kubernetes
+        ASSEMBLE_PROJECT_ID: 51640029
+        ASSEMBLE_PROJECT_PATH: projects/ansible/collection/kubernetes
+
       - ASSEMBLE_PROJECT_NAME: gitlab-ci
         ASSEMBLE_PROJECT_ID: 28543717
         ASSEMBLE_PROJECT_PATH: projects/gitlab-ci
@@ -72,10 +76,6 @@ Get Project Documentation:
       - ASSEMBLE_PROJECT_NAME: homeassistant
         ASSEMBLE_PROJECT_ID: 51020674
         ASSEMBLE_PROJECT_PATH: projects/ansible/roles/homeassistant
-
-      - ASSEMBLE_PROJECT_NAME: kubernetes
-        ASSEMBLE_PROJECT_ID: 51640029
-        ASSEMBLE_PROJECT_PATH: projects/ansible/roles/kubernetes
 
       - ASSEMBLE_PROJECT_NAME: itil_runbooks
         ASSEMBLE_PROJECT_ID: 54680811
