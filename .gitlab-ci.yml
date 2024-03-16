@@ -25,6 +25,10 @@ Get Project Documentation:
         ASSEMBLE_PROJECT_ID: 55052132
         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/phpipam_scan_agent
 
+      - ASSEMBLE_PROJECT_NAME: firewall
+        ASSEMBLE_PROJECT_ID: 51640016
+        ASSEMBLE_PROJECT_PATH: projects/ansible/collection/firewall
+
       - ASSEMBLE_PROJECT_NAME: kubernetes
         ASSEMBLE_PROJECT_ID: 51640029
         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/kubernetes
@@ -68,10 +72,6 @@ Get Project Documentation:
       - ASSEMBLE_PROJECT_NAME: common
         ASSEMBLE_PROJECT_ID: 52226103
         ASSEMBLE_PROJECT_PATH: projects/ansible/roles/common
-
-      - ASSEMBLE_PROJECT_NAME: firewall
-        ASSEMBLE_PROJECT_ID: 51640016
-        ASSEMBLE_PROJECT_PATH: projects/ansible/roles/firewall
 
       - ASSEMBLE_PROJECT_NAME: homeassistant
         ASSEMBLE_PROJECT_ID: 51020674
