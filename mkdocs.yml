@@ -41,13 +41,17 @@ nav:
 
       - projects/ansible/collection/index.md
 
-      - phpIPAM Scan Agent: 
+      - Firewall:
       
-        - projects/ansible/collection/phpipam_scan_agent/index.md
+        - projects/ansible/collection/firewall/index.md
 
       - Kubernetes:
       
         - projects/ansible/collection/kubernetes/index.md
+
+      - phpIPAM Scan Agent: 
+      
+        - projects/ansible/collection/phpipam_scan_agent/index.md
 
     - Playbooks:
 
