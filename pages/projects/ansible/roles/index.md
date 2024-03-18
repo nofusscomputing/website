@@ -15,8 +15,6 @@ Our roles:
 
 - Docker Management
 
-- [Firewall](firewall/index.md)
-
 - Git Configuration
 
 - [Home Assistant](homeassistant/index.md)
