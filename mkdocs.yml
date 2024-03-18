@@ -65,10 +65,6 @@ nav:
       
         - projects/ansible/roles/common/index.md
 
-      - Firewall:
-      
-        - projects/ansible/roles/firewall/index.md
-
       - Git Configuration:
 
         - projects/ansible/roles/git_configuration/index.md
