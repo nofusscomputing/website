@@ -45,6 +45,10 @@ Get Project Documentation:
         ASSEMBLE_PROJECT_ID: 45705596
         ASSEMBLE_PROJECT_PATH: projects/ansible/roles/git_configuration
 
+      - ASSEMBLE_PROJECT_NAME: docker-bind
+        ASSEMBLE_PROJECT_ID: 52098058
+        ASSEMBLE_PROJECT_PATH: projects/docker/bind
+
       - ASSEMBLE_PROJECT_NAME: docker-mail
         ASSEMBLE_PROJECT_ID: 33611657
         ASSEMBLE_PROJECT_PATH: projects/docker-mail
