@@ -21,10 +21,6 @@ Get Project Documentation:
   parallel:
     matrix:
 
-      - ASSEMBLE_PROJECT_NAME: phpipam_scan_agent
-        ASSEMBLE_PROJECT_ID: 55052132
-        ASSEMBLE_PROJECT_PATH: projects/ansible/collection/phpipam_scan_agent
-
       - ASSEMBLE_PROJECT_NAME: firewall
         ASSEMBLE_PROJECT_ID: 51640016
         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/firewall
@@ -32,6 +28,14 @@ Get Project Documentation:
       - ASSEMBLE_PROJECT_NAME: kubernetes
         ASSEMBLE_PROJECT_ID: 51640029
         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/kubernetes
+
+      - ASSEMBLE_PROJECT_NAME: netbox
+        ASSEMBLE_PROJECT_ID: 56568566
+        ASSEMBLE_PROJECT_PATH: projects/ansible/collection/netbox
+
+      - ASSEMBLE_PROJECT_NAME: phpipam_scan_agent
+        ASSEMBLE_PROJECT_ID: 55052132
+        ASSEMBLE_PROJECT_PATH: projects/ansible/collection/phpipam_scan_agent
 
       - ASSEMBLE_PROJECT_NAME: gitlab-ci
         ASSEMBLE_PROJECT_ID: 28543717
