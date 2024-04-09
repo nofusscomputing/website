@@ -39,7 +39,7 @@ The areas of infrastructure that are covered are as detailed:
 
     - Backup Management
 
-    - Computer Lifecycle Management - _Foreman_
+    - Computer Lifecycle Management - _GLPI_
 
     - Help desk - _GLPI_
 
@@ -70,6 +70,8 @@ The areas of infrastructure that are covered are as detailed:
     - Incident Management - _GLPI_
 
     - IT Asset Management - _GLPI_
+
+    - Patch Management - _Foreman_
 
     - Problem Management - _GLPI_
 
