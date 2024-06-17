@@ -97,6 +97,10 @@ nav:
     
       - projects/docker-mail/index.md
 
+  - Django ITSM:
+
+    - projects/django-template/index.md
+
   - Gitlab CI: projects/gitlab-ci/index.md
 
   - ITIL:
