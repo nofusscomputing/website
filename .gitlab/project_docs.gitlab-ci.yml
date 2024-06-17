@@ -57,7 +57,11 @@
         )
           ||
         (
-          $CI_COMMIT_BRANCH == "development"
+          (
+            $CI_COMMIT_BRANCH == "development"
+              ||
+            $CI_COMMIT_BRANCH != "master"
+          )
             &&
           ( 
             $CI_PIPELINE_SOURCE == "pipeline"
@@ -131,7 +135,11 @@
         )
           ||
         (
-          $CI_COMMIT_BRANCH == "development"
+          (
+            $CI_COMMIT_BRANCH == "development"
+              ||
+            $CI_COMMIT_BRANCH != "master"
+          )
             &&
           ( 
             $CI_PIPELINE_SOURCE == "pipeline"
