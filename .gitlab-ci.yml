@@ -112,12 +112,119 @@ Website.Lint:
     extends: .Lint_Markdown_Docs
     variables:
       MDLINT_PATHS: "pages/*.md pages/**/*.md pages/**/**/*.md pages/**/**/**/*.md pages/**/**/**/**/**/*.md #CHANGELOG.md !gitlab-ci !website-template"
+    
+    rules:
+      - if: '$JOB_STOP_LINT_MARKDOWN_DOCS'
+        when: never
+
+      - if:  # condition_git_tag
+          $CI_COMMIT_TAG != null &&
+          $CI_COMMIT_BRANCH == null
+        exists:
+          - '{docs/**,pages/**}/*.md'
+        when: always
+
+      - if:  # condition_master_branch_push
+          $CI_COMMIT_BRANCH == "master" && 
+          $CI_PIPELINE_SOURCE == "push"
+        exists:
+          - '{docs/**,pages/**}/*.md'
+        when: always
+
+      - if:  # condition_dev_branch_push
+          $CI_COMMIT_BRANCH &&
+          (
+            $CI_PIPELINE_SOURCE == "api"
+              ||
+            $CI_PIPELINE_SOURCE == "pipeline"
+              ||
+            $CI_PIPELINE_SOURCE == "push"
+              ||
+            $CI_PIPELINE_SOURCE == "schedule"
+          )
+        # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+        exists:
+          - '{docs/**,pages/**}/*.md'
+        # No changes check # See nofusscomputing/projects/gitlab-ci#34
+        # changes:
+        #   paths:
+        #     - '{docs/**,pages/**}/*.md'
+        #   compare_to: 'master'
+        when: always
+
+      - if:  # condition_not_master_or_dev_push
+          $CI_COMMIT_BRANCH != "master" && 
+          $CI_COMMIT_BRANCH != "development" && 
+          $CI_PIPELINE_SOURCE == "push"
+        exists:
+          - '{docs/**,pages/**}/*.md' # works
+        changes:
+          paths:
+            #- '{docs/*,pages/*}*.md'
+            - '{docs/**,pages/**}/*.md'
+          compare_to: 'development'
+        when: always
+
+      - when: never
 
 
 Website.Build:
   extends: .MKDocs_Build
   needs: [ 'Website.Lint' ]
   resource_group: build
+  rules:
+
+    - if: '$JOB_STOP_MKDOCS_BUILD'
+      when: never
+
+    - if:  # condition_git_tag
+        $CI_COMMIT_TAG != null &&
+        $CI_COMMIT_BRANCH == null
+      exists:
+        - 'mkdocs.{yaml,yml}'
+      when: always
+
+    # - if:  # condition_master_branch_push
+    #     $CI_COMMIT_BRANCH == "master" && 
+    #     $CI_PIPELINE_SOURCE == "push"
+    #   exists:
+    #     - 'mkdocs.{yaml,yml}'
+    #   when: always
+
+    - if:  # condition_dev_branch_push
+        $CI_COMMIT_BRANCH && 
+        ( 
+          $CI_PIPELINE_SOURCE == "api"
+            ||
+          $CI_PIPELINE_SOURCE == "pipeline"
+            ||
+          $CI_PIPELINE_SOURCE == "push"
+            ||
+          $CI_PIPELINE_SOURCE == "schedule"
+        )
+        # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+      exists:
+        - 'mkdocs.{yaml,yml}'
+      # No changes check # See nofusscomputing/projects/gitlab-ci#34
+      # changes:
+      #   paths:
+      #     - '{docs/**,pages/**}/*.md'
+      #   compare_to: 'master'
+      when: always
+
+    - if:  # condition_not_master_or_dev_push
+        $CI_COMMIT_BRANCH != "master" && 
+        $CI_COMMIT_BRANCH != "development" && 
+        $CI_PIPELINE_SOURCE == "push"
+      exists:
+        - 'mkdocs.{yaml,yml}'
+      changes:
+        paths:
+          - '{docs/**,pages/**}/*.md'
+        compare_to: 'development'
+      when: always
+
+    - when: never
 
 
 Merge Project Docs:
