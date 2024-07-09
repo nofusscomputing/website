@@ -27,7 +27,7 @@ Get Project Documentation:
 
       - ASSEMBLE_PROJECT_NAME: django_template
         ASSEMBLE_PROJECT_ID: 57560288
-        ASSEMBLE_PROJECT_PATH: projects/django-template
+        ASSEMBLE_PROJECT_PATH: projects/centurion_erp
 
       - ASSEMBLE_PROJECT_NAME: kubernetes
         ASSEMBLE_PROJECT_ID: 51640029

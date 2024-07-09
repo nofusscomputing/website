@@ -97,9 +97,9 @@ nav:
     
       - projects/docker-mail/index.md
 
-  - Django ITSM:
+  - Centurion ERP:
 
-    - projects/django-template/index.md
+    - projects/centurion_erp/index.md
 
   - Gitlab CI: projects/gitlab-ci/index.md
 
