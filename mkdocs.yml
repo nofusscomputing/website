@@ -41,6 +41,10 @@ nav:
 
       - projects/ansible/collection/index.md
 
+      - Centurion:
+
+        - projects/ansible/collection/centurion/index.md
+
       - Firewall:
       
         - projects/ansible/collection/firewall/index.md

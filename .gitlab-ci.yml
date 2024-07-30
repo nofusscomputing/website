@@ -21,6 +21,10 @@ Get Project Documentation:
   parallel:
     matrix:
 
+      - ASSEMBLE_PROJECT_NAME: centurion
+        ASSEMBLE_PROJECT_ID: 59504579
+        ASSEMBLE_PROJECT_PATH: projects/ansible/collection/centurion
+
       - ASSEMBLE_PROJECT_NAME: firewall
         ASSEMBLE_PROJECT_ID: 51640016
         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/firewall
