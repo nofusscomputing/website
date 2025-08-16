@@ -12,6 +12,10 @@
     GIT_STRATEGY: none
   before_script:
     - mkdir -p "$CI_PROJECT_DIR/artifacts/project_docs"
+    - apt update;
+    - apt install -y --no-install-recommends curl python3 --reinstall ca-certificates
+    - update-ca-certificates --fresh
+
 
   script:
     - echo "[DEBUG] Fetch Project ${ASSEMBLE_PROJECT_NAME}"
