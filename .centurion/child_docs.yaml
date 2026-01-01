@@ -71,10 +71,10 @@ child_docs:
   #   host: https://gitlab.com
   #   path: projects/ansible/roles/homeassistant
 
-  - name: itil_runbooks
-    user: nofusscomputing/infrastructure/configuration-management
-    host: https://gitlab.com
-    path: projects/itil/runbooks
+  # - name: itil_runbooks
+  #   user: nofusscomputing/infrastructure/configuration-management
+  #   host: https://gitlab.com
+  #   path: projects/itil/runbooks
 
   - name: kubernetes_monitoring
     user: nofusscomputing
