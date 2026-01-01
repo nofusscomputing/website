@@ -1,0 +1,49 @@
+---
+
+name: 'MKDocs'
+
+on:
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+
+
+  build:
+    name: Build
+    if: ${{ github.event_name != 'pull_request' && ! startsWith(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-latest
+    steps:
+
+
+      - name: Checkout Code
+        uses: http://${{ secrets.ACTIONS_TOKEN_RO }}@gitea-http.git.svc:3000/actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+
+      - name: MkDocs Docker CI
+        shell: bash
+        env:
+          IS_BUILD: 1
+        run: |
+          git submodule update --init
+
+          docker run -t --rm \
+            -e IS_BUILD=1 \
+            -e token=${{ secrets.ACTIONS_TOKEN_RO }} \
+            -e template_repo='http://${token}@gitea-http.git.svc:3000/nofusscomputing/website-template.git' \
+            --mount type=volume,source=${JOB_CONTAINER_NAME},target=${GITHUB_WORKSPACE} \
+            --workdir ${GITHUB_WORKSPACE} \
+            harbor.earth.nww/docker/nofusscomputing/mkdocs-ci:latest \
+
+
+      - name: Upload Artifacts
+        uses: http://${{ secrets.ACTIONS_TOKEN_RO }}@gitea-http.git.svc:3000/actions/upload-artifact@v3
+        if: success() || failure()
+        with:
+          name: artifacts
+          path: artifacts/
