@@ -56,10 +56,10 @@ child_docs:
     host: https://gitlab.com
     path: projects/ansible/collection/firewall
 
-  - name: gitlab-ci
-    user: nofusscomputing/projects
-    host: https://gitlab.com
-    path: projects/gitlab-ci
+  # - name: gitlab-ci
+  #   user: nofusscomputing/projects
+  #   host: https://gitlab.com
+  #   path: projects/gitlab-ci
 
   - name: git_configuration
     user: nofusscomputing/projects/ansible
