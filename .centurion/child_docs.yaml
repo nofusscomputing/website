@@ -21,10 +21,10 @@ child_docs:
   #   host: https://gitlab.com
   #   path: projects/ansible/playbooks
 
-  - name: common
-    user: nofusscomputing/projects/ansible
-    host: https://gitlab.com
-    path: projects/ansible/roles/common
+  # - name: common
+  #   user: nofusscomputing/projects/ansible
+  #   host: https://gitlab.com
+  #   path: projects/ansible/roles/common
 
   - name: execution_environment
     user: nofusscomputing/projects/ansible
