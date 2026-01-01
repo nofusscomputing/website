@@ -81,10 +81,10 @@ child_docs:
   #   host: https://github.com
   #   path: projects/kubernetes_monitoring
 
-  - name: nodered_ldap_self_service
-    user: nofusscomputing/projects
-    host: https://gitlab.com
-    path: projects/ldap_self_service
+  # - name: nodered_ldap_self_service
+  #   user: nofusscomputing/projects
+  #   host: https://gitlab.com
+  #   path: projects/ldap_self_service
 
   - name: netbox
     user: nofusscomputing/projects/ansible/collections
