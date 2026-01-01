@@ -34,6 +34,7 @@ jobs:
 
           docker run -t --rm \
             -e IS_BUILD=1 \
+            -e MKDOCS_SRC_DIRECTORY=pages \
             -e token=${{ secrets.ACTIONS_TOKEN_RO }} \
             -e template_repo='http://${token}@gitea-http.git.svc:3000/infrastructure/website-template.git' \
             --mount type=volume,source=${JOB_CONTAINER_NAME},target=${GITHUB_WORKSPACE} \
