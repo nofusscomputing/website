@@ -61,10 +61,10 @@ child_docs:
   #   host: https://gitlab.com
   #   path: projects/gitlab-ci
 
-  - name: git_configuration
-    user: nofusscomputing/projects/ansible
-    host: https://gitlab.com
-    path: projects/ansible/roles/git_configuration
+  # - name: git_configuration
+  #   user: nofusscomputing/projects/ansible
+  #   host: https://gitlab.com
+  #   path: projects/ansible/roles/git_configuration
 
   - name: homeassistant
     user: nofusscomputing/projects/ansible
