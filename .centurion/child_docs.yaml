@@ -36,10 +36,10 @@ child_docs:
     host: https://github.com
     path: projects/centurion_erp
 
-  - name: docker-bind
-    user: nofusscomputing/projects
-    host: https://gitlab.com
-    path: projects/docker/bind
+  # - name: docker-bind
+  #   user: nofusscomputing/projects
+  #   host: https://gitlab.com
+  #   path: projects/docker/bind
 
   - name: docker-mail
     user: nofusscomputing/projects
