@@ -6,7 +6,96 @@ child_docs:
   #   host: https://${token}@my-git-provider.com       # Repository protocol/host
   #   path: /projects/centurion_erp/user_interface    # Doc path under `docs/` directory
 
+  - name: ansible_collection_centurion
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/ansible/collection/centurion
+
+  - name: ansible_collection_kubernetes
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/ansible/collection/kubernetes
+
+  - name: ansible_playbooks
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/playbooks
+
+  - name: common
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/roles/common
+
+  - name: execution_environment
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/execution_environment
+
+  - name: centurion_erp
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/centurion_erp
+
+  - name: docker-bind
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/docker/bind
+
+  - name: docker-mail
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/docker-mail
+
+  - name: docker-glpi
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/glpi
+
   - name: firewall
     user: nofusscomputing/projects/ansible/collections
     host: https://gitlab.com
-    path: /projects/ansible/collection/firewall
+    path: projects/ansible/collection/firewall
+
+  - name: gitlab-ci
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/gitlab-ci
+
+  - name: git_configuration
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/roles/git_configuration
+
+  - name: homeassistant
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/roles/homeassistant
+
+  - name: itil_runbooks
+    user: nofusscomputing/infrastructure/configuration-management
+    host: https://gitlab.com
+    path: projects/itil/runbooks
+
+  - name: kubernetes_monitoring
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/kubernetes_monitoring
+
+  - name: nodered_ldap_self_service
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/ldap_self_service
+
+  - name: netbox
+    user: nofusscomputing/projects/ansible/collections
+    host: https://gitlab.com
+    path: projects/ansible/collection/netbox
+
+#       - ASSEMBLE_PROJECT_NAME: operations
+#         ASSEMBLE_PROJECT_ID: 32419575
+#         ASSEMBLE_PROJECT_PATH: operations
+
+  - name: phpipam_scan_agent
+    user: nofusscomputing/projects/ansible/collections
+    host: https://gitlab.com
+    path: projects/ansible/collection/phpipam_scan_agent
