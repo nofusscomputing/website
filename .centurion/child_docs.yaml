@@ -16,10 +16,10 @@ child_docs:
     host: https://github.com
     path: projects/ansible/collection/kubernetes
 
-  - name: ansible_playbooks
-    user: nofusscomputing/projects/ansible
-    host: https://gitlab.com
-    path: projects/ansible/playbooks
+  # - name: ansible_playbooks
+  #   user: nofusscomputing/projects/ansible
+  #   host: https://gitlab.com
+  #   path: projects/ansible/playbooks
 
   - name: common
     user: nofusscomputing/projects/ansible
