@@ -41,10 +41,10 @@ child_docs:
   #   host: https://gitlab.com
   #   path: projects/docker/bind
 
-  - name: docker-mail
-    user: nofusscomputing/projects
-    host: https://gitlab.com
-    path: projects/docker-mail
+  # - name: docker-mail
+  #   user: nofusscomputing/projects
+  #   host: https://gitlab.com
+  #   path: projects/docker-mail
 
   - name: docker-glpi
     user: nofusscomputing/projects
