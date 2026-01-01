@@ -46,11 +46,11 @@ jobs:
           mkdir -p artifacts
 
 
-      - name: Enable Problem Matcher
-        shell: bash
-        run: |
-          echo "NFC_PROBLEM_MATCHER=${GITHUB_REF_NAME}";
-          echo "NFC_PROBLEM_MATCHER_TYPE=markdown-lint";
+      # - name: Enable Problem Matcher
+      #   shell: bash
+      #   run: |
+      #     echo "NFC_PROBLEM_MATCHER=${GITHUB_REF_NAME}";
+      #     echo "NFC_PROBLEM_MATCHER_TYPE=markdown-lint";
 
 
       - name: Lint
