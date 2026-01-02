@@ -1,10 +1,6 @@
 ---
 
 child_docs:
-  # - name: centurion_erp_ui                          # Repository Name
-  #   user: nofusscomputing                           # Repository Owner
-  #   host: https://${token}@my-git-provider.com       # Repository protocol/host
-  #   path: /projects/centurion_erp/user_interface    # Doc path under `docs/` directory
 
   - name: ansible_collection_centurion
     user: nofusscomputing
