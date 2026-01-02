@@ -44,10 +44,11 @@ child_docs:
     path: projects/docker/bind
     branch: development
 
-  # - name: docker-mail
-  #   user: nofusscomputing/projects
-  #   host: https://gitlab.com
-  #   path: projects/docker-mail
+  - name: docker-mail
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/docker-mail
+    branch: development
 
   - name: docker-glpi
     user: nofusscomputing/projects
