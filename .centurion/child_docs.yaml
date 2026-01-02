@@ -89,10 +89,11 @@ child_docs:
     path: projects/kubernetes_monitoring
     branch: development
 
-  # - name: nodered_ldap_self_service
-  #   user: nofusscomputing/projects
-  #   host: https://gitlab.com
-  #   path: projects/ldap_self_service
+  - name: nodered_ldap_self_service
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/ldap_self_service
+    branch: development
 
   - name: netbox
     user: nofusscomputing/projects/ansible/collections
