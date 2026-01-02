@@ -83,10 +83,11 @@ child_docs:
     path: projects/itil/runbooks
     branch: development
 
-  # - name: kubernetes_monitoring
-  #   user: nofusscomputing
-  #   host: https://github.com
-  #   path: projects/kubernetes_monitoring
+  - name: kubernetes_monitoring
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/kubernetes_monitoring
+    branch: development
 
   # - name: nodered_ldap_self_service
   #   user: nofusscomputing/projects
