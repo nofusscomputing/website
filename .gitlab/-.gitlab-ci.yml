@@ -1,0 +1,466 @@
+---
+
+variables:
+    MY_PROJECT_ID: "13001358"
+
+
+# include:
+
+#   - local: .gitlab/project_docs.gitlab-ci.yml
+
+#   - project: nofusscomputing/projects/gitlab-ci
+#     ref: development
+#     file:
+#       - .gitlab-ci_common.yaml
+#       - template/automagic.gitlab-ci.yaml
+
+
+
+# Get Project Documentation:
+#   extends: .fetch_project_docs
+#   parallel:
+#     matrix:
+
+#       - ASSEMBLE_PROJECT_NAME: centurion
+#         ASSEMBLE_PROJECT_ID: 59504579
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/centurion
+
+#       - ASSEMBLE_PROJECT_NAME: firewall
+#         ASSEMBLE_PROJECT_ID: 51640016
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/firewall
+
+#       - ASSEMBLE_PROJECT_NAME: django_template
+#         ASSEMBLE_PROJECT_ID: 57560288
+#         ASSEMBLE_PROJECT_PATH: projects/centurion_erp
+
+#       - ASSEMBLE_PROJECT_NAME: kubernetes
+#         ASSEMBLE_PROJECT_ID: 51640029
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/kubernetes
+
+#       - ASSEMBLE_PROJECT_NAME: netbox
+#         ASSEMBLE_PROJECT_ID: 56568566
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/netbox
+
+#       - ASSEMBLE_PROJECT_NAME: phpipam_scan_agent
+#         ASSEMBLE_PROJECT_ID: 55052132
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/collection/phpipam_scan_agent
+
+#       - ASSEMBLE_PROJECT_NAME: gitlab-ci
+#         ASSEMBLE_PROJECT_ID: 28543717
+#         ASSEMBLE_PROJECT_PATH: projects/gitlab-ci
+
+#       - ASSEMBLE_PROJECT_NAME: operations
+#         ASSEMBLE_PROJECT_ID: 32419575
+#         ASSEMBLE_PROJECT_PATH: operations
+
+#       - ASSEMBLE_PROJECT_NAME: git_configuration
+#         ASSEMBLE_PROJECT_ID: 45705596
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/roles/git_configuration
+
+#       - ASSEMBLE_PROJECT_NAME: docker-bind
+#         ASSEMBLE_PROJECT_ID: 52098058
+#         ASSEMBLE_PROJECT_PATH: projects/docker/bind
+
+#       - ASSEMBLE_PROJECT_NAME: docker-mail
+#         ASSEMBLE_PROJECT_ID: 33611657
+#         ASSEMBLE_PROJECT_PATH: projects/docker-mail
+
+#       - ASSEMBLE_PROJECT_NAME:  execution_environment
+#         ASSEMBLE_PROJECT_ID: 45741845
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/execution_environment
+
+#       - ASSEMBLE_PROJECT_NAME: ldap_self_service
+#         ASSEMBLE_PROJECT_ID: 48321671
+#         ASSEMBLE_PROJECT_PATH: projects/ldap_self_service
+
+#       - ASSEMBLE_PROJECT_NAME: docker-glpi
+#         ASSEMBLE_PROJECT_ID: 12928828
+#         ASSEMBLE_PROJECT_PATH: projects/glpi
+
+#       - ASSEMBLE_PROJECT_NAME: kubernetes_monitoring
+#         ASSEMBLE_PROJECT_ID: 50510268
+#         ASSEMBLE_PROJECT_PATH: projects/kubernetes_monitoring
+
+#       - ASSEMBLE_PROJECT_NAME: ansible_playbooks
+#         ASSEMBLE_PROJECT_ID: 46364551
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/playbooks
+
+#       - ASSEMBLE_PROJECT_NAME: common
+#         ASSEMBLE_PROJECT_ID: 52226103
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/roles/common
+
+#       - ASSEMBLE_PROJECT_NAME: homeassistant
+#         ASSEMBLE_PROJECT_ID: 51020674
+#         ASSEMBLE_PROJECT_PATH: projects/ansible/roles/homeassistant
+
+#       - ASSEMBLE_PROJECT_NAME: itil_runbooks
+#         ASSEMBLE_PROJECT_ID: 54680811
+#         ASSEMBLE_PROJECT_PATH: projects/itil/runbooks
+
+#       # - ASSEMBLE_PROJECT_NAME:
+#       #   ASSEMBLE_PROJECT_ID:
+#       #   ASSEMBLE_PROJECT_PATH:
+
+
+# Documentation.Lint:
+#   rules:
+#     - when: never
+
+
+# Documentation.Build:
+#   rules:
+#     - when: never
+
+
+# Website.Lint:
+#     extends: .Lint_Markdown_Docs
+#     variables:
+#       MDLINT_PATHS: "pages/*.md pages/**/*.md pages/**/**/*.md pages/**/**/**/*.md pages/**/**/**/**/**/*.md #CHANGELOG.md !gitlab-ci !website-template"
+    
+#     rules:
+#       - if: '$JOB_STOP_LINT_MARKDOWN_DOCS'
+#         when: never
+
+#       - if:  # condition_git_tag
+#           $CI_COMMIT_TAG != null &&
+#           $CI_COMMIT_BRANCH == null
+#         exists:
+#           - '{docs/**,pages/**}/*.md'
+#         when: always
+
+#       - if:  # condition_master_branch_push
+#           $CI_COMMIT_BRANCH == "master" && 
+#           $CI_PIPELINE_SOURCE == "push"
+#         exists:
+#           - '{docs/**,pages/**}/*.md'
+#         when: always
+
+#       - if:  # condition_dev_branch_push
+#           $CI_COMMIT_BRANCH &&
+#           (
+#             $CI_PIPELINE_SOURCE == "api"
+#               ||
+#             $CI_PIPELINE_SOURCE == "pipeline"
+#               ||
+#             $CI_PIPELINE_SOURCE == "push"
+#               ||
+#             $CI_PIPELINE_SOURCE == "schedule"
+#           )
+#         # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+#         exists:
+#           - '{docs/**,pages/**}/*.md'
+#         # No changes check # See nofusscomputing/projects/gitlab-ci#34
+#         # changes:
+#         #   paths:
+#         #     - '{docs/**,pages/**}/*.md'
+#         #   compare_to: 'master'
+#         when: always
+
+#       - if:  # condition_not_master_or_dev_push
+#           $CI_COMMIT_BRANCH != "master" && 
+#           $CI_COMMIT_BRANCH != "development" && 
+#           $CI_PIPELINE_SOURCE == "push"
+#         exists:
+#           - '{docs/**,pages/**}/*.md' # works
+#         changes:
+#           paths:
+#             #- '{docs/*,pages/*}*.md'
+#             - '{docs/**,pages/**}/*.md'
+#           compare_to: 'development'
+#         when: always
+
+#       - when: never
+
+
+# Website.Build:
+#   extends: .MKDocs_Build
+#   needs: [ 'Website.Lint' ]
+#   resource_group: build
+#   rules:
+
+#     - if: '$JOB_STOP_MKDOCS_BUILD'
+#       when: never
+
+#     - if:  # condition_git_tag
+#         $CI_COMMIT_TAG != null &&
+#         $CI_COMMIT_BRANCH == null
+#       exists:
+#         - 'mkdocs.{yaml,yml}'
+#       when: always
+
+#     # - if:  # condition_master_branch_push
+#     #     $CI_COMMIT_BRANCH == "master" && 
+#     #     $CI_PIPELINE_SOURCE == "push"
+#     #   exists:
+#     #     - 'mkdocs.{yaml,yml}'
+#     #   when: always
+
+#     - if:  # condition_dev_branch_push
+#         $CI_COMMIT_BRANCH && 
+#         ( 
+#           $CI_PIPELINE_SOURCE == "api"
+#             ||
+#           $CI_PIPELINE_SOURCE == "pipeline"
+#             ||
+#           $CI_PIPELINE_SOURCE == "push"
+#             ||
+#           $CI_PIPELINE_SOURCE == "schedule"
+#         )
+#         # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+#       exists:
+#         - 'mkdocs.{yaml,yml}'
+#       # No changes check # See nofusscomputing/projects/gitlab-ci#34
+#       # changes:
+#       #   paths:
+#       #     - '{docs/**,pages/**}/*.md'
+#       #   compare_to: 'master'
+#       when: always
+
+#     - if:  # condition_not_master_or_dev_push
+#         $CI_COMMIT_BRANCH != "master" && 
+#         $CI_COMMIT_BRANCH != "development" && 
+#         $CI_PIPELINE_SOURCE == "push"
+#       exists:
+#         - 'mkdocs.{yaml,yml}'
+#       changes:
+#         paths:
+#           - '{docs/**,pages/**}/*.md'
+#         compare_to: 'development'
+#       when: always
+
+#     - when: never
+
+
+# Merge Project Docs:
+#   extends: .merge_project_docs
+#   needs:
+#     - job: Get Project Documentation
+#       artifacts: true
+#     - job: Website.Build
+#       artifacts: true
+
+
+
+
+# pages:
+#   stage: deploy
+#   variables:
+#     GIT_STRATEGY: none
+#   script:
+#     - |
+#       if [ -d "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" ]; then
+
+#         mv "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build" public;
+
+#       else
+
+#         mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" public;
+
+#       fi
+#   needs:
+#     - job: Website.Build
+#       artifacts: true
+#     - job: 'Merge Project Docs'
+#       optional: true
+#   environment: 
+#     name: Gitlab Pages
+#     url: $CI_PAGES_URL
+#   artifacts:
+#     paths:
+#     - public
+#   rules:
+#     # - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE == "push"'
+#     #   when: on_success
+
+#       # Build docs on tag so they can be downloaded from the tag job and are always available.
+#     - if:  # condition_git_tag
+#         $CI_COMMIT_TAG != null &&
+#         $CI_COMMIT_BRANCH == null
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       when: on_success
+
+#     - if:  # condition_master_branch_push
+#         $CI_COMMIT_BRANCH == "master" && 
+#         $CI_PIPELINE_SOURCE == "push"
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       when: on_success
+
+#     - if:  # condition_dev_branch_push
+#         $CI_COMMIT_BRANCH == "development" && 
+#         ( 
+#           $CI_PIPELINE_SOURCE == "pipeline"
+#             ||
+#           $CI_PIPELINE_SOURCE == "push"
+#             ||
+#           $CI_PIPELINE_SOURCE == "schedule"
+#         )
+#         # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       # No changes check # See nofusscomputing/projects/gitlab-ci#34
+#       # changes:
+#       #   paths:
+#       #     - '{docs/**,pages/**}/*.md'
+#       #   compare_to: 'master'
+#       when: on_success
+
+#     - if:  # condition_not_master_or_dev_push
+#         $CI_COMMIT_BRANCH != "master" && 
+#         $CI_COMMIT_BRANCH != "development" && 
+#         $CI_PIPELINE_SOURCE == "push"
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       changes:
+#         paths:
+#           - '{docs/**,pages/**}/*.md'
+#         compare_to: 'development'
+#       when: on_success
+
+#     - when: never
+
+
+# .Pytest_template:
+#   stage: test
+#   image: ubuntu:18.04
+#   before_script:
+#     - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME"
+#     - mkdir -p "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/tests"
+#     - apt update
+#     - apt install -y python3 python3-pip ca-certificates
+#     - apt install --no-install-recommends -y chromium-chromedriver
+#     - pip3 install --upgrade pip
+#     - pip3 install -r test/requirements.txt
+#   artifacts:
+#     expire_in: 24 hrs
+#     when: always
+#     paths:
+#       - "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/*"
+#     reports:
+#       junit:
+#         - "*.junit.xml"
+#   rules:
+#     # - if: '$CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push"'
+#     #   when: on_success
+
+#       # Build docs on tag so they can be downloaded from the tag job and are always available.
+#     - if:  # condition_git_tag
+#         $CI_COMMIT_TAG != null &&
+#         $CI_COMMIT_BRANCH == null
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       when: on_success
+
+#     - if:  # condition_master_branch_push
+#         $CI_COMMIT_BRANCH == "master" && 
+#         $CI_PIPELINE_SOURCE == "push"
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       when: on_success
+
+#     - if:  # condition_dev_branch_push
+#         $CI_COMMIT_BRANCH == "development" && 
+#         ( 
+#           $CI_PIPELINE_SOURCE == "pipeline"
+#             ||
+#           $CI_PIPELINE_SOURCE == "push"
+#             ||
+#           $CI_PIPELINE_SOURCE == "schedule"
+#         )
+#         # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+      
+#       # No changes check # See nofusscomputing/projects/gitlab-ci#34
+#       # changes:
+#       #   paths:
+#       #     - '{docs/**,pages/**}/*.md'
+#       #   compare_to: 'master'
+#       when: on_success
+
+#     - if:  # condition_not_master_or_dev_push
+#         $CI_COMMIT_BRANCH != "master" && 
+#         $CI_COMMIT_BRANCH != "development" && 
+#         $CI_PIPELINE_SOURCE == "push"
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       changes:
+#         paths:
+#           - '{docs/**,pages/**}/*.md'
+#         compare_to: 'development'
+#       when: on_success
+
+#     - when: never
+
+
+# # Unit Tests:
+# #   extends: .Pytest_template
+# #   needs: [ 'Website.Build' ]
+# #   script:
+# #     - mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" build
+# #     - pytest --verbose --junitxml=unit_test.junit.xml --tb=line test/unit
+# #     - cp *.junit.xml "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/"
+# #     - echo "[DEBUG] python_exit[$python_exit]"
+
+
+# #Integration Tests:
+# #  extends: .Pytest_template
+# #  needs: 
+# #    - pages
+# #    - 'Unit Tests'
+# #  script:
+# #   - echo "placeholder job for integration tests" > "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/DETEMEME.txt"
+
+
+# public_website:
+#   stage: publish
+#   image: alpine
+#   variables:
+#     GIT_STRATEGY: none
+#   before_script:
+#     - ls -la /html
+#   script:
+#     - rm -rf /html/*
+#     - cp -r "$CI_PROJECT_DIR/artifacts/prepare/Merge.Project.Docs/build"/* /html/
+#     - ls -laR /html/
+#   # needs: [ 'Merge Project Docs', 'Unit Tests']
+#   needs: [ 'Merge Project Docs']
+#   resource_group: production
+#   environment: 
+#     name: production
+#     url: https://nofusscomputing.com
+#   artifacts:
+#     paths:
+#     - public
+#   rules:
+#     - if:  # condition_master_branch_push
+#         $CI_COMMIT_BRANCH == "master" && 
+#         $CI_PIPELINE_SOURCE == "push"
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       when: on_success
+
+#     - if:  # condition_dev_branch_push
+#         $CI_COMMIT_BRANCH == "development" &&  
+#         ( 
+#           $CI_PIPELINE_SOURCE == "pipeline"
+#             ||
+#           $CI_PIPELINE_SOURCE == "push"
+#             ||
+#           $CI_PIPELINE_SOURCE == "schedule"
+#         )
+#         # See nofusscomputing/projects/gitlab-ci#34 for extra $CI_PIPELINE_SOURCE
+#       exists:
+#         - '{docs/**,pages/**}/*.md'
+#       # No changes check # See nofusscomputing/projects/gitlab-ci#34
+#       # changes:
+#       #   paths:
+#       #     - '{docs/**,pages/**}/*.md'
+#       #   compare_to: 'master'
+#       allow_failure: true
+#       when: manual
+#     - when: never
+#   tags:
+#     - production
+#     - website
