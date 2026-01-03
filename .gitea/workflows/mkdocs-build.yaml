@@ -39,7 +39,7 @@ jobs:
             -e template_repo='http://${token}@gitea-http.git.svc:3000/infrastructure/website-template.git' \
             --mount type=volume,source=${JOB_CONTAINER_NAME},target=${GITHUB_WORKSPACE} \
             --workdir ${GITHUB_WORKSPACE} \
-            harbor.earth.nww/docker/nofusscomputing/mkdocs-ci:0.4.0 \
+            harbor.earth.nww/docker/nofusscomputing/mkdocs-ci:0.4.1 \
 
 
       - name: Upload Artifacts
