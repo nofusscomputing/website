@@ -48,3 +48,35 @@ jobs:
         with:
           name: artifacts
           path: artifacts/
+
+
+  publish:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+
+
+      - name: Download Artifacts
+        uses: http://${{ secrets.ACTIONS_TOKEN_RO }}@gitea-http.git.svc:3000/actions/Download-artifact@v3
+        if: success() || failure()
+        with:
+          name: artifacts
+          # path: artifacts/
+
+      - name: Trace
+        shell: bash
+        run: |
+          ls -laR
+
+      - name: Copy files to Webserver
+        uses: http://${{ secrets.ACTIONS_TOKEN_RO }}@gitea-http.git.svc:3000/actions/ssh-scp-deploy@v1.2.0
+        with:
+          local: 'pages/*'
+          remote: '/opt/webserver/nofusscomputing.com/'
+          host: ${{ secrets.WEBSERVER_HOST }}
+          user: ${{ secrets.WEBSERVER_SSH_USERNAME }}
+          password: ${{ secrets.WEBSERVER_SSH_PASSWORD }}
+          pre_upload: rm -rf /opt/webserver/nofusscomputing.com/*
+          post_upload: ls -la /opt/webserver/nofusscomputing.com/
+          scp_options: -v
