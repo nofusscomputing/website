@@ -68,10 +68,11 @@ child_docs:
     path: projects/ansible/roles/git_configuration
     branch: development
 
-  # - name: homeassistant
-  #   user: nofusscomputing/projects/ansible
-  #   host: https://gitlab.com
-  #   path: projects/ansible/roles/homeassistant
+  - name: homeassistant
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/roles/homeassistant
+    branch: development
 
   - name: itil_runbooks
     user: nofusscomputing/infrastructure/configuration-management
