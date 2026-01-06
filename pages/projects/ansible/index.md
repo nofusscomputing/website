@@ -105,8 +105,53 @@ Naming of host inventory files is to use the hostname portion of the FQDN only. 
 The hosts file `host.yaml` contains all hosts and by which group they are part of.
 
 
+### Variable Files
+
+Preference for variable files is that there is one file per subject. i.e. for the variables for a keycloak deployment, all be in one variable file, and under a directory matching the host/group name.
+
+
 ### Playbooks
 
+For playbook usage in AWX / Ansible Automation platform, the following changes are required to be made to **all** playbooks:
+
+- variable `nfc_pb_host` is used for a template survey variable for a host selector for limiting hosts when running a play.
+
+    Example implementaion
+    ``` yaml
+    - name: Desktops and Sub-groups
+      hosts: |-
+        {%- if 
+          nfc_pb_host is defined 
+            and
+          nfc_pb_host in groups.desktops 
+        -%}
+          {{ nfc_pb_host }}
+        {%- else -%}
+          {{ groups.desktops }}
+        {%- endif %}
+    ```
+
+    !!! warning "Important"
+        The building of the variable is dynamic and must check if the host is part of the group the playbook is for. this ensures that the playbook will only ever run for a host that is part of that group.
+
+- variable `nfc_pb_kubernetes_cluster_name` is used for a template survey variable for the dynamic building of the cluster group name.
+
+    Example implementaion
+    ``` yaml
+    - name: Kubernetes Group and sub-groups
+      hosts:  |-
+        {%- if 
+          nfc_pb_host is defined 
+            and
+          nfc_pb_host in groups.kubernetes 
+        -%}
+          {{ nfc_pb_host }}
+        {%- elseif nfc_pb_kubernetes_cluster_name is defined -%}
+          kubernetes_cluster_{{ nfc_pb_kubernetes_cluster_name }}
+        {%- else -%}
+          {{ groups.kubernetes }}
+        {%- endif %}
+    ```
 
 ### Templates
 
@@ -138,6 +183,315 @@ feature_gates:
 ```
 
 Seting a feature gate on a template is as simple as enclosing the entire contents of the file with a jinja if statement. i.e. `{% if path.feature_gates.monitoring | default(false) | bool %}the content here{% endif %}`
+
+
+## Playbooks
+
+Playbooks are used for grouping of hosts and/or groups for a task or set of tasks that are required to be run. All playbooks must return artifacts that exist to serve the purpose of having information on the play that can be used in further automations.
+
+
+### Artifacts
+
+The artificates returned are set using the `ansible.builtin.set_stats` module. Prior to setting these facts with the `stats` module they must be set as facts first using the `ansible.builtin.set_fact` module. the latter enables passing of the artifacts via cli and `stats` from within AWX / Ansible Automation Platform.
+
+!!! tip
+    When setting the artifacts, ensure `per_host=false` is set so that artifacts work within AWX / Ansible Automation Platform.
+
+Common artifacts structure. **ALL** playbooks must set these variables.
+
+``` yaml
+# 'nfc_automation', dict. Global Variable, This is set from within the first playbook 
+# ran and updated as required with the end time updated by the last playbook.
+nfc_automation:
+  error: 0      # Boolean, 0=no Error, 1=Error occured
+  time:
+    start: "{{ '%Y-%m-%dT%H:%M:%S %z' | strftime }}"    # String of date time, set at time of setting 'nfc_automation'
+    end: 0                                              # String of date time, set when play finished, and updated by subsequent plays
+                                                        # Determin end time of play or duration of play when used with start time, even on error.
+
+# 'nfc_task', list. every playbook creates its own task dict to add to this list.
+nfc_task: 
+  - name: "glpi"
+    start: "{{ '%Y-%m-%dT%H:%M:%S %z' | strftime }}"
+    tags: "{{ ansible_run_tags }}"
+
+```
+
+The above must be set from within every playbook regardless of what else is in the playbooks.
+
+example playbook to set artifacts and variables
+
+``` yaml
+---
+
+#
+# Playbook Template
+#
+# This playbook template is the base template for All of our playbooks.
+#
+# No Fuss Computing <https://nofusscomputing.gitlab.io/projects/ansible/ansible_playbooks/projects/ansible/>
+#
+# Requirements:
+#   - ansible >= 2.8
+#
+
+- name: Playbook Template
+  hosts: localhost
+  become: false
+
+
+  pre_tasks:
+
+
+      # Play and task set time
+    - name: Set Start Time
+      ansible.builtin.set_fact:
+        nfc_task_starttime: "{{ ('%Y-%m-%dT%H:%M:%S %z' | strftime) | string }}"
+      no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+      tags:
+        - always
+
+
+    # Setup dictionary 'nfc_automation'
+    - name: Set Automation Facts
+      ansible.builtin.set_fact:
+        nfc_automation: {
+          "time": {
+            "start": "{{ nfc_task_starttime | string }}",
+            "end": 0
+          }
+        }
+      no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+      when: nfc_automation is not defined
+      tags:
+        - always
+
+
+    # Setup dictionary 'nfc_task'
+    - name: Set Automation Facts
+      ansible.builtin.set_fact:
+        nfc_task: {
+          "name": "{{ ansible_play_name | lower | string }}",
+          "error": 0,
+          "roles": "{{ ansible_play_role_names | string }}",
+          "skip_tags": "{{ ansible_skip_tags | list }}",
+          "start": "{{ nfc_task_starttime | string }}",
+          "tags": "{{ ansible_run_tags | list }}"
+        }
+      no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+      tags:
+        - always
+
+
+    - name: Block - pre_tasks
+      block:
+
+
+        ########################################################################
+        #
+        # Your tasks here
+        #
+        ########################################################################
+
+
+      rescue:
+
+          # there was an error, set error object
+        - name: Set error fact
+          ansible.builtin.set_fact:
+            nfc_task: "{{ nfc_task | combine({
+                'error': 1
+              }) }}"
+          no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+          tags:
+            - always
+
+
+      always:
+
+
+          # Check if error occured and fail task
+        - name: Error Check
+          ansible.builtin.assert:
+            that:
+              - nfc_task.error | int == 0
+            msg: Error occured, Fail the play run
+          tags:
+            - always
+
+
+    # Don't use the 'roles' section.
+  roles: []
+    # if the included role(s) do not contain a rescue block, the playbook may stop
+    # executing in this section (roles) with the post_tasks not running. This will
+    # cause the artifacts to be incomplete. It's recommended to include your roles
+    # in section(s) 'pre_tasks', 'tasks' or 'post_tasks' and from within a block with
+   # rescue so that the playbook can complete and ensure that all artifacts are set.
+
+
+  tasks:
+
+
+    - name: Block - tasks
+      block:
+
+          # Check for error and fail play on error
+        - name: Error Check
+          ansible.builtin.assert:
+            that:
+              - nfc_task.error | int == 0
+            msg: Error eccured, follow error path to fail play
+
+
+        ########################################################################
+        #
+        # Your tasks here
+        #
+        ########################################################################
+
+      rescue:
+
+
+          # there was an error, set error object
+        - name: Set error fact
+          ansible.builtin.set_fact:
+            nfc_task: "{{ nfc_task | combine({
+                'error': 1
+              }) }}"
+          no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+          tags:
+            - always
+
+
+      always:
+
+
+          # Check if error occured and fail task
+        - name: Error Check
+          ansible.builtin.assert:
+            that:
+              - nfc_task.error | int == 0
+            msg: Error occured, Fail the play run
+          tags:
+            - always
+
+
+  post_tasks:
+
+    - name: Tasks post_task
+      block:
+
+
+          # Check for error and fail play on error
+        - name: Error Check
+          ansible.builtin.assert:
+            that:
+              - nfc_task.error | int == 0
+            msg: Error occured, follow error path to fail play
+          tags:
+            - always
+
+
+        ########################################################################
+        #
+        # Your tasks here
+        #
+        ########################################################################
+
+
+      rescue:
+
+
+          # there was an error, set error object
+        - name: Set error fact
+          ansible.builtin.set_fact:
+            nfc_task: "{{ nfc_task | combine({
+                'error': 1
+              }) }}"
+          no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+          tags:
+            - always
+
+
+      always:
+
+
+          # Task and automation end time.
+        - name: Fetch End time
+          ansible.builtin.set_fact:
+            nfc_task_endtime: "{{ '%Y-%m-%dT%H:%M:%S %z' | strftime }}"
+          no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+          tags:
+            - always
+
+
+          # Set task end time
+        - name: Set task Facts
+          ansible.builtin.set_fact:
+            nfc_tasks: "{{ nfc_tasks | default([]) + [ nfc_task | combine({
+                'end': nfc_task_endtime | string
+              }) ] }}"
+          no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+          tags:
+            - always
+
+
+          # Set Automation end time.
+          # every playbook must set this variable so that the end time
+          # is equal to the fail time or the end of a group of playbooks.
+        - name: Set automation end time
+          ansible.builtin.set_fact:
+            nfc_automation: "{{ nfc_automation | combine({
+                'time': nfc_automation.time | combine({
+                  'end': nfc_task_endtime | string
+                })
+              }) }}"
+            nfc_task_endtime: null
+          no_log: "{{ nfc_pb_no_log_setup_facts | default(true) | bool }}"
+          tags:
+            - always
+
+
+          # Set the artifacts as a fact for subsequent playbook useage
+          # Note: variable 'per_host' must be 'false' so that the artifacts
+          # work within AWX / Ansible Automation Platform.
+        - name: Create Automation Artifact
+          ansible.builtin.set_stats:
+            data:
+              nfc_automation: "{{ nfc_automation }}"
+              nfc_tasks: "{{ nfc_tasks }}"
+            per_host: false
+          tags:
+            - always
+
+
+          # Final error check to fail the entire play run on error
+        - name: Error Check
+          ansible.builtin.assert:
+            that:
+              - nfc_task.error | int == 0
+            msg: Error occured, Fail the play run
+          tags:
+            - always
+
+
+  vars: {}
+
+
+```
+
+The above template playbook is designed for post automation should it be required to run. `nfc_automation` is for the entire play/workflow with `nfc_tasks` being a list of `nfc_task` dictionary from each playbook. `nfc_task`  is there for you to add your own artifacts to and without any additional effort from you, will be added to the global artifacts. 
+
+
+### Playbook Variables
+
+Within any playbook that we create any variable that is set within the playbook is to be prefixed with `nfc_pb_`. Currently we have the following variables that are reserved and set as part of how we structure our playbooks.
+
+- `nfc_automation` Details on the play/run. see artifacts above for details.
+
+- `nfc_pb_no_log_setup_facts` Boolean value used as a feature gate on whether to log `set_fact` tasks that are for setting up the play. i.e. artifacts. setting this value to `false` will caused the tasks to be logged.
+
+- `nfc_tasks` List of all `nfc_task` dictionaries of the play. see artifacts above for details.
 
 
 ## AWX / Tower / Automation Platform

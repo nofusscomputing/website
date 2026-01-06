@@ -1,8 +1,8 @@
-INHERIT: website-template/mkdocs.yml
+INHERIT: docs_template/mkdocs.yml
 
 repo_name: Website
-repo_url: https://gitlab.com/nofusscomputing/infrastructure/website
-edit_uri: '/-/ide/project/nofusscomputing/projects/website/edit/development/-/pages/'
+repo_url: https://github.com/nofusscomputing/website
+edit_uri: '/edit/development/pages/'
 
 nav:
 - Home: index.md
@@ -35,7 +35,39 @@ nav:
 
     - Ansible Execution Environment:
 
-        - projects/execution_environment/index.md
+        - projects/ansible/execution_environment/index.md
+
+    - Collections:
+
+      - projects/ansible/collection/index.md
+
+      - Centurion:
+
+        - projects/ansible/collection/centurion/index.md
+
+        - Roles:
+
+          - projects/ansible/collection/centurion/roles/index.md
+
+          - Git:
+
+            - projects/ansible/collection/centurion/roles/git/index.md
+
+      - Firewall:
+      
+        - projects/ansible/collection/firewall/index.md
+
+      - Kubernetes:
+      
+        - projects/ansible/collection/kubernetes/index.md
+
+      - netbox:
+      
+        - projects/ansible/collection/netbox/index.md
+
+      - phpIPAM Scan Agent: 
+      
+        - projects/ansible/collection/phpipam_scan_agent/index.md
 
     - Playbooks:
 
@@ -49,33 +81,45 @@ nav:
       
         - projects/ansible/roles/common/index.md
 
-      - Firewall:
-      
-        - projects/ansible/roles/firewall/index.md
+      - Git Configuration:
+
+        - projects/ansible/roles/git_configuration/index.md
 
       - Home Assistant:
       
         - projects/ansible/roles/homeassistant/index.md
 
-      - Kubernetes:
+      - Testing:
       
-        - projects/ansible/roles/kubernetes/index.md
-
-    - Git Configuration:
-
-      - projects/git_configuration/index.md
+        - projects/ansible/roles/ansible_test/index.md
 
   - Docker:
 
     - projects/docker/index.md
   
-    - BIND DNS Server: projects/docker/bind/index.md
+    - BIND DNS Server:
+    
+      - projects/docker/bind/index.md
 
-    - Docker Mail: projects/docker-mail/index.md
+    - Docker GLPI: 
+    
+      - projects/glpi/index.md
+
+    - Docker Mail: 
+    
+      - projects/docker-mail/index.md
+
+  - Centurion ERP:
+
+    - projects/centurion_erp/index.md
 
   - Gitlab CI: projects/gitlab-ci/index.md
 
-  - Docker GLPI: projects/glpi/index.md
+  - ITIL:
+
+    - Runbooks:
+
+      - projects/itil/runbooks/index.md
 
   - Kubernetes Monitoring: projects/kubernetes_monitoring/index.md
 

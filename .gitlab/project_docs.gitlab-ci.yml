@@ -1,0 +1,166 @@
+---
+
+# Variables required:
+#   ASSEMBLE_PROJECT_NAME: ''
+#   ASSEMBLE_PROJECT_ID: ''
+#   ASSEMBLE_PROJECT_PATH: ''
+.fetch_project_docs:
+  stage: chores
+  needs: []
+
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - mkdir -p "$CI_PROJECT_DIR/artifacts/project_docs"
+    - apt update;
+    - apt install -y --no-install-recommends curl python3 unzip --reinstall ca-certificates
+    - update-ca-certificates --fresh
+
+
+  script:
+    - echo "[DEBUG] Fetch Project ${ASSEMBLE_PROJECT_NAME}"
+
+    - 'HTTP_STATUS_FILE=$(curl --location -o /dev/null --silent --head --write-out "%{http_code}" --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/${ASSEMBLE_PROJECT_ID}/jobs/artifacts/development/download?job=Documentation%2EBuild")'
+
+    - echo "[DEBUG] HTTP_STATUS_FILE=$HTTP_STATUS_FILE"
+
+    - |
+      if [ "0$HTTP_STATUS_FILE" != "0200" ]; then
+
+        echo "[ERROR] Unable to fetch Job Artifacts due to HTTP status of $HTTP_STATUS_FILE";
+
+        # exit 1;
+
+      else
+
+        curl --location --output artifacts.zip --header "PRIVATE-TOKEN: ${GIT_COMMIT_TOKEN}" "https://gitlab.com/api/v4/projects/${ASSEMBLE_PROJECT_ID}/jobs/artifacts/development/download?job=Documentation%2EBuild";
+
+        unzip artifacts.zip;
+
+        # rm -Rf "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/$CI_JOB_NAME/build/projects/gitlab-ci";
+
+        cp -rvf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build/build/${ASSEMBLE_PROJECT_PATH}" "$CI_PROJECT_DIR/artifacts/project_docs/$(echo -n "${ASSEMBLE_PROJECT_PATH}" | sed -e "s/\//./g")/";
+
+        rm -Rf "$CI_PROJECT_DIR/artifacts/build/Documentation.Build";
+      fi
+
+  artifacts:
+    expire_in: 24 hrs
+    when: always
+    paths:
+    - "$CI_PROJECT_DIR/artifacts/"
+  rules:
+
+      # Docs must always be built for:
+      #   - git tag
+      #   - dev branch
+      #   - master branch
+    - if:  # condition_git_tag
+        (
+          $CI_COMMIT_TAG
+        )
+          ||
+        (
+          (
+            $CI_COMMIT_BRANCH == "development"
+              ||
+            $CI_COMMIT_BRANCH != "master"
+          )
+            &&
+          ( 
+            $CI_PIPELINE_SOURCE == "pipeline"
+              ||
+            $CI_PIPELINE_SOURCE == "push"
+              ||
+            $CI_PIPELINE_SOURCE == "schedule"
+          )
+        )
+          ||
+        (
+          $CI_COMMIT_BRANCH == "master"
+            &&
+          $CI_PIPELINE_SOURCE == "push"
+        )
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      when: always
+
+    - when: never
+
+
+
+.merge_project_docs:
+  stage: prepare
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - mkdir -p $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs
+    - mv "$CI_PROJECT_DIR/artifacts/build/Website.Build/build" "$CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/"
+  script:
+
+    - ls -l ${CI_PROJECT_DIR}/artifacts/project_docs/
+
+    - | # Merge Project docs to website
+      for i in `ls ${CI_PROJECT_DIR}/artifacts/project_docs/`; do 
+
+        echo "Found Path - $i";
+
+        export JOIN_PROJECT_PATH=$(echo -n "${i}" | sed -e "s/\./\//g");
+
+        echo "set as project path [${JOIN_PROJECT_PATH}]";
+
+        rm -Rf $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/build/${JOIN_PROJECT_PATH};
+
+        cp -rvf $CI_PROJECT_DIR/artifacts/project_docs/${i} $CI_PROJECT_DIR/artifacts/$CI_JOB_STAGE/Merge.Project.Docs/build/${JOIN_PROJECT_PATH}/;
+
+      done
+
+    - | # Assemble website and project sources to build search index
+      echo "ToDo: build website and docs together to get the search index to add to the website";
+
+    - | # Join sitemaps together
+      echo "ToDo: Join all Sitemaps together into one";
+
+  artifacts:
+    expire_in: 24 hrs
+    when: always
+    paths:
+    - "$CI_PROJECT_DIR/artifacts/"
+  
+  rules:
+
+      # Docs must always be built for:
+      #   - git tag
+      #   - dev branch
+      #   - master branch
+    - if:  # condition_git_tag
+        (
+          $CI_COMMIT_TAG
+        )
+          ||
+        (
+          (
+            $CI_COMMIT_BRANCH == "development"
+              ||
+            $CI_COMMIT_BRANCH != "master"
+          )
+            &&
+          ( 
+            $CI_PIPELINE_SOURCE == "pipeline"
+              ||
+            $CI_PIPELINE_SOURCE == "push"
+              ||
+            $CI_PIPELINE_SOURCE == "schedule"
+          )
+        )
+          ||
+        (
+          $CI_COMMIT_BRANCH == "master"
+            &&
+          $CI_PIPELINE_SOURCE == "push"
+        )
+      exists:
+        - '{docs/**,pages/**}/*.md'
+      when: always
+
+    - when: never

@@ -1,0 +1,124 @@
+---
+
+child_docs:
+
+  - name: ansible_collection_centurion
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/ansible/collection/centurion
+
+
+  ######################################################################
+  #   SoF Centurion Collection sub-docs
+  ######################################################################
+
+  - name: git
+    user: ansible-roles
+    host: http://${token}@gitea-http.git.svc.kube.earth.nww:3000
+    path: projects/ansible/collection/centurion/roles/git
+    branch: development
+
+
+  ######################################################################
+  #   EoF Centurion Collection sub-docs
+  ######################################################################
+
+
+  - name: ansible_collection_kubernetes
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/ansible/collection/kubernetes
+
+  - name: ansible_playbooks
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/playbooks
+    branch: development
+
+  - name: common
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/roles/common
+    branch: development
+
+  - name: execution_environment
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/execution_environment
+
+  - name: centurion_erp
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/centurion_erp
+
+  - name: docker-bind
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/docker/bind
+    branch: development
+
+  - name: docker-mail
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/docker-mail
+    branch: development
+
+  - name: docker-glpi
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/glpi
+
+  - name: firewall
+    user: nofusscomputing/projects/ansible/collections
+    host: https://gitlab.com
+    path: projects/ansible/collection/firewall
+
+  - name: gitlab-ci
+    user: nofusscomputing/projects
+    host: https://gitlab.com
+    path: projects/gitlab-ci
+    branch: development
+
+  - name: git_configuration
+    user: nofusscomputing/projects/ansible
+    host: https://gitlab.com
+    path: projects/ansible/roles/git_configuration
+    branch: development
+
+  - name: homeassistant
+    user: ansible-roles
+    host: http://${token}@gitea-http.git.svc.kube.earth.nww:3000
+    path: projects/ansible/roles/homeassistant
+    branch: development
+
+  - name: itil_runbooks
+    user: nofusscomputing/infrastructure/configuration-management
+    host: https://gitlab.com
+    path: projects/itil/runbooks
+    branch: development
+
+  - name: kubernetes_monitoring
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/kubernetes_monitoring
+    branch: development
+
+  - name: nodered_ldap_self_service
+    user: infrastructure
+    host: http://${token}@gitea-http.git.svc.kube.earth.nww:3000
+    path: projects/ldap_self_service
+    branch: development
+
+  - name: netbox
+    user: nofusscomputing/projects/ansible/collections
+    host: https://gitlab.com
+    path: projects/ansible/collection/netbox
+
+#       - ASSEMBLE_PROJECT_NAME: operations
+#         ASSEMBLE_PROJECT_ID: 32419575
+#         ASSEMBLE_PROJECT_PATH: operations
+
+  - name: phpipam_scan_agent
+    user: nofusscomputing/projects/ansible/collections
+    host: https://gitlab.com
+    path: projects/ansible/collection/phpipam_scan_agent

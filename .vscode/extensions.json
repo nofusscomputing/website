@@ -1,8 +1,9 @@
 {
     "recommendations": [
-        "gitlab.gitlab-workflow",
         "ms-python.python",
         "njpwerner.autodocstring",
-        "davidanson.vscode-markdownlint"
+        "davidanson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-australian-english"
     ]
   }

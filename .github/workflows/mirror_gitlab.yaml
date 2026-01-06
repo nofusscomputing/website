@@ -1,0 +1,31 @@
+---
+
+name: Mirror
+
+
+on:
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+
+
+  mirror-gitlab:
+    name: Gitlab
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Mirror
+        uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url: gitlab.com:nofusscomputing/infrastructure/website.git
+          ssh_private_key: ${{ secrets.SSH_DEPLOY_KEY_GITLAB }}
+          ssh_username: git
