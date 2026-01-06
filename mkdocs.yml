@@ -1,4 +1,4 @@
-INHERIT: website-template/mkdocs.yml
+INHERIT: docs_template/mkdocs.yml
 
 repo_name: Website
 repo_url: https://github.com/nofusscomputing/website
