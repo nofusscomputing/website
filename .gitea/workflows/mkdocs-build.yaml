@@ -3,7 +3,13 @@
 name: 'MKDocs'
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      PUBLISH_DOCS:
+        default: false
+        required: false
+        type: boolean
+        description: Publish Built Docs
 
   push:
     tags:
@@ -55,6 +61,7 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
+    if: ${{ inputs.PUBLISH_DOCS || startsWith(github.ref, 'refs/tags/') }}
     steps:
 
 
