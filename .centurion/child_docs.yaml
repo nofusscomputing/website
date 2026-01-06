@@ -69,8 +69,8 @@ child_docs:
     branch: development
 
   - name: homeassistant
-    user: nofusscomputing/projects/ansible
-    host: https://gitlab.com
+    user: ansible-roles
+    host: http://${token}@gitea-http.git.svc.kube.earth.nww:3000
     path: projects/ansible/roles/homeassistant
     branch: development
 
