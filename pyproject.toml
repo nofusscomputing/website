@@ -1,6 +1,6 @@
 [project]
 name = 'no-fuss-computing'
-version = "1.0.0rc3"
+version = "1.0.0"
 
 
 [tool.commitizen]
