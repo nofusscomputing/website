@@ -7,6 +7,23 @@ child_docs:
     host: https://github.com
     path: projects/ansible/collection/centurion
 
+
+  ######################################################################
+  #   SoF Centurion Collection sub-docs
+  ######################################################################
+
+  - name: git
+    user: ansible-roles
+    host: http://${token}@gitea-http.git.svc.kube.earth.nww:3000
+    path: projects/ansible/collection/centurion/roles/git
+    branch: development
+
+
+  ######################################################################
+  #   EoF Centurion Collection sub-docs
+  ######################################################################
+
+
   - name: ansible_collection_kubernetes
     user: nofusscomputing
     host: https://github.com
