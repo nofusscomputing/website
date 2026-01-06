@@ -45,6 +45,14 @@ nav:
 
         - projects/ansible/collection/centurion/index.md
 
+        - Roles:
+
+          - projects/ansible/collection/centurion/roles/index.md
+
+          - Git:
+
+            - projects/ansible/collection/centurion/roles/git/index.md
+
       - Firewall:
       
         - projects/ansible/collection/firewall/index.md

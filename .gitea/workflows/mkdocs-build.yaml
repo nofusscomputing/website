@@ -84,3 +84,14 @@ jobs:
           pre_upload: rm -rf /opt/webserver/nofusscomputing.com/*
           post_upload: ls -la /opt/webserver/nofusscomputing.com/
           scp_options: -v
+
+
+      #
+      # Update so publish release
+      #
+      # - name: Gitea Release
+      #   uses: http://${{ secrets.ACTIONS_TOKEN_RO }}@gitea-http.git.svc:3000/actions/gitea-release-action@v1.3.5
+      #   with:
+      #     body_path: changelog-release.md
+      #     name: ${{ github.ref_name }}
+      #     draft: true
