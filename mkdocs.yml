@@ -113,6 +113,10 @@ nav:
 
     - projects/centurion_erp/index.md
 
+  - Centurion UI:
+
+    - projects/centurion_ui/index.md
+
   - Gitlab CI: projects/gitlab-ci/index.md
 
   - ITIL:

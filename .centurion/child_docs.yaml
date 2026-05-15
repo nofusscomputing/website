@@ -51,6 +51,11 @@ child_docs:
     host: https://github.com
     path: projects/centurion_erp
 
+  - name: centurion_erp_ui
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/centurion_ui
+
   - name: docker-bind
     user: nofusscomputing/projects
     host: https://gitlab.com
