@@ -1,3 +1,13 @@
+## 1.1.0 (2026-06-08)
+
+### feat
+
+- publish Centurion UI docs
+
+### Fixes
+
+- **child_docs**: correct docs path for centurion UI
+
 ## 1.0.0 (2026-01-06)
 
 ### feat
