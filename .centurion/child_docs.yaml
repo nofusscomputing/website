@@ -51,6 +51,20 @@ child_docs:
     host: https://github.com
     path: projects/centurion_erp
 
+  - name: centurion_erp_ui
+    user: nofusscomputing
+    host: https://github.com
+    path: projects/centurion_user_interface
+
+  # uncomment after:
+  #   - https://nofusscomputing.com/git/nofusscomputing/centurion_erp_glpi_migrate/pulls/5
+  #   - https://nofusscomputing.com/git/nofusscomputing/centurion_erp_glpi_migrate/pulls/6
+  #   # Centurion ERP Extension: GLPI Import
+  # - name: centurion_erp_glpi_migrate
+  #   user: nofusscomputing
+  #   host: http://${token}@gitea-http.git.svc.kube.earth.nww:3000
+  #   path: projects/centurion_erp/extensions/glpi_import
+
   - name: docker-bind
     user: nofusscomputing/projects
     host: https://gitlab.com
