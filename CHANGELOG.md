@@ -1,3 +1,9 @@
+## 1.2.1 (2026-09-12)
+
+### Fixes
+
+- use correct path for kustomize docs
+
 ## 1.2.0 (2026-09-12)
 
 ### feat
