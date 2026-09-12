@@ -125,6 +125,10 @@ nav:
 
       - projects/itil/runbooks/index.md
 
+  - Kustomize:
+
+    - projects/kustomize/index.md
+
   - Kubernetes Monitoring: projects/kubernetes_monitoring/index.md
 
   - LDAP Self Service: projects/ldap_self_service/index.md
