@@ -111,7 +111,7 @@ child_docs:
     path: projects/itil/runbooks
     branch: development
 
-  - name: kustomize
+  - name: kubernetes
     user: nofusscomputing
     host: https://github.com
     path: projects/kustomize
