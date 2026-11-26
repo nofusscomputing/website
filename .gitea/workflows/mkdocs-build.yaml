@@ -42,6 +42,10 @@ jobs:
 
           echo '******************************************************';
 
+          ls -la;
+
+          echo '******************************************************';
+
           export;
 
           echo '******************************************************';
@@ -49,10 +53,10 @@ jobs:
           echo docker run -t --rm \
             -e IS_BUILD=1 \
             -e MKDOCS_SRC_DIRECTORY=pages \
-            -e token=930e282dc65a90ce1c1b414ffc7bb3a2452ad7c6 \
+            -e token=${{ secrets.ACTIONS_TOKEN_RO }} \
             -e template_repo='http://${token}@gitea-http.git.svc:3000/infrastructure/website-template.git' \
-            --mount type=volume,source=/home/sysadmin/git/website,target=/workspace \
-            --workdir /workspace \
+            --mount type=volume,source=${JOB_CONTAINER_NAME},target=${GITHUB_WORKSPACE} \
+            --workdir ${GITHUB_WORKSPACE} \
             harbor.earth.nww/docker/nofusscomputing/mkdocs-ci:0.5.1;
 
           echo '******************************************************';
