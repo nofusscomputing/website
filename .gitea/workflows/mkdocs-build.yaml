@@ -31,7 +31,6 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-          submodules: true
 
 
       - name: MkDocs Docker CI
@@ -44,6 +43,10 @@ jobs:
           echo '******************************************************';
 
           ls -la;
+
+          echo '******************************************************';
+
+          ls -la website-template;
 
           echo '******************************************************';
 
@@ -70,6 +73,33 @@ jobs:
             --mount type=volume,source=${JOB_CONTAINER_NAME},target=${GITHUB_WORKSPACE} \
             --workdir ${GITHUB_WORKSPACE} \
             harbor.earth.nww/docker/nofusscomputing/mkdocs-ci:0.5.1 \
+
+
+      - name: trace
+        if: success() || failure()
+        shell: bash
+        env:
+          IS_BUILD: 1
+        run: |
+          echo ${PWD};
+
+          echo '******************************************************';
+
+          echo ${GITHUB_WORKSPACE};
+
+          echo '******************************************************';
+
+          ls -la || true;
+
+          echo '******************************************************';
+
+          ls -la docs_template || true;
+
+          echo '******************************************************';
+
+          ls -la gitlab-ci || true;
+
+          echo '******************************************************';
 
 
       - name: Upload Artifacts
