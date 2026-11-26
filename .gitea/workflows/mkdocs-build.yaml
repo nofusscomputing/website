@@ -37,7 +37,24 @@ jobs:
         env:
           IS_BUILD: 1
         run: |
-          git submodule update --init
+          git submodule update --init;
+
+          echo '******************************************************';
+
+          export;
+
+          echo '******************************************************';
+
+          echo docker run -t --rm \
+            -e IS_BUILD=1 \
+            -e MKDOCS_SRC_DIRECTORY=pages \
+            -e token=930e282dc65a90ce1c1b414ffc7bb3a2452ad7c6 \
+            -e template_repo='http://${token}@gitea-http.git.svc:3000/infrastructure/website-template.git' \
+            --mount type=volume,source=/home/sysadmin/git/website,target=/workspace \
+            --workdir /workspace \
+            harbor.earth.nww/docker/nofusscomputing/mkdocs-ci:0.5.1;
+
+          echo '******************************************************';
 
           docker run -t --rm \
             -e IS_BUILD=1 \
