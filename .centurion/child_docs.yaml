@@ -50,6 +50,7 @@ child_docs:
     user: nofusscomputing
     host: https://github.com
     path: projects/centurion_erp
+    branch: development
 
   - name: centurion_erp_ui
     user: nofusscomputing
